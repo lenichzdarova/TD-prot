@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class WaveSO : ScriptableObject
 {
-    [SerializeField] List<ENEMY_NAMES> enemyList;
+    [SerializeField] List<GameObject> enemyList;
     
     [SerializeField] float spawnTime;
+
+    public List<GameObject> GetEnemyList()
+    {
+        return enemyList;
+    }
 }

@@ -5,30 +5,25 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private List<ENEMY_NAMES> enemyList;
-
-    private void OnEnable()
-    {
-        StartCoroutine(SpawnEnemy(ENEMY_NAMES.Sphere));//тест
-    }
+    private List<GameObject> enemyList;
+    private int enemyIndex;
 
     public void SpawnWave(int round, Action callback)
     {
-        callback(); //here must be victory condition check class which will call callback
+        WaveSO wave = Resources.Load<WaveSO>($"ScriptableObjects/Wave/{round}");
+        enemyList= wave.GetEnemyList();       
+        
+        StartCoroutine(SpawnEnemy(enemyList[enemyIndex++]));
+        //callback(); //here must be victory condition check class which will call callback
     }
 
-    private IEnumerator SpawnEnemy(ENEMY_NAMES enemyName)
+    private IEnumerator SpawnEnemy(GameObject enemyPrefab)
     {
-        yield return new WaitForSeconds(1);
-        EnemySO enemySO = Resources.Load<EnemySO>($"ScriptableObjects/Enemy/{enemyName}");        
-        GameObject enemyPrefab = enemySO.GetPrefab();         
-        GameObject enemyGO = Instantiate(enemyPrefab, transform.position, new Quaternion(1,1,1,1)); // разобраться с квартернионом
-        Enemy enemy = enemyGO.GetComponent<Enemy>();
-        enemy.SetSpeed(enemySO.GetSpeed());
-        enemy.SetHP(enemySO.GetMaxHitPoints());
+        yield return new WaitForSeconds(1);               
+        GameObject enemyGO = Instantiate(enemyPrefab, transform.position, new Quaternion(1,1,1,1));
+        if (enemyIndex < enemyList.Count)
+        {
+            StartCoroutine(SpawnEnemy(enemyList[enemyIndex++]));
+        }
     }
-
-
-
-
 }

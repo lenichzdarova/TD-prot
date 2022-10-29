@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour
 
     private void OnEnable()
     {        
-        //NewRound();
+        NewRound();
     }
 
     private IEnumerator ActivationDelay(float delay)
