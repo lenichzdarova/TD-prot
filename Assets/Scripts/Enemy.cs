@@ -1,18 +1,29 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ENEMY_NAMES
+{
+    Sphere,
+    Cub,
+    Capsule
+}
+
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int maxHP;
+    [SerializeField] int hp;
+    [SerializeField] float speed;
+
+    public void SetSpeed(float speed)
     {
-        
+        this.speed = speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetHP(int maxHP)
     {
-        
+        this.maxHP = maxHP;
+        hp = maxHP;
     }
 }

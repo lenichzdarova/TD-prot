@@ -11,22 +11,20 @@ public class Controller : MonoBehaviour
 
     private void OnEnable()
     {        
-        NewRound();
+        //NewRound();
     }
-
 
     private IEnumerator ActivationDelay(float delay)
     {        
-        Debug.Log("Raund starting");
+        Debug.Log("Round starting");
         yield return new WaitForSeconds(delay);
-        spawner.Spawn(round, NewRound);
+        spawner.SpawnWave(round, NewRound);
     }
 
     public void NewRound()
     {
         ++round;
         StartCoroutine(ActivationDelay(baseDelay));
-    }
-    
+    }    
 
 }

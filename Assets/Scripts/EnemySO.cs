@@ -9,4 +9,19 @@ public class EnemySO : ScriptableObject
     [SerializeField] int maxHitPoints;
     [SerializeField] float speed;
     [SerializeField] GameObject prefab;
+
+    public GameObject GetPrefab()
+    {
+        return prefab;
+    }
+
+    public int GetMaxHitPoints()
+    {
+        return maxHitPoints;
+    }
+
+    public float GetSpeed()
+    {
+      return speed;
+    }
 }
