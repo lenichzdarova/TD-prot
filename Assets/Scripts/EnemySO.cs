@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySO : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu(fileName ="EnemySO",menuName ="Scriptable Objects/Enemy", order = 0) ]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class EnemySO : ScriptableObject
+{
+    [SerializeField] int maxHitPoints;
+    [SerializeField] float speed;
+    [SerializeField] GameObject prefab;
 }

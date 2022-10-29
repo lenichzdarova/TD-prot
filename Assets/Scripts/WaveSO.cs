@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSO : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "WaveSo",menuName = "Scriptable Objects/Wave", order = 0)]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class WaveSO : ScriptableObject
+{
+    [SerializeField] EnemySO[] enemyList;
+    [SerializeField] int enemyCount;
+    [SerializeField] float spawnTime;
 }
