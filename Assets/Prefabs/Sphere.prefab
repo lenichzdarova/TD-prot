@@ -113,3 +113,5 @@ MonoBehaviour:
   maxHP: 10
   hp: 10
   speed: 5
+  damage: 1
+  gold: 1

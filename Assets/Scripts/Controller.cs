@@ -5,26 +5,15 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] Spawner spawner;
-    private int round;
-    private float baseDelay=5;
+    [SerializeField] GameBoard gameBoard;    
 
-    private void OnEnable()
-    {        
-        NewRound();
-    }
+    private int fps=60;
 
-    private IEnumerator ActivationDelay(float delay)
-    {        
-        Debug.Log("Round starting");
-        yield return new WaitForSeconds(delay);
-        spawner.SpawnWave(round, NewRound);
-    }
-
-    public void NewRound()
+    private void Awake()
     {
-        ++round;
-        StartCoroutine(ActivationDelay(baseDelay));
-    }    
+        Application.targetFrameRate = fps;
+        
+    }
+     
 
 }
