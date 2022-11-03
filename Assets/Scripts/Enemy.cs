@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ENEMY_NAMES
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     private NavigationPoint nextNavPoint;
     private Vector3 destination;
+    private float CoveredDistance;
 
     private void Update()
     {
@@ -41,18 +43,41 @@ public class Enemy : MonoBehaviour
     {
         nextNavPoint = n.GetNextNavigationPoint();
         destination = n.GetDestination(); 
-        destination.y = transform.transform.position.y;        
-        transform.LookAt(destination);        
+        destination.y = transform.transform.position.y;
+        if (n.GetOrientation() == EnemyOrient.Right)
+        {
+            if(transform.localScale.x > 0)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x *= -1;
+                transform.localScale = scale;
+            }                        
+        }
+        else
+        {
+            if (transform.localScale.x < 0)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x *= -1;
+                transform.localScale = scale;
+            }
+        }
+        
     }
     private void Moving()
-    {       
-        if ((transform.position - destination).magnitude < speed * Time.deltaTime)
+    {
+        Vector3 position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        CoveredDistance += Vector3.Distance(transform.position, position); 
+        transform.position = position;
+        if (transform.position == destination)
         {
-            transform.position = destination;
-            SetPath(nextNavPoint);           
-            return;
+            SetPath(nextNavPoint);
         }
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        Debug.Log(CoveredDistance);
+    }
 
+    public float GetCoveredDistance()
+    {
+        return CoveredDistance;
     }
 }

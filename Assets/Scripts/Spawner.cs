@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     private IEnumerator SpawnEnemy(GameObject enemyPrefab)
     {
         yield return new WaitForSeconds(spawnTime);               
-        GameObject enemyGO = Instantiate(enemyPrefab, transform.position, new Quaternion(1,1,1,1));        
+        GameObject enemyGO = Instantiate(enemyPrefab, transform.position,enemyPrefab.transform.rotation);        
         Enemy enemy = enemyGO.GetComponent<Enemy>();
         enemy.SetPath(navPoint);
         if (enemyIndex < enemyList.Count)
