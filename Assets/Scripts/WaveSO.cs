@@ -6,12 +6,23 @@ using UnityEngine;
 
 public class WaveSO : ScriptableObject
 {
-    [SerializeField] List<GameObject> enemyList;
+    [SerializeField] Enemy[] enemyPrefabs;
     
-    [SerializeField] float spawnTime;
-
-    public List<GameObject> GetEnemyList()
+    [SerializeField] float[] spawnTime;
+    [SerializeField] int[] countToSpawn;
+    
+   public float[] GetSpawnTime()
     {
-        return enemyList;
+        return spawnTime;
+    }   
+
+    public Enemy GetEnemy(int index)
+    {
+        return Instantiate(enemyPrefabs[index]);
+    }    
+
+    public int GetCount(int enemyIndex)
+    {
+        return countToSpawn[enemyIndex];
     }
 }

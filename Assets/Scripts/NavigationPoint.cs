@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public enum EnemyOrient
@@ -32,4 +33,10 @@ public class NavigationPoint : MonoBehaviour
     {
         return orientation;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawCube(transform.position, new Vector3(1f, 1f, 1f));
+    }
+
 }

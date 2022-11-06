@@ -72,8 +72,7 @@ public class Enemy : MonoBehaviour
         if (transform.position == destination)
         {
             SetPath(nextNavPoint);
-        }
-        Debug.Log(CoveredDistance);
+        }        
     }
 
     public float GetCoveredDistance()
