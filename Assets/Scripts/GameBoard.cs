@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBoard : MonoBehaviour
 {   
-    [SerializeField] Spawner spawner;    
+    [SerializeField] Spawner[] spawner;    
 
     
 

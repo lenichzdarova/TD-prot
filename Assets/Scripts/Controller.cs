@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] GameBoard gameBoard;    
+    [SerializeField] GameBoard gameBoard;
+    private int gold;
 
     private int fps=60;
 
@@ -14,6 +15,10 @@ public class Controller : MonoBehaviour
         Application.targetFrameRate = fps;
         
     }
-     
+
+    static void ChooseToweUI()
+    {
+
+    }     
 
 }

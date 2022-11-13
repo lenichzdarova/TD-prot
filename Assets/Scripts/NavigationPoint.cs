@@ -13,6 +13,7 @@ public class NavigationPoint : MonoBehaviour
 {
     [SerializeField] NavigationPoint nextNavigationPoint;
     [SerializeField] EnemyOrient orientation;
+    [SerializeField] Color gizmoColor;
 
 
     public Vector3 GetDestination()
@@ -34,9 +35,10 @@ public class NavigationPoint : MonoBehaviour
         return orientation;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
-        Gizmos.DrawCube(transform.position, new Vector3(1f, 1f, 1f));
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawSphere(transform.position, 0.3f);
     }
 
 }

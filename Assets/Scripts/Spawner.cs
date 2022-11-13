@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,42 +7,67 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] WaveSO[] waves;    
     private NavigationPoint navPoint;
-    private int waveNumber =0;
+    private int waveIndex =0;
+    private float nextWaveCountdown=0;
 
-    WaveSO currenWave;
-    int[] counter;
+    private float spawnOffsetY=0.5f;
 
+    Coroutine nextWaveSpawn;
+
+    private void Update()
+    {
+        nextWaveCountdown -= Time.deltaTime;        
+    }
     private void Awake()
+    {
+        Initialize();
+    }
+
+    public void Initialize()
     {        
         navPoint = GetComponent<NavigationPoint>();
-        SpawnWave(waveNumber);
-        waveNumber++;
+        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));        
     }
 
-    public void SpawnWave(int waveIndex)
-    {        
-        currenWave = waves[waveIndex];
-        float[] spawnTime = currenWave.GetSpawnTime();
-        counter = new int[spawnTime.Length];
-        for (int i = 0; i < spawnTime.Length; i++)
-        {
-            StartCoroutine(SpawnEnemy(spawnTime[i], i));
-        }
-    }
-
-    private IEnumerator SpawnEnemy(float timeToSpawn,int enemyIndex)
+    private void WaveInitialization()
     {
-        yield return new WaitForSeconds(timeToSpawn);
-        Enemy instance = currenWave.GetEnemy(enemyIndex);
-        float MaxOffset = 0.5f;
-        Vector3 spawnOfsset = new Vector3(Random.Range(-MaxOffset, MaxOffset),0,0); 
-        instance.transform.position = transform.position+spawnOfsset;
-        instance.SetPath(navPoint);        
-        counter[enemyIndex]++; 
-        
-        if (counter[enemyIndex] < currenWave.GetCount(enemyIndex))
+        WaveSO wave = waves[waveIndex];
+        wave.Initialize();
+        nextWaveCountdown = wave.NextWaveCountdown();
+        SpawnEnemy(wave);
+        waveIndex++;        
+        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));        
+    }
+
+    public void ManualWaveSpawn()
+    {
+        StopCoroutine(nextWaveSpawn);
+        WaveInitialization();
+    }
+
+    private void SpawnEnemy(WaveSO wave)
+    {
+        Enemy enemy = wave.GetEnemy();
+        if (enemy == null)
         {
-            StartCoroutine(SpawnEnemy(timeToSpawn, enemyIndex));
-        }        
-    }    
+            return;
+        }
+        Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + spawnOffsetY, transform.position.z);
+        enemy.transform.position = startPosition;
+        enemy.SetPath(navPoint);
+        StartCoroutine(SpawnEnemyTimer(wave));
+    }
+
+    private IEnumerator SpawnEnemyTimer(WaveSO wave)
+    {        
+        yield return new WaitForSeconds(wave.GetSpawnTime());
+        SpawnEnemy(wave);
+    }
+    
+    private IEnumerator WaveSpawnTimer(float timeToNextWave)
+    {              
+        yield return new WaitForSeconds(timeToNextWave);
+        WaveInitialization();
+    }
+      
 }

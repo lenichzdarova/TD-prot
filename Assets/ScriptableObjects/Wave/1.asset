@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4221089a286fa9f42810e41de8467e4f, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 3160374018154157790, guid: 34a3833850ccfea4d8e03f8f79f95a8e, type: 3}
-  - {fileID: 8066749336714904253, guid: 0e280cd4ce521994eb618b6731c6a2f4, type: 3}
-  - {fileID: -8879646301504188021, guid: 2193cfa0c41207e4399c5aa3be1aa7e1, type: 3}
-  spawnTime:
-  - 1
-  - 5
-  - 3
-  countToSpawn: 0a0000000200000005000000
+  enemyPrefab: {fileID: 5373725400343228753, guid: 194979209965980449516022e6e3eb27,
+    type: 3}
+  nextWaveCountdown: 100
+  spawnTime: 1
+  countToSpawn: 30

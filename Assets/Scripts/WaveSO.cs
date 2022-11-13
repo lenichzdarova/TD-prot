@@ -1,28 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WaveSo",menuName = "Scriptable Objects/Wave", order = 0)]
 
+[Serializable]
 public class WaveSO : ScriptableObject
 {
-    [SerializeField] Enemy[] enemyPrefabs;
-    
-    [SerializeField] float[] spawnTime;
-    [SerializeField] int[] countToSpawn;
-    
-   public float[] GetSpawnTime()
-    {
-        return spawnTime;
-    }   
+    [SerializeField] Enemy enemyPrefab;
+    [SerializeField] float nextWaveCountdown;
+    [SerializeField] float spawnTime;
+    [SerializeField] int countToSpawn;
 
-    public Enemy GetEnemy(int index)
+    private int alreadySpawned;
+
+    public void Initialize()
     {
-        return Instantiate(enemyPrefabs[index]);
+        alreadySpawned = 0;
+    }
+
+    public Enemy GetEnemy()
+    {   
+        if(alreadySpawned == countToSpawn)
+        {
+            return null;
+        }
+        alreadySpawned++;
+        return Instantiate(enemyPrefab);        
     }    
 
-    public int GetCount(int enemyIndex)
+    public float GetSpawnTime()
     {
-        return countToSpawn[enemyIndex];
+        return spawnTime;
+    }
+
+    public int GetCountToSpawn()
+    {
+        return countToSpawn;
+    }    
+
+    public float NextWaveCountdown()
+    {
+        return nextWaveCountdown;
     }
 }

@@ -39,11 +39,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CellDencity: 6
+    - _Alpha: 0.1
+    - _CellDencity: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _TimeMultiplayer: 0.1
-    - _Twirl_Str: 10
+    - _TimeMultiplayer: 0.3
+    - _Twirl_Str: 20
     m_Colors:
     - _Color: {r: 3.0810802, g: 0.42689666, b: 3.5450983, a: 0}
   m_BuildTextureStacks: []
