@@ -21,12 +21,16 @@ public class Enemy : MonoBehaviour
 
     private NavigationPoint nextNavPoint;
     private Vector3 destination;
-    private float CoveredDistance;
+    private float distanceToLastNavPoint;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
+    private Spawner spawner;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
 
@@ -36,59 +40,30 @@ public class Enemy : MonoBehaviour
         {
             Moving();
         }        
-    }
-     
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-    }
-
-    public void ChangeHP(int value)
-    {        
-        hp +=value;
-    }
+    }    
 
     public void SetPath(NavigationPoint n)
     {
         nextNavPoint = n.GetNextNavigationPoint();
-        destination = n.GetDestination(); 
-        //destination.y = transform.transform.position.y;
-        /*
-        if (n.GetOrientation() == EnemyOrient.Left)
-        {
-            if(transform.localScale.x > 0)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x *= -1;
-                transform.localScale = scale;
-            }                        
-        }
-        else
-        {
-            if (transform.localScale.x < 0)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x *= -1;
-                transform.localScale = scale;
-            }
-        }
-        */
+        destination = nextNavPoint.GetDestination();         
     }
+
+    public void SetSpawner(Spawner spawner)
+    {
+        this.spawner= spawner;
+    }
+
     private void Moving()
     {
         Vector3 position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-        CoveredDistance += Vector3.Distance(transform.position, position);
-        if (transform.position.x< position.x&& transform.localScale.x < 0)
+        distanceToLastNavPoint -= Vector3.Distance(transform.position, position);
+        if (transform.position.x< position.x&& spriteRenderer.flipX == true)
         {
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+            spriteRenderer.flipX= false;           
         }
-        else if (transform.position.x > position.x && transform.localScale.x > 0)
+        else if (transform.position.x > position.x && spriteRenderer.flipX == false)
         {
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+            spriteRenderer.flipX = true;
         }
 
         transform.position = position;
@@ -98,9 +73,14 @@ public class Enemy : MonoBehaviour
         }        
     }
 
-    public float GetCoveredDistance()
+    public float GetDistance()
     {
-        return CoveredDistance;
+        return distanceToLastNavPoint;
+    }
+
+    public void SetDistance(float distance)
+    {
+        distanceToLastNavPoint= distance;
     }
 
     public void ApplyDamage(int damage, float slow, int poison)
@@ -110,16 +90,13 @@ public class Enemy : MonoBehaviour
         {
             speed = 0f;
             gameObject.layer = 6;
-            animator.SetBool("IsDead", true);
-            StartCoroutine(CleanCorps());
+            animator.SetBool("IsDead", true);            
+            spawner.Recycle(this);
         }
     }
 
-    
-
-    private IEnumerator CleanCorps()
+    public int GetGold()
     {
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
-    }
+        return gold;
+    }    
 }

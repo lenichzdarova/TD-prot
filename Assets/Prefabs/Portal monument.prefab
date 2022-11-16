@@ -205,8 +205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1991736854768970367}
-  - component: {fileID: 6740286194844172051}
-  - component: {fileID: 2366184471337803256}
   m_Layer: 0
   m_Name: Portal monument
   m_TagString: Untagged
@@ -232,33 +230,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 50.377, z: 0}
---- !u!114 &6740286194844172051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513366288221454099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e7094ba8b756545a2418432eb83f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waves: []
---- !u!114 &2366184471337803256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513366288221454099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb02a461d11315e4794b8c02a69a6093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextNavigationPoint: {fileID: 0}
-  orientation: 0
 --- !u!1 &6662034025493538394
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +242,8 @@ GameObject:
   - component: {fileID: 5144508703258681512}
   - component: {fileID: 122010425464391157}
   - component: {fileID: 291733128947312501}
+  - component: {fileID: 6917248518929186582}
+  - component: {fileID: 766169814334897327}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -358,6 +331,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &6917248518929186582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662034025493538394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e7094ba8b756545a2418432eb83f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+--- !u!114 &766169814334897327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662034025493538394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb02a461d11315e4794b8c02a69a6093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextNavigationPoint: {fileID: 0}
+  orientation: 0
+  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7680727987945392456
 GameObject:
   m_ObjectHideFlags: 0

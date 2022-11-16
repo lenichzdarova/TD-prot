@@ -46,7 +46,7 @@ public class Tower: MonoBehaviour
                     }
                     else
                     {
-                        currentTarget = currentTarget.GetCoveredDistance() < enemy.GetCoveredDistance() ? enemy : currentTarget;
+                        currentTarget = currentTarget.GetDistance() <= enemy.GetDistance() ? currentTarget : enemy;
                     }
                 }
 

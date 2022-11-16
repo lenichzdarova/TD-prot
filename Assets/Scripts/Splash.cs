@@ -11,12 +11,20 @@ public class Splash : MonoBehaviour
 
     private void Update()
     {
-        Vector3 position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        transform.position = position;
-        if (transform.position == target.position)
+        if(target!= null)
         {
-            Instantiate(ImpactVFX,target.position,ImpactVFX.transform.rotation);            
-            Collider[] hit = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Enemy"));  
+            Vector3 position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            transform.position = position;
+            if (transform.position == target.position)
+            {
+                Instantiate(ImpactVFX, target.position, ImpactVFX.transform.rotation);
+                Collider[] hit = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Enemy"));
+                gameObject.SetActive(false);
+                transform.localPosition = new Vector3(0, 0, 0);
+            }
+        }
+        else
+        {
             gameObject.SetActive(false);
             transform.localPosition = new Vector3(0, 0, 0);
         }

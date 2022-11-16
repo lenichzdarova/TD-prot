@@ -18,7 +18,7 @@ public class NavigationPoint : MonoBehaviour
 
     public Vector3 GetDestination()
     {
-        return nextNavigationPoint.transform.position;
+        return transform.position;
     }
 
     public NavigationPoint GetNextNavigationPoint()
