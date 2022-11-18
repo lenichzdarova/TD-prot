@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    public event Action<Tower[]> OnBuild;
+    public event Action<Building> OnBuild;    
     
-    [SerializeField] Tower[] prefabs;
+    [SerializeField] Building[] upgrades;
+    [SerializeField] Sprite icon;
+    [SerializeField] int cost;
+    [SerializeField] bool canSell;
 
 
     private void OnMouseDown()
     {
-        OnBuild?.Invoke(GetUpgrades());
+        OnBuild?.Invoke(this);
     }
 
-    public Tower[] GetUpgrades()
+    public Building[] GetUpgrades()
     {
-        return prefabs;
-    }
-
-    public void Build(int prefabIndex)
-    {
-
-    }
-
-    public void Sell()
-    {
-
-    }
-
+        return upgrades;
+    }  
+    
+    public Sprite GetIcon() { return icon; }
+    public int GetCost() { return cost; }
+    public bool CanSell() { return canSell;}
 }

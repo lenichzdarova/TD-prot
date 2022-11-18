@@ -8,36 +8,48 @@ public class BuildUI : MonoBehaviour
     [SerializeField] Button[] buildButtons;
     [SerializeField] TextMeshProUGUI[] prices;
     [SerializeField] Controller controller;
+    [SerializeField] Button sell;
     public event Action<int> OnBuild;
+    public event Action OnSell;
 
+    public void Initialize(bool canSell)
+    {        
+        sell.interactable = canSell;
+    }
 
     private void OnDisable()
     {
         foreach(Button button in buildButtons)
         {
             button.gameObject.SetActive(false);
-        }
+            button.onClick.RemoveAllListeners();
+        }        
     }
 
-    public void ActivateButtons(int count)
+    public void ActivateButton(int index,Sprite icon, int cost, bool enoughGold)
     {
-        for(int i =0; i < count; i++)
+        Button button = buildButtons[index];
+        button.gameObject.SetActive(true);
+        button.interactable = enoughGold;        
+        button.onClick.AddListener(() =>
         {
-            buildButtons[i].gameObject.SetActive(true);
-        }
-    }
-
-    public void SetButtonIcons(Sprite[] sprites)
-    {
-        for(int i =0;i<sprites.Length;i++)
-        {
-            Image image = buildButtons[i].GetComponent<Image>();
-            image.sprite = sprites[i];
-        }
-    }
+            OnBuild?.Invoke(index);
+            Close();
+        });    
+               
+        Image image = GetComponent<Image>();
+        image.sprite = icon;
+        prices[index].text= cost.ToString();
+    }    
 
     public void Close()
     {
         gameObject.SetActive(false);
     }
+
+    public void Sell()
+    {
+        //код на продажу
+        Close();
+    }   
 }

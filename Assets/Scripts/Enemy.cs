@@ -85,13 +85,20 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage(int damage, float slow, int poison)
     {
-        hp -= damage;
-        if(hp <= 0)
+        if (hp > 0)
         {
-            speed = 0f;
-            gameObject.layer = 6;
-            animator.SetBool("IsDead", true);            
-            spawner.Recycle(this);
+            hp -= damage;
+            if (hp <= 0)
+            {
+                speed = 0f;
+                gameObject.layer = 6;
+                animator.SetBool("IsDead", true);
+                spawner.Recycle(this);
+            }
+        }
+        else
+        {
+            return; 
         }
     }
 

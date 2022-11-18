@@ -125,9 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec42df17e634e479c7046b3a257020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 1122207340375842134, guid: d10c856cac239e9458de035fc25209d7, type: 3}
-  - {fileID: 4839252616049409881, guid: a8c79e4e63609b144858d6b81c47fd64, type: 3}
+  upgrades:
+  - {fileID: 1137647316683979190, guid: d1c2e7a634b26984c9f3adae9cb55130, type: 3}
+  - {fileID: 5876907204619804945, guid: 269ea9ba9837dcd46ad5a3ce3d4f6da7, type: 3}
+  icon: {fileID: 0}
+  cost: 0
+  canSell: 0
 --- !u!1 &8317518636760276491
 GameObject:
   m_ObjectHideFlags: 0

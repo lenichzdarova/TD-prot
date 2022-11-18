@@ -10,12 +10,18 @@ public class Controller : MonoBehaviour
     [SerializeField] GameBoard gameBoard;   
     [SerializeField] TextMeshProUGUI goldUI;
     [SerializeField] TextMeshProUGUI healthUI;
+    [SerializeField] Camera cam;
 
     public event Action<int> OnGoldChange;
     public event Action<int> OnHealthChange;
 
     private int gold;
-    private int health;    
+    private int health; 
+    
+    public int GetGold()
+    {
+        return gold;
+    }
 
     private int fps=60;
 
@@ -42,4 +48,9 @@ public class Controller : MonoBehaviour
         goldUI.text = gold.ToString();
         OnGoldChange?.Invoke(gold);
     }    
+
+    public Camera GetCam()
+    {
+        return cam;
+    }
 }
