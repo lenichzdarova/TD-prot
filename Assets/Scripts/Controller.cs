@@ -28,6 +28,7 @@ public class Controller : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = fps;
+        cam.aspect = 1.77f;
         gameBoard.Initialize(this);
 
         ChangeHealth(100);

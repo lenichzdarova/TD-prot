@@ -44,8 +44,11 @@ public class Spawner : MonoBehaviour
         wave.Initialize();
         nextWaveCountdown = wave.NextWaveCountdown();
         SpawnEnemy(wave);
-        waveIndex++;        
-        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));        
+        waveIndex++;  
+        if(waveIndex<waves.Length) 
+        {
+            nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));
+        }           
     }
 
     public void ManualWaveSpawn()

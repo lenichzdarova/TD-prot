@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 5876907204619804945, guid: 269ea9ba9837dcd46ad5a3ce3d4f6da7, type: 3}
-  icon: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  icon: {fileID: 21300000, guid: 126cbe6c7773da74c848285bd7c5c5ba, type: 3}
   cost: 50
   canSell: 1
 --- !u!65 &239881894261307665
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1178886423472070160}
   - component: {fileID: 1178886423472070161}
   - component: {fileID: 1178886423472070174}
-  - component: {fileID: 1178886423472070175}
+  - component: {fileID: 8524812734427246023}
   m_Layer: 0
   m_Name: Splash
   m_TagString: Untagged
@@ -162,7 +162,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1178886423472070175
+--- !u!114 &8524812734427246023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,11 +171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178886423472070172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec70fa3c70d0a146a7f20acc46c0af6, type: 3}
+  m_Script: {fileID: 11500000, guid: a5cd2c45bafe6144f8cbc5b4bb4def4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  radius: 3
   ImpactVFX: {fileID: 537611419916758876, guid: 825bc175c6c6bf642b25efd4ab097a87,
     type: 3}
 --- !u!1 &1178886423544836707
@@ -189,7 +188,6 @@ GameObject:
   - component: {fileID: 1178886423544836710}
   - component: {fileID: 1178886423544836711}
   - component: {fileID: 1178886423544836708}
-  - component: {fileID: 1178886423544836709}
   - component: {fileID: 1178886423544836706}
   m_Layer: 0
   m_Name: Sphere
@@ -264,19 +262,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1178886423544836709
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178886423544836707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1178886423544836706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,11 +275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 3
+  attackAOE: 1
   reloadTime: 1
   damage: 10
   slow: 0
   poison: 0
-  icon: {fileID: 21300000, guid: 1e2c6caf292bf0742bd99ef0cbddd383, type: 3}
-  cost: 0
-  attackType: 2
   attackGO: {fileID: 1178886423472070172}

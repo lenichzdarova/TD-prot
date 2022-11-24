@@ -1,6 +1,8 @@
 
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Building : MonoBehaviour
 {
@@ -11,10 +13,14 @@ public class Building : MonoBehaviour
     [SerializeField] int cost;
     [SerializeField] bool canSell;
 
-
+    
+    
     private void OnMouseDown()
     {
-        OnBuild?.Invoke(this);
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            OnBuild?.Invoke(this);
+        }        
     }
 
     public Building[] GetUpgrades()

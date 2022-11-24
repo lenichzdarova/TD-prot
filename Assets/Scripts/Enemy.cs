@@ -2,16 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-
-public enum ENEMY_NAMES
-{
-    Sphere,
-    Cub,
-    Capsule
-}
-
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] HealthBar healthBar;
     [SerializeField] int maxHP;
     [SerializeField] int hp;
     [SerializeField] float speed;   
@@ -31,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         spriteRenderer= GetComponent<SpriteRenderer>();
+        healthBar.Initialize(maxHP);
     }
 
 
@@ -88,11 +82,13 @@ public class Enemy : MonoBehaviour
         if (hp > 0)
         {
             hp -= damage;
+            healthBar.SetHealth(hp);
             if (hp <= 0)
             {
                 speed = 0f;
                 gameObject.layer = 6;
                 animator.SetBool("IsDead", true);
+                healthBar.gameObject.SetActive(false);
                 spawner.Recycle(this);
             }
         }

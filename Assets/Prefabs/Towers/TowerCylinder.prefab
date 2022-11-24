@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  ImpactVFX: {fileID: 537611419916758876, guid: 825bc175c6c6bf642b25efd4ab097a87,
+    type: 3}
 --- !u!1 &4207871233285497115
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +124,6 @@ GameObject:
   - component: {fileID: 4207871233285497104}
   - component: {fileID: 4207871233285497111}
   - component: {fileID: 4207871233285497110}
-  - component: {fileID: 4207871233285497109}
   - component: {fileID: 4207871233285497108}
   m_Layer: 0
   m_Name: Cylinder
@@ -197,20 +198,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4207871233285497109
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4207871233285497115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 3
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: -0.00000011920929}
 --- !u!114 &4207871233285497108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,13 +211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 5
+  attackAOE: 0
   reloadTime: 1
   damage: 10
   slow: 0
   poison: 0
-  icon: {fileID: 21300000, guid: f4a4c9e6f691106499aefc12909370c8, type: 3}
-  cost: 0
-  attackType: 0
   attackGO: {fileID: 4207871233186611019}
 --- !u!1 &7030504868668740141
 GameObject:
@@ -280,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 1137647316683979190, guid: d1c2e7a634b26984c9f3adae9cb55130, type: 3}
-  icon: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  icon: {fileID: 21300000, guid: 5ea4707820e87994bbf0429c5cfdb547, type: 3}
   cost: 70
   canSell: 1
 --- !u!65 &8295715305435945591

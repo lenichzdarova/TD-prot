@@ -4,21 +4,20 @@ using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
-public enum EnemyOrient
-{
-    Left,
-    Right
-}
 public class NavigationPoint : MonoBehaviour
 {
-    [SerializeField] NavigationPoint nextNavigationPoint;
-    [SerializeField] EnemyOrient orientation;
+    [SerializeField] NavigationPoint nextNavigationPoint;   
     [SerializeField] Color gizmoColor;
+    private float offset = 0.3f;
+    
 
 
     public Vector3 GetDestination()
     {
-        return transform.position;
+        float offsetX=Random.Range(-offset, offset);
+        float offsetZ = Random.Range(-offset, offset);
+        Vector3 position = new Vector3(transform.position.x + offsetX,transform.position.y,transform.position.z+offsetZ);
+        return position;
     }
 
     public NavigationPoint GetNextNavigationPoint()
@@ -29,11 +28,7 @@ public class NavigationPoint : MonoBehaviour
             
         }
         return nextNavigationPoint;
-    }
-    public EnemyOrient GetOrientation()
-    {
-        return orientation;
-    }
+    }    
 
     private void OnDrawGizmos()
     {

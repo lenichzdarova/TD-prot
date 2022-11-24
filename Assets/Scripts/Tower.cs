@@ -5,19 +5,16 @@ using UnityEngine;
 
 public class Tower: MonoBehaviour
 {
-    [SerializeField] float attackRange;    
+    [SerializeField] float attackRange;
+    [SerializeField] float attackAOE;
+
     [SerializeField] float reloadTime;
 
     //hit modificators
     [SerializeField] int damage;
     [SerializeField] float slow;
     [SerializeField] int poison;
-
-    //upgrades    
-    [SerializeField] Sprite icon;
-    [SerializeField] int cost;
-
-    [SerializeField] TowerAttackType attackType;
+   
     [SerializeField] GameObject attackGO;
     
     LayerMask enemyLayer;
@@ -57,24 +54,8 @@ public class Tower: MonoBehaviour
 
     private void Activation(Enemy enemy)
     {
-        isReadyToShoot = false;
-        switch (attackType)
-        {
-            case TowerAttackType.Projectile:
-                {
-                    attackGO.GetComponent<Projectile>().Initialize(enemy, HitTarget);
-                    break;
-                }
-            case TowerAttackType.AOE:
-                {
-                    break;
-                }
-            case TowerAttackType.Splash:
-                {
-                    attackGO.GetComponent<Splash>().Initialize(enemy.transform); 
-                    break;
-                }
-        }
+        isReadyToShoot = false;        
+        attackGO.GetComponent<TowerAttack>().Initialize(enemy , attackAOE, HitTarget);              
         StartCoroutine(Realoading());
     }
 
@@ -87,16 +68,6 @@ public class Tower: MonoBehaviour
     private void HitTarget(Enemy enemy)
     {
         enemy.ApplyDamage(damage,slow,poison);        
-    }
-
-    public int GetCost()
-    {
-        return cost;
-    }    
-
-    public Sprite GetIcon()
-    {
-        return icon;
-    }
+    }   
 
 }
