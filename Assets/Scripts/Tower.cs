@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Tower: MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Tower: MonoBehaviour
     [SerializeField] int poison;
    
     [SerializeField] GameObject attackGO;
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
     
     LayerMask enemyLayer;
     bool isReadyToShoot = true;
@@ -47,16 +50,27 @@ public class Tower: MonoBehaviour
                     }
                 }
 
-                Activation(currentTarget);
+                if (transform.position.x < currentTarget.transform.position.x && spriteRenderer.flipX == true)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else if (transform.position.x > currentTarget.transform.position.x && spriteRenderer.flipX == false)
+                {
+                    spriteRenderer.flipX = true;
+                }
+
+                animator.SetTrigger("Attack");
+                isReadyToShoot= false;
+                StartCoroutine(Realoading());
+                StartCoroutine(Attack(currentTarget));
             }
         }
     }
 
     private void Activation(Enemy enemy)
-    {
-        isReadyToShoot = false;        
+    {            
         attackGO.GetComponent<TowerAttack>().Initialize(enemy , attackAOE, HitTarget);              
-        StartCoroutine(Realoading());
+        //StartCoroutine(Realoading());
     }
 
     private IEnumerator Realoading()
@@ -69,5 +83,14 @@ public class Tower: MonoBehaviour
     {
         enemy.ApplyDamage(damage,slow,poison);        
     }   
+
+    private IEnumerator Attack(Enemy enemy)
+    {
+        AnimatorClipInfo[] clip = animator.GetCurrentAnimatorClipInfo(0);
+        float time = clip[0].clip.averageDuration;
+        yield return new WaitForSeconds(time);
+        Activation(enemy);
+        animator.SetTrigger("Idle");        
+    }
 
 }
