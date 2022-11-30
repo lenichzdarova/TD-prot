@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 74963f9b29d1ec64abbe297ad16f4fd9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hobbit_fire_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 8
+        width: 20
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6343593, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88a75022ed341c4391289b4e1fb49f3
+      internalID: 1245644399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 8
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.6279611, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1464d1b6466ac14ca4857ed79a65a52
+      internalID: 429116494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 8
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.6378039, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ed7f7742ee3d74380f426eed9513da
+      internalID: 252224152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 8
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.62402344, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcae6474d39da64b8c53c43aa9ca8cd
+      internalID: 1403759080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 8
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.6082738, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa83abe1ea04f8b4abd176e4fa67b037
+      internalID: -1490970856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 8
+        width: 19
+        height: 16
+      alignment: 9
+      pivot: {x: 0.60879195, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2850c27a4a37ea14da336d364aafdd28
+      internalID: 284749611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 8
+        width: 13
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5635998, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fe44b9afcba03458b6a859067215a0
+      internalID: -1082515218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 8
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.51476395, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e45a60da4aa48147948424ad65e557f
+      internalID: -876520636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 8
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5137797, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ff407471b6b964aa4187a551ffe444
+      internalID: 1211298175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_9
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 8
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5364775, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1103e09c2fff64f40a88e05a224b15b5
+      internalID: 2107515461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 8
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.56890106, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215e8e56da33a0f42966c73e3b1a5848
+      internalID: 1201905350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_11
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 7
+        width: 36
+        height: 17
+      alignment: 9
+      pivot: {x: 0.36219534, y: 0.0615829}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235874ec3ae7f6a42b9075b7787aa3fc
+      internalID: -2112500228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_12
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 8
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.31126735, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623828b72ca8f414bb34eb13a6044f37
+      internalID: 420561201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_13
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 8
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.40812853, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a3d1af18277f14d9d51245175fc0dc
+      internalID: -62445931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_14
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 8
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.42704323, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1138582a3e2094f90609872f0b9c1e
+      internalID: -1889526993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_15
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 8
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.4392036, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255ac7ff572845a49b3451dc73a4202e
+      internalID: 1964387029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hobbit_fire_16
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 8
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.6033512, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26985ad1c3b9f8b4f8c2e5b609dad250
+      internalID: 2068463517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8769d6971ca3b9b4bb44bc0f7f200666
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hobbit_fire_8: 1211298175
+      Hobbit_fire_9: 2107515461
+      Hobbit_fire_6: -1082515218
+      Hobbit_fire_14: -1889526993
+      Hobbit_fire_15: 1964387029
+      Hobbit_fire_0: 1245644399
+      Hobbit_fire_7: -876520636
+      Hobbit_fire_16: 2068463517
+      Hobbit_fire_11: -2112500228
+      Hobbit_fire_13: -62445931
+      Hobbit_fire_5: 284749611
+      Hobbit_fire_1: 429116494
+      Hobbit_fire_12: 420561201
+      Hobbit_fire_4: -1490970856
+      Hobbit_fire_2: 252224152
+      Hobbit_fire_3: 1403759080
+      Hobbit_fire_10: 1201905350
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -125,7 +125,7 @@ TextureImporter:
         width: 43
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 41
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,8 +166,8 @@ TextureImporter:
         y: 36
         width: 42
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999928, y: 0.43840778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,8 +187,8 @@ TextureImporter:
         y: 37
         width: 42
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.48659116, y: 0.38737458}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,8 +208,8 @@ TextureImporter:
         y: 38
         width: 43
         height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4607104, y: 0.3630235}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,8 +229,8 @@ TextureImporter:
         y: 39
         width: 43
         height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.473806, y: 0.3782432}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,8 +250,8 @@ TextureImporter:
         y: 40
         width: 43
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.48690298, y: 0.3537333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: Necro_cast_7
       rect:
         serializedVersion: 2
-        x: 1148
+        x: 1149
         y: 40
         width: 44
         height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4360074, y: 0.35180894}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,12 +288,12 @@ TextureImporter:
       name: Necro_cast_8
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 39
+        x: 1307
+        y: 38
         width: 61
         height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.35229293, y: 0.30802527}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,8 +313,8 @@ TextureImporter:
         y: 38
         width: 67
         height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.29828155, y: 0.28660512}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,8 +334,8 @@ TextureImporter:
         y: 37
         width: 71
         height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30171484, y: 0.26109838}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -351,12 +351,12 @@ TextureImporter:
       name: Necro_cast_11
       rect:
         serializedVersion: 2
-        x: 1787
+        x: 1788
         y: 36
         width: 75
         height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.29727215, y: 0.26490894}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,7 +377,7 @@ TextureImporter:
         width: 43
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

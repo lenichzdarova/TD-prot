@@ -18,6 +18,10 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private float slowSpeedModifier = 0.5f;
+    private bool isSlowed;
+    private Coroutine slowCorutine;
+
     private Spawner spawner;
 
     private void Awake()
@@ -49,7 +53,9 @@ public class Enemy : MonoBehaviour
 
     private void Moving()
     {
-        Vector3 position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        float currentSpeed = isSlowed? speed*slowSpeedModifier : speed;
+
+        Vector3 position = Vector3.MoveTowards(transform.position, destination, currentSpeed * Time.deltaTime);
         distanceToLastNavPoint -= Vector3.Distance(transform.position, position);
         if (transform.position.x< position.x&& spriteRenderer.flipX == true)
         {
@@ -77,11 +83,19 @@ public class Enemy : MonoBehaviour
         distanceToLastNavPoint= distance;
     }
 
-    public void ApplyDamage(int damage, float slow, int poison)
+    public void ApplyDamage(int damage, float slowInSeconds, int poison)
     {
         if (hp > 0)
         {
-            hp -= damage;
+            if (slowInSeconds != 0)
+            {
+                if (slowCorutine != null)
+                {
+                    StopCoroutine(slowCorutine);                    
+                }
+                slowCorutine= StartCoroutine(slowApply(slowInSeconds));
+            }
+            hp -= damage;            
             healthBar.SetHealth(hp);
             if (hp <= 0)
             {
@@ -89,7 +103,8 @@ public class Enemy : MonoBehaviour
                 gameObject.layer = 6;
                 animator.SetBool("IsDead", true);
                 healthBar.gameObject.SetActive(false);
-                spawner.Recycle(this);
+                //StopCoroutine(slowCorutine); разобраться как работает корутина
+                spawner.Recycle(this);                
             }
         }
         else
@@ -102,4 +117,11 @@ public class Enemy : MonoBehaviour
     {
         return gold;
     }    
+
+    private IEnumerator slowApply(float time)
+    {
+        isSlowed = true;
+        yield return new WaitForSeconds(time);
+        isSlowed= false;
+    }
 }

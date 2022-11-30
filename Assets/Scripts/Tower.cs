@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+
 
 public class Tower: MonoBehaviour
 {
@@ -13,19 +12,21 @@ public class Tower: MonoBehaviour
 
     //hit modificators
     [SerializeField] int damage;
-    [SerializeField] float slow;
+    [SerializeField] float slowInSeconds;
     [SerializeField] int poison;
    
     [SerializeField] GameObject attackGO;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
+    private Enemy currentTarget;
     
-    LayerMask enemyLayer;
-    bool isReadyToShoot = true;
+    private LayerMask enemyLayer;
+    private bool isReadyToShoot = true;
+    private bool isFliped;
 
     private void Awake()
     {
-        enemyLayer = LayerMask.GetMask("Enemy");
+        enemyLayer = LayerMask.GetMask("Enemy");        
     }
 
     // Update is called once per frame
@@ -33,10 +34,10 @@ public class Tower: MonoBehaviour
     {
         if (isReadyToShoot)
         {
+            currentTarget = null;
             RaycastHit[] hit = Physics.SphereCastAll(transform.position, attackRange, Vector3.down, 2f, enemyLayer);            
             if (hit.Length != 0)
-            {
-                Enemy currentTarget = null;
+            {                
                 for (int i = 0; i < hit.Length; i++)
                 {
                     Enemy enemy = hit[i].transform.GetComponent<Enemy>();
@@ -53,24 +54,28 @@ public class Tower: MonoBehaviour
                 if (transform.position.x < currentTarget.transform.position.x && spriteRenderer.flipX == true)
                 {
                     spriteRenderer.flipX = false;
+                    isFliped = false;
                 }
                 else if (transform.position.x > currentTarget.transform.position.x && spriteRenderer.flipX == false)
                 {
                     spriteRenderer.flipX = true;
+                    isFliped = true;
                 }
 
                 animator.SetTrigger("Attack");
                 isReadyToShoot= false;
-                StartCoroutine(Realoading());
-                StartCoroutine(Attack(currentTarget));
+                StartCoroutine(Realoading());               
             }
         }
     }
 
-    private void Activation(Enemy enemy)
-    {            
-        attackGO.GetComponent<TowerAttack>().Initialize(enemy , attackAOE, HitTarget);              
-        //StartCoroutine(Realoading());
+    private void Activation()
+    {
+        if (currentTarget != null)
+        {
+            attackGO.GetComponent<TowerAttack>().Initialize(currentTarget.transform, Attack,isFliped);
+        }
+             
     }
 
     private IEnumerator Realoading()
@@ -79,18 +84,26 @@ public class Tower: MonoBehaviour
         isReadyToShoot = true;
     }
 
-    private void HitTarget(Enemy enemy)
+    private void Attack()
     {
-        enemy.ApplyDamage(damage,slow,poison);        
+        if (attackAOE > 0)
+        {
+            Collider[] hit = Physics.OverlapSphere(currentTarget.transform.position, attackAOE, LayerMask.GetMask("Enemy"));
+            foreach (Collider collider in hit)
+            {
+                Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+                enemy.ApplyDamage(damage, slowInSeconds, poison);
+            }
+        }
+        else
+        {
+            currentTarget.ApplyDamage(damage, slowInSeconds, poison);
+        }
     }   
-
-    private IEnumerator Attack(Enemy enemy)
+    
+    private void AttackAnimationEnd()
     {
-        AnimatorClipInfo[] clip = animator.GetCurrentAnimatorClipInfo(0);
-        float time = clip[0].clip.averageDuration;
-        yield return new WaitForSeconds(time);
-        Activation(enemy);
-        animator.SetTrigger("Idle");        
+        animator.SetTrigger("Idle");
     }
 
 }

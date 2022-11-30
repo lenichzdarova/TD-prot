@@ -1,0 +1,2137 @@
+fileFormatVersion: 2
+guid: 9aea3f1aed93e9541907039c737560b8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fa58ef97472374e9aefef415599369
+      internalID: -1420723046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a86f027ecd751147b96599fa226ad9b
+      internalID: -1447649763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5a7462f11374f4a8c20d1989927136
+      internalID: -407345195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71187c3163fcf5c4188894c441452059
+      internalID: 445497996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a417fbec6d75234284df3cda26dd25d
+      internalID: 1078074467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250c5628699cea84aa6b84901d4efe77
+      internalID: 1222705471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21775bfe3f1dde8488fda2fbd5744526
+      internalID: -1049802188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 913
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ea600c1caef0340b274673d78610f6
+      internalID: 629231580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe0757a99eaa57408be3ce27b6b2414
+      internalID: -452054362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 913
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f32106728791934c9e2c58c5f5ba61a
+      internalID: -1424491393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56b0dc2b213ed5498b6c9ba27eae637
+      internalID: 1813171726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84156e3455645de459ca1a4eb03a3135
+      internalID: 590235991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380fdbb5dd54d9f4e81d6e85c04b4bbe
+      internalID: 2092056832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2b84d229442564bb238d3f3f4e3824
+      internalID: 336831377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 813
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44660f18edd12c41bde41c89de3f840
+      internalID: 1345813906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525491afcda2e8d4a98765c42f1d2873
+      internalID: 800237013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f362d5c5a0b1c24f850cbf8c9b29a4b
+      internalID: 244958943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2e12cdb97409a4f999d3e86a2f50f5
+      internalID: -2014545598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a728c5e16c303469f97a040fc0065c
+      internalID: 1454031783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 813
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b026e3485da57741ba37dbe30bbd639
+      internalID: 568608870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 713
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ff535d70a4e6c42993727d98708886
+      internalID: -1355205909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 713
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9c82be353acc44ba0c54f1eb44a1a7
+      internalID: 490950533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a6efab532ff0e4fb7de5cd37079c22
+      internalID: -1047731556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 713
+        width: 69
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526bd3bba22873b49a4ec2668d7c5542
+      internalID: -1251953034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e686ce601f7ab49902936b0a654120
+      internalID: -185846124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d70277c15f27a47ad4c42d4941d998
+      internalID: 195520910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1623c1c023d6546b8eef7deff5468e
+      internalID: -448445883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4daed86b525bd8347806361fad280580
+      internalID: 896198072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebaaa52b6ebc27e49a3c364be0c56590
+      internalID: 2002338395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 713
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8285737c50c9fc84d9f8f2d4a555cca5
+      internalID: 443918718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a2fca4d61b2f4478c959264e36218c
+      internalID: 27868992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 613
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33dc471482322749bcd6dfbed7778b8
+      internalID: 1368708510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 613
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50b3d8c5ead74b47b45f0d609b4a125
+      internalID: -892581216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 613
+        width: 69
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef03644e209d47a46b81919b584d264e
+      internalID: -1012585153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff0c8a0d3de9f14bab071b4da7a04e0
+      internalID: 1409712024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d7959c6f8ccbb489886fd4a96d4c65
+      internalID: -1843490837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1e13948d489d949b3949587234a424
+      internalID: -1756291335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fec3461c5ad034c99eccf635ec2fa1
+      internalID: -1862515223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56e5b5016375084aa637c2eb1766919
+      internalID: 794593201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 613
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d672955453b2ec54197a69a31e9fd9db
+      internalID: -848218216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c04351e9254894284da58b63bb88c0
+      internalID: -278977408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93ec9bee4fccb74b90e7aa6fefa6e1f
+      internalID: 1936773880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1d86547aebcfe48b3dc9fc3fd9bf57
+      internalID: -1592928856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6df542d87595b441856913b4c17d077
+      internalID: -145474065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d4aff01289c5e40a0c982adffc3ff8
+      internalID: 1272779720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a4b9e5fec94764abfb28e80facc129
+      internalID: -1236055243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1095f3f1454108f4c8c4f192c1bdbff6
+      internalID: 163041513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 513
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af06aeb0dfa0fb747ba53d2a544683bf
+      internalID: 277972449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 513
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e90593ce2d9d341abb29eee499075c
+      internalID: -1114680204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 513
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679d51c1421fdb54d852777aa96d1583
+      internalID: 1536468233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 413
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2fc60d53c94fc42bfe9f40a8b3abcc
+      internalID: -445770549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 413
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d572c711f399864c801f34843272f47
+      internalID: -896124711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8a62ebae9b54f45bf49e6a3f11a9dc
+      internalID: 1782629475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f0b8d9629f64540a8d5c587911cfa9
+      internalID: -2043302985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 413
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16128062337648146b77cc49a928d8eb
+      internalID: 353473834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677ebdaf4f33cc84084a43352f781e09
+      internalID: -2111181848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65acb4024d10a6242b002cb14990772e
+      internalID: -1460490908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c7884cf0b261c4da25d25ccef73e66
+      internalID: -804079503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 413
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8ff4ababd29b240b68085c9f396fd1
+      internalID: -461966720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 413
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b155012b032b1c4d84eeae7f95490cc
+      internalID: 133313992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991b7fb16b280914e90627f6d2097587
+      internalID: 1944879384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05bca7109adf6154db236aac59603f35
+      internalID: -1610344211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b894edcfb22101e41b1cab30c2732ec4
+      internalID: -109620467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b457c4eb005d24743a94f01aaa70b00e
+      internalID: -1741029622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1defcb445508cb845a0879a7e6fd8f9f
+      internalID: -872927673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08ab58aca9f4574fb7b183b294c28cc
+      internalID: -196407353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eef5bb2ad4ab14abbb348568cfc266
+      internalID: 386026686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4548b35ed28c1ab43bf16058e4f2a540
+      internalID: -954079648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 313
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f015af34b5858a4095380d459fd1883
+      internalID: 2012466027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 313
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d91948d96c7af04fac38bcf40a59474
+      internalID: 1969524650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 213
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de4c69b216cd1545889181b0a26a4bf
+      internalID: -611127003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 213
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a16e5c9beea61a469c362b08165bc9e
+      internalID: 569670725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 213
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e635c35bddc0d7488358ca6d19393c3
+      internalID: -1238870059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d11397efbc0fa498491259ca39d55a
+      internalID: -2071987576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fbb1f1186f8a44c9e9663dec0093e1
+      internalID: 1724248319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4332ef557eea00040965895d7bae9fea
+      internalID: -865968068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5064708cb3063e4f971670eba956e60
+      internalID: -190803757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0738db8cce0bc249a97ec5f67a427a9
+      internalID: 1640375808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb69fd942c8856046b9ec1d240e06660
+      internalID: -1061772021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 213
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4937badaed7b7304fad7b578e69bfc5c
+      internalID: 2124783863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8047ce3da304a449d9a943ce090ceb
+      internalID: 866601161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92105b83ac04a1441a5a7dc1f389f51d
+      internalID: -1710136971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 113
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e5ce6971461e2478e9309c6c59b1c1
+      internalID: -558656527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2ffbc8be7194143878d26a2affc0b8
+      internalID: -1214808603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6e9909ffabae449afa9d371c957043
+      internalID: -286716742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 113
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26d30f3a993a5b41820ce121af79ae2
+      internalID: -134707432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e2af736cbf8b54ea4d4f2714d8f3a8
+      internalID: -384349915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce81dbc52b7eb14c9cd5c06a817eb96
+      internalID: 1045764310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509dbdbaef9703945a0677b3d78f54e1
+      internalID: -614443933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 113
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b827b853e27db664ebd6fa1a4d9102da
+      internalID: 1585706659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_felspell_spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 13
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60a1b9c01cded843a47d829cc2995dd
+      internalID: -398426939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0d15db3c216043c428783436d38e5a29
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      17_felspell_spritesheet_59: 133313992
+      17_felspell_spritesheet_30: 27868992
+      17_felspell_spritesheet_3: 445497996
+      17_felspell_spritesheet_24: -185846124
+      17_felspell_spritesheet_77: 1640375808
+      17_felspell_spritesheet_32: -892581216
+      17_felspell_spritesheet_84: -286716742
+      17_felspell_spritesheet_88: -614443933
+      17_felspell_spritesheet_42: -1592928856
+      17_felspell_spritesheet_60: 1944879384
+      17_felspell_spritesheet_52: 1782629475
+      17_felspell_spritesheet_19: 568608870
+      17_felspell_spritesheet_39: -848218216
+      17_felspell_spritesheet_47: 277972449
+      17_felspell_spritesheet_45: -1236055243
+      17_felspell_spritesheet_27: 896198072
+      17_felspell_spritesheet_44: 1272779720
+      17_felspell_spritesheet_58: -461966720
+      17_felspell_spritesheet_13: 336831377
+      17_felspell_spritesheet_64: -872927673
+      17_felspell_spritesheet_14: 1345813906
+      17_felspell_spritesheet_31: 1368708510
+      17_felspell_spritesheet_26: -448445883
+      17_felspell_spritesheet_15: 800237013
+      17_felspell_spritesheet_5: 1222705471
+      17_felspell_spritesheet_68: 2012466027
+      17_felspell_spritesheet_20: -1355205909
+      17_felspell_spritesheet_78: -1061772021
+      17_felspell_spritesheet_1: -1447649763
+      17_felspell_spritesheet_81: -1710136971
+      17_felspell_spritesheet_89: 1585706659
+      17_felspell_spritesheet_33: -1012585153
+      17_felspell_spritesheet_49: 1536468233
+      17_felspell_spritesheet_48: -1114680204
+      17_felspell_spritesheet_18: 1454031783
+      17_felspell_spritesheet_16: 244958943
+      17_felspell_spritesheet_37: -1862515223
+      17_felspell_spritesheet_57: -804079503
+      17_felspell_spritesheet_69: 1969524650
+      17_felspell_spritesheet_51: -896124711
+      17_felspell_spritesheet_34: 1409712024
+      17_felspell_spritesheet_72: -1238870059
+      17_felspell_spritesheet_38: 794593201
+      17_felspell_spritesheet_36: -1756291335
+      17_felspell_spritesheet_21: 490950533
+      17_felspell_spritesheet_66: 386026686
+      17_felspell_spritesheet_79: 2124783863
+      17_felspell_spritesheet_40: -278977408
+      17_felspell_spritesheet_90: -398426939
+      17_felspell_spritesheet_56: -1460490908
+      17_felspell_spritesheet_61: -1610344211
+      17_felspell_spritesheet_67: -954079648
+      17_felspell_spritesheet_0: -1420723046
+      17_felspell_spritesheet_28: 2002338395
+      17_felspell_spritesheet_7: 629231580
+      17_felspell_spritesheet_41: 1936773880
+      17_felspell_spritesheet_76: -190803757
+      17_felspell_spritesheet_65: -196407353
+      17_felspell_spritesheet_4: 1078074467
+      17_felspell_spritesheet_25: 195520910
+      17_felspell_spritesheet_62: -109620467
+      17_felspell_spritesheet_75: -865968068
+      17_felspell_spritesheet_83: -1214808603
+      17_felspell_spritesheet_23: -1251953034
+      17_felspell_spritesheet_71: 569670725
+      17_felspell_spritesheet_17: -2014545598
+      17_felspell_spritesheet_86: -384349915
+      17_felspell_spritesheet_2: -407345195
+      17_felspell_spritesheet_9: -1424491393
+      17_felspell_spritesheet_22: -1047731556
+      17_felspell_spritesheet_8: -452054362
+      17_felspell_spritesheet_54: 353473834
+      17_felspell_spritesheet_73: -2071987576
+      17_felspell_spritesheet_74: 1724248319
+      17_felspell_spritesheet_55: -2111181848
+      17_felspell_spritesheet_46: 163041513
+      17_felspell_spritesheet_63: -1741029622
+      17_felspell_spritesheet_53: -2043302985
+      17_felspell_spritesheet_80: 866601161
+      17_felspell_spritesheet_85: -134707432
+      17_felspell_spritesheet_12: 2092056832
+      17_felspell_spritesheet_10: 1813171726
+      17_felspell_spritesheet_11: 590235991
+      17_felspell_spritesheet_50: -445770549
+      17_felspell_spritesheet_82: -558656527
+      17_felspell_spritesheet_6: -1049802188
+      17_felspell_spritesheet_29: 443918718
+      17_felspell_spritesheet_43: -145474065
+      17_felspell_spritesheet_70: -611127003
+      17_felspell_spritesheet_87: 1045764310
+      17_felspell_spritesheet_35: -1843490837
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
