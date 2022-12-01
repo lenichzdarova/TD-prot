@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrades:
-  - {fileID: 1137647316683979190, guid: d1c2e7a634b26984c9f3adae9cb55130, type: 3}
-  - {fileID: 5876907204619804945, guid: 269ea9ba9837dcd46ad5a3ce3d4f6da7, type: 3}
+  - {fileID: 8019917700012577283, guid: 642f9bd020b4e4a41a040e0a1c0c3acd, type: 3}
+  - {fileID: 8433036537476202804, guid: c3150551a577f43478e9165d9d0ddce5, type: 3}
   icon: {fileID: 0}
   cost: 0
   canSell: 0

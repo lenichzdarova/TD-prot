@@ -13,12 +13,8 @@ public class TowerAttack : MonoBehaviour
 
     private void Update()
     {
-        Vector3 position = Vector3.MoveTowards(transform.position, targetTransform.position, speed*Time.deltaTime);
 
-        Vector3 firstVector = new Vector3(transform.position.x, 0, transform.position.z)+ transform.right;
-        Vector3 secondVector = new Vector3(targetTransform.position.x - transform.position.x, 0, targetTransform.position.z - transform.position.z);        
-        float angle = Vector3.SignedAngle(firstVector, secondVector, transform.position+Vector3.up);          
-        transform.eulerAngles = new Vector3(60,0,-angle);
+        Vector3 position = Vector3.MoveTowards(transform.position, targetTransform.position, speed*Time.deltaTime);        
         transform.position = position;
         
         if (transform.position == targetTransform.position)
@@ -38,16 +34,21 @@ public class TowerAttack : MonoBehaviour
         startPositionLocal = transform.localPosition;
         if (isFliped)
         {
-            transform.localPosition = new Vector3(startPositionLocal.x * -1, startPositionLocal.y, startPositionLocal.z);
+            transform.localPosition = new Vector3(startPositionLocal.x * -1, startPositionLocal.y, startPositionLocal.z);            
         }
         this.calback = calback;        
         this.targetTransform = targetTransform;
-        this.calback = calback; 
+        this.calback = calback;
+
+        Vector3 firstVector = transform.position + transform.right;
+        Vector3 secondVector = new Vector3(targetTransform.position.x - transform.position.x, transform.position.y, targetTransform.position.z - transform.position.z);
+        float angle = Vector3.SignedAngle(firstVector, secondVector, transform.position + Vector3.up);
+        transform.eulerAngles = new Vector3(90, 0, -angle); 
+        animator.Play(0);
     }    
 
     private void EndOfAnimation()
-    {
-        animator.SetTrigger("Fly");
+    {        
         transform.localPosition = startPositionLocal;
         gameObject.SetActive(false);
     }

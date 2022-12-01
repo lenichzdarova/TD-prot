@@ -12,6 +12,7 @@ public class WaveSO : ScriptableObject
     [SerializeField] float nextWaveCountdown;
     [SerializeField] float spawnTime;
     [SerializeField] int countToSpawn;
+    [SerializeField] float HPModifier=1;
 
     private int alreadySpawned;
 
@@ -27,7 +28,9 @@ public class WaveSO : ScriptableObject
             return null;
         }
         alreadySpawned++;
-        return Instantiate(enemyPrefab);        
+        Enemy enemy = Instantiate(enemyPrefab);
+        enemy.ApplyWaveModifier(HPModifier);
+        return enemy;        
     }    
 
     public float GetSpawnTime()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73d976dc27b766e45b9b5bdac1011865
+guid: 17575b2c20e2fa944a9e38a9af409d42
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,95 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: B_witch_idle_0
+      name: Attack_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 246
-        width: 20
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfabfb1b00763f747994be5984ed5424
-      internalID: -438142430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_1
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 198
-        width: 20
-        height: 37
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10fa9111f16ac0a4fa299bc7ab7ca31b
-      internalID: -720486341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 150
-        width: 20
-        height: 35
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ead0f32c8a8eec748bc16ca0859e6752
-      internalID: 1744306206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_3
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 102
-        width: 19
-        height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bfe61497dad5734abb8f8650c2d2f77
-      internalID: 1760147268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_4
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 54
+        x: 16
+        y: 4
         width: 19
         height: 39
       alignment: 7
@@ -215,19 +131,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cba9b490ce18d46b5b9717816f1a30
-      internalID: -487165753
+      spriteID: 18d0303ffe4361d4fa7115c2fc3849d6
+      internalID: 1199593124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_5
+      name: Attack_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 6
-        width: 21
+        x: 53
+        y: 4
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.38832203, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf08f5765798344b974332988c9efe1
+      internalID: -1154413739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 3
+        width: 28
         height: 38
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -236,8 +173,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bec4664aeac55d4db740755fbd98362
-      internalID: 1559807004
+      spriteID: ac633fffc91eaca47abe29d0ab356176
+      internalID: -901571302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 3
+        width: 32
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54520b54c984dfe408cc0f51dc1c86ed
+      internalID: -2119377628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_4
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 5
+        width: 35
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e742bf27b307424caabe194c3dc4fc1
+      internalID: -819602090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 3
+        width: 23
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45a4365d7d44034d844e66c5c99b6c0
+      internalID: -418068494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_6
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 5
+        width: 19
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5016893573a3d46993bb0081d5f936
+      internalID: 227990021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_7
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 5
+        width: 19
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2598eec406966cf45bd1ac97aa097167
+      internalID: -964332602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_8
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 6
+        width: 19
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8899123af1de442b9bd060106c3c89
+      internalID: 1798754901
       vertices: []
       indices: 
       edges: []
@@ -245,7 +308,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: efb2f29efe5f81f4a99000752dab1b5a
+    spriteID: 4408038928a1bb543871deb43feeacee
     internalID: 0
     vertices: []
     indices: 
@@ -253,12 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      B_witch_idle_2: 1744306206
-      B_witch_idle_5: 1559807004
-      B_witch_idle_4: -487165753
-      B_witch_idle_1: -720486341
-      B_witch_idle_0: -438142430
-      B_witch_idle_3: 1760147268
+      Attack_5: -418068494
+      Attack_0: 1199593124
+      Attack_7: -964332602
+      Attack_8: 1798754901
+      Attack_4: -819602090
+      Attack_2: -901571302
+      Attack_1: -1154413739
+      Attack_3: -2119377628
+      Attack_6: 227990021
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

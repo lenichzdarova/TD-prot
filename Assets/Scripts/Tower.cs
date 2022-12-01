@@ -64,7 +64,7 @@ public class Tower: MonoBehaviour
 
                 animator.SetTrigger("Attack");
                 isReadyToShoot= false;
-                StartCoroutine(Realoading());               
+                StartCoroutine(Realoading());                
             }
         }
     }

@@ -124,4 +124,11 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(time);
         isSlowed= false;
     }
+
+    public void ApplyWaveModifier(float hpMod)
+    {
+        float maxHPMod = maxHP * hpMod;
+        maxHP = (int)maxHPMod;
+        hp = maxHP;
+    }
 }
