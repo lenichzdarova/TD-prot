@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec42df17e634e479c7046b3a257020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: []
+  upgrades:
+  - {fileID: 6007617338991466720, guid: 3dd8a85b5a927814583f353110686218, type: 3}
   icon: {fileID: 0}
   cost: 0
-  canSell: 0
+  canSell: 1
 --- !u!65 &2345016310215417537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -217,6 +218,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: attackRange
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
 --- !u!4 &4862519956621015271 stripped
@@ -291,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: attackRange
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}

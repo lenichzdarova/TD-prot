@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 11366204ac9a89e4c95b50c08fce8736
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 864
+        width: 36
+        height: 43
+      alignment: 9
+      pivot: {x: 0.60722303, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b00cb00526e9ca4faa4069323b83100
+      internalID: 603722632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 789
+        width: 33
+        height: 43
+      alignment: 9
+      pivot: {x: 0.6169708, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850f90dab5dc40744bb45b0948a2a392
+      internalID: 1732533843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 728
+        width: 38
+        height: 43
+      alignment: 9
+      pivot: {x: 0.56772, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b37622dba40974db1ad548634d4b0c
+      internalID: -563396108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 667
+        width: 39
+        height: 42
+      alignment: 9
+      pivot: {x: 0.6187703, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248b0e41c0f7edb46bc566d49f7cd364
+      internalID: -1789109711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 589
+        width: 54
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4904692, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d02721d23c9f4c43b9bec339280b6be
+      internalID: 924107868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 521
+        width: 55
+        height: 49
+      alignment: 9
+      pivot: {x: 0.41578132, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db52afc06f641b94daa6156050c0cbdb
+      internalID: 436568499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 457
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.61322755, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb53acac48598948b359560e1efd883
+      internalID: -278639022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 401
+        width: 28
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5643339, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aca6ec815b4e0c45b59f68b7221d754
+      internalID: 1082527157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 355
+        width: 32
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5804174, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a65c1ac4455324bbad96fd4884e218
+      internalID: -1653343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_9
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 309
+        width: 35
+        height: 41
+      alignment: 9
+      pivot: {x: 0.58822924, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dcea8ee9a0e0b47ac57e460f41b91d
+      internalID: -1973891700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 263
+        width: 23
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5671312, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cdb6fd811812445ae8866d37a05dac
+      internalID: 2039297498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 217
+        width: 19
+        height: 39
+      alignment: 9
+      pivot: {x: 0.59480786, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70b2c2a8b905944885d0226a35fe98f
+      internalID: -1075386995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 171
+        width: 19
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5812639, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b640a54c89aa52245a0d4410ee18fba8
+      internalID: -1912759368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny wizard t3 attack_13
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 125
+        width: 19
+        height: 38
+      alignment: 9
+      pivot: {x: 0.6083519, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b802a6276564d9f4eaffbd665db07207
+      internalID: 1467893626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2cfe7b455876fc149b20dc10508c0a88
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tiny wizard t3 attack_5: 436568499
+      Tiny wizard t3 attack_0: 603722632
+      Tiny wizard t3 attack_6: -278639022
+      Tiny wizard t3 attack_1: 1732533843
+      Tiny wizard t3 attack_3: -1789109711
+      Tiny wizard t3 attack_9: -1973891700
+      Tiny wizard t3 attack_7: 1082527157
+      Tiny wizard t3 attack_2: -563396108
+      Tiny wizard t3 attack_8: -1653343
+      Tiny wizard t3 attack_12: -1912759368
+      Tiny wizard t3 attack_4: 924107868
+      Tiny wizard t3 attack_11: -1075386995
+      Tiny wizard t3 attack_10: 2039297498
+      Tiny wizard t3 attack_13: 1467893626
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

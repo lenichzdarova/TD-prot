@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -18,8 +19,9 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private float slowSpeedModifier = 0.5f;
+    private float slowDuration = 10f;
     private bool isSlowed;
+    private float slowStrength;
     private Coroutine slowCorutine;
 
     private Spawner spawner;
@@ -53,7 +55,11 @@ public class Enemy : MonoBehaviour
 
     private void Moving()
     {
-        float currentSpeed = isSlowed? speed*slowSpeedModifier : speed;
+        float currentSpeed = isSlowed? speed-slowStrength : speed;
+        if (currentSpeed < 0)
+        {
+            currentSpeed= 0;
+        }
 
         Vector3 position = Vector3.MoveTowards(transform.position, destination, currentSpeed * Time.deltaTime);
         distanceToLastNavPoint -= Vector3.Distance(transform.position, position);
@@ -83,17 +89,27 @@ public class Enemy : MonoBehaviour
         distanceToLastNavPoint= distance;
     }
 
-    public void ApplyDamage(int damage, float slowInSeconds, int poison)
+    public void ApplyDamage(int damage, float slowStrength, int armorPiercing)
     {
+        
         if (hp > 0)
         {
-            if (slowInSeconds != 0)
+            if (slowStrength != 0)
             {
-                if (slowCorutine != null)
+                if (isSlowed)
                 {
-                    StopCoroutine(slowCorutine);                    
+                    if (slowStrength >= this.slowStrength)
+                    {
+                        StopCoroutine(slowCorutine); 
+                        this.slowStrength = slowStrength;                        
+                        slowCorutine = StartCoroutine(slowApply());
+                    }                                       
                 }
-                slowCorutine= StartCoroutine(slowApply(slowInSeconds));
+                else
+                {
+                    this.slowStrength = slowStrength;
+                    slowCorutine = StartCoroutine(slowApply());
+                }                
             }
             hp -= damage;            
             healthBar.SetHealth(hp);
@@ -118,10 +134,10 @@ public class Enemy : MonoBehaviour
         return gold;
     }    
 
-    private IEnumerator slowApply(float time)
+    private IEnumerator slowApply()
     {
         isSlowed = true;
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(slowDuration);
         isSlowed= false;
     }
 

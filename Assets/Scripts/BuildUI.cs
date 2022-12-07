@@ -15,7 +15,7 @@ public class BuildUI : MonoBehaviour
 
     public void Initialize(bool canSell)
     {
-        foreach (Button button in buildButtons)
+        foreach (var button in buildButtons)
         {
             button.gameObject.SetActive(false);
             button.onClick.RemoveAllListeners();

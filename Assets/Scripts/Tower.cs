@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 
+[RequireComponent(typeof(AudioSource))]
 
 public class Tower: MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class Tower: MonoBehaviour
 
     //hit modificators
     [SerializeField] int damage;
-    [SerializeField] float slowInSeconds;
-    [SerializeField] int poison;
+    [SerializeField] float slowStrength;
+    [SerializeField] int armorPiercing;
    
-    [SerializeField] GameObject attackGO;
+    [SerializeField] TowerAttackBehaviour attackGO;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
     private Enemy currentTarget;
@@ -24,9 +25,12 @@ public class Tower: MonoBehaviour
     private bool isReadyToShoot = true;
     private bool isFliped;
 
+    private AudioSource audioSourse;
+
     private void Awake()
     {
-        enemyLayer = LayerMask.GetMask("Enemy");        
+        enemyLayer = LayerMask.GetMask("Enemy");  
+        audioSourse= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,9 +77,9 @@ public class Tower: MonoBehaviour
     {
         if (currentTarget != null)
         {
-            attackGO.GetComponent<TowerAttack>().Initialize(currentTarget.transform, Attack,isFliped);
-        }
-             
+            attackGO.Initialize(currentTarget.transform, Attack,isFliped);
+            audioSourse.PlayOneShot(audioSourse.clip);
+        }             
     }
 
     private IEnumerator Realoading()
@@ -88,16 +92,17 @@ public class Tower: MonoBehaviour
     {
         if (attackAOE > 0)
         {
-            Collider[] hit = Physics.OverlapSphere(currentTarget.transform.position, attackAOE, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(attackGO.transform.position, attackAOE, LayerMask.GetMask("Enemy"));
+            Debug.Log(hit.Length);
             foreach (Collider collider in hit)
             {
                 Enemy enemy = collider.gameObject.GetComponent<Enemy>();
-                enemy.ApplyDamage(damage, slowInSeconds, poison);
+                enemy.ApplyDamage(damage, slowStrength, armorPiercing);
             }
         }
-        else
+        else if(currentTarget!=null)
         {
-            currentTarget.ApplyDamage(damage, slowInSeconds, poison);
+            currentTarget.ApplyDamage(damage, slowStrength, armorPiercing);
         }
     }   
     

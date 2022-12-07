@@ -52,7 +52,7 @@ MonoBehaviour:
   upgrades: []
   icon: {fileID: 0}
   cost: 0
-  canSell: 0
+  canSell: 1
 --- !u!65 &3589176140650394809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
 --- !u!4 &7182117577981911717 stripped
@@ -208,6 +213,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
 --- !u!4 &2308629229718678262 stripped
@@ -282,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: attackRange
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}

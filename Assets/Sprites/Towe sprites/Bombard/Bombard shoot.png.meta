@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: ffd933215594d7846b15e27bd1eccd8e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bombard shoot_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 27
+        width: 64
+        height: 66
+      alignment: 9
+      pivot: {x: 0.6269791, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c48c1f0aea405444b68e64966943028
+      internalID: -1511946260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_3
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 27
+        width: 81
+        height: 55
+      alignment: 9
+      pivot: {x: 0.6443105, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ce28d64b993fc4f821e72cf083a1b9
+      internalID: 1504633792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 26
+        width: 84
+        height: 51
+      alignment: 9
+      pivot: {x: 0.63191223, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1476f3789df024f84e8ee5b6bc1dc8
+      internalID: -1154754056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_5
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 27
+        width: 85
+        height: 51
+      alignment: 9
+      pivot: {x: 0.6139447, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34c3fd5fc1c069488d5bad40172ce99
+      internalID: -72499704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_6
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 27
+        width: 80
+        height: 51
+      alignment: 9
+      pivot: {x: 0.61524355, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cff709533728eb4e8ee4e30627aa00f
+      internalID: -18556745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_7
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 27
+        width: 81
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5995928, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1a44b2868c46145be78f2ae37abb1f
+      internalID: 1159175345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_8
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 27
+        width: 81
+        height: 51
+      alignment: 9
+      pivot: {x: 0.61882263, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a6c469c75c9ee4b9e61a744ff4ddd3
+      internalID: -1899782182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_11
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 27
+        width: 74
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6767809, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a8e1817ba739542acadaa01c68d5db
+      internalID: 1661778265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_12
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 27
+        width: 79
+        height: 120
+      alignment: 9
+      pivot: {x: 0.6585106, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734974dd12e962743a4ef1c7024176c8
+      internalID: -1374527891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_13
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 27
+        width: 75
+        height: 126
+      alignment: 9
+      pivot: {x: 0.68242025, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b153cc4cf4be734aba510c528c560a3
+      internalID: 7688629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 27
+        width: 62
+        height: 66
+      alignment: 9
+      pivot: {x: 0.61444587, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934cc7832ecdb714c95e96409a375e80
+      internalID: 211750123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_2
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 27
+        width: 62
+        height: 66
+      alignment: 9
+      pivot: {x: 0.6149774, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1440dde85728fd943a3f26371ddd0c39
+      internalID: -279420012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_9
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 27
+        width: 69
+        height: 88
+      alignment: 9
+      pivot: {x: 0.712351, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447f2265ee50cdb4285fdb892f7b8de3
+      internalID: 556114081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bombard shoot_10
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 26
+        width: 74
+        height: 90
+      alignment: 9
+      pivot: {x: 0.6778812, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebfe0faf8642ea4cb1e6755d88eeb6c
+      internalID: 815626747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6152d32400abb344c8743e814a37dbd2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bombard shoot_2: -279420012
+      Bombard shoot_11: 1661778265
+      Bombard shoot_12: -1374527891
+      Bombard shoot_9: 556114081
+      Bombard shoot_0: -1511946260
+      Bombard shoot_1: 211750123
+      Bombard shoot_4: -1154754056
+      Bombard shoot_13: 7688629
+      Bombard shoot_10: 815626747
+      Bombard shoot_7: 1159175345
+      Bombard shoot_6: -18556745
+      Bombard shoot_5: -72499704
+      Bombard shoot_3: 1504633792
+      Bombard shoot_8: -1899782182
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
