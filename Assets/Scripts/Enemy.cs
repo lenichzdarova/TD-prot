@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;   
 
     [SerializeField] int damage;
-    [SerializeField] int gold;    
+    [SerializeField] int bounty;    
 
     private NavigationPoint nextNavPoint;
     private Vector3 destination;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     private float slowStrength;
     private Coroutine slowCorutine;
 
-    private Spawner spawner;
+    private Spawner _spawner;
 
     private void Awake()
     {
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     public void SetSpawner(Spawner spawner)
     {
-        this.spawner= spawner;
+        _spawner= spawner;
     }
 
     private void Moving()
@@ -89,49 +89,48 @@ public class Enemy : MonoBehaviour
         distanceToLastNavPoint= distance;
     }
 
-    public void ApplyDamage(int damage, float slowStrength, int armorPiercing)
-    {
+    public void ApplyDamage()
+    {/*
         
-        if (hp > 0)
+        if (_hp > 0)
         {
-            if (slowStrength != 0)
+            if (_attackModificators.GetSLowStrenght() != 0)
             {
-                if (isSlowed)
+                if (_isSlowed)
                 {
-                    if (slowStrength >= this.slowStrength)
+                    if (_attackModificators.GetSLowStrenght() >= _slowStrength)
                     {
-                        StopCoroutine(slowCorutine); 
-                        this.slowStrength = slowStrength;                        
-                        slowCorutine = StartCoroutine(slowApply());
+                        StopCoroutine(_slowCorutine); 
+                        _slowStrength = _attackModificators.GetSLowStrenght();                         
+                        _slowCorutine = StartCoroutine(slowApply());
                     }                                       
                 }
                 else
                 {
-                    this.slowStrength = slowStrength;
-                    slowCorutine = StartCoroutine(slowApply());
+                    _slowStrength = _attackModificators.GetSLowStrenght();
+                    _slowCorutine = StartCoroutine(slowApply());
                 }                
             }
-            hp -= damage;            
-            healthBar.SetHealth(hp);
-            if (hp <= 0)
+            _hp -= _attackModificators.GetDamage();            
+            _healthBar.SetHealth(_hp);
+            if (_hp <= 0)
             {
-                speed = 0f;
+                _speed = 0f;
                 gameObject.layer = 6;
-                animator.SetBool("IsDead", true);
-                healthBar.gameObject.SetActive(false);
-                //StopCoroutine(slowCorutine); разобраться как работает корутина
-                spawner.Recycle(this);                
+                _animator.SetBool("IsDead", true);
+                _healthBar.gameObject.SetActive(false);               
+                _spawner.Recycle(this);                
             }
         }
         else
         {
             return; 
-        }
+        }*/
     }
 
-    public int GetGold()
+    public int GetBounty()
     {
-        return gold;
+        return bounty;
     }    
 
     private IEnumerator slowApply()

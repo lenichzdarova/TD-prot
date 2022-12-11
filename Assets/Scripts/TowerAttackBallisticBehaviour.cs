@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 
-public class TowerAttackBallisticBehaviour : TowerAttackBehaviour
+public class TowerAttackBallisticBehaviour : TaskObjectBehaviour
 {
     private Vector3 targetPoint;
     private float radius;

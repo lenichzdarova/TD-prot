@@ -6742,8 +6742,9 @@ GameObject:
   - component: {fileID: 1776710948}
   - component: {fileID: 1776710947}
   - component: {fileID: 1776710946}
-  - component: {fileID: 1776710950}
   - component: {fileID: 1776710949}
+  - component: {fileID: 1776710950}
+  - component: {fileID: 1776710951}
   m_Layer: 0
   m_Name: Bombard
   m_TagString: Untagged
@@ -6851,16 +6852,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831311ab767cb0b47a91c7a1a7eda348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3
-  attackAOE: 1
-  reloadTime: 4
-  damage: 20
-  slowStrength: 0
-  armorPiercing: 0
+  tasks:
+  - {fileID: 1776710950}
+  animator: {fileID: 1776710946}
+--- !u!114 &1776710950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776710945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb3d2bbdda1847899bf4567711b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 9f8324e6714b8ce48b7c6b37a78a961d, type: 3}
   attackGO: {fileID: 1124778792}
   animator: {fileID: 1776710946}
   spriteRenderer: {fileID: 1776710947}
---- !u!82 &1776710950
+  minDamage: 9
+  maxDamage: 17
+  slowStrength: 0
+  armorPiercing: 0
+  attackRange: 3
+  attackAOE: 2
+  reloadTime: 4
+--- !u!82 &1776710951
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6870,7 +6888,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9f8324e6714b8ce48b7c6b37a78a961d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class TowerAttackLinearBehaviour : TowerAttackBehaviour
+public class TowerAttackLinearBehaviour : TaskObjectBehaviour
 {
    private protected override void Move()
     {

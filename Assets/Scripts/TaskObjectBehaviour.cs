@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public abstract class TowerAttackBehaviour : MonoBehaviour
+public abstract class TaskObjectBehaviour : MonoBehaviour
 {
     [SerializeField] protected float speed;
     [SerializeField] protected Animator animator;

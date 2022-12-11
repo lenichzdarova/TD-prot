@@ -86,7 +86,7 @@ public class Spawner : MonoBehaviour
     
     public void Recycle(Enemy enemy)
     {
-        controller.ChangeGold(enemy.GetGold());
+        controller.ChangeGold(enemy.GetBounty());
         StartCoroutine(DeletingEnemy(enemy));
     }
 
