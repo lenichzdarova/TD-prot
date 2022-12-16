@@ -3,16 +3,20 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyFactory))]
+
 public class Spawner : MonoBehaviour
 {
     [SerializeField] WaveSO[] waves;
     [SerializeField] Controller controller;
+    private EnemyFactory enemyFactory;
     private NavigationPoint navPoint;
     private int waveIndex =0;
     private float nextWaveCountdown=0;
     private float enemyRecycleTime = 2f;
-    private float spawnOffsetY=0.1f;
-    private float distanceToLastNavPoint=0f;
+    private float spawnOffsetY=0.1f;   //этот костыль переделать
+  
+    
 
     Coroutine nextWaveSpawn;
 
@@ -22,18 +26,10 @@ public class Spawner : MonoBehaviour
     }    
 
     public void Initialize()
-    {        
-        navPoint = GetComponent<NavigationPoint>();
-
-        NavigationPoint tempNavPoint = navPoint;
-        while(tempNavPoint != tempNavPoint.GetNextNavigationPoint())
-        {
-            Vector3 APoint = tempNavPoint.GetDestination();
-            Vector3 BPoint = tempNavPoint.GetNextNavigationPoint().GetDestination();
-            float distance = Vector3.Distance(APoint,BPoint);
-            distanceToLastNavPoint += distance;
-            tempNavPoint= tempNavPoint.GetNextNavigationPoint();
-        }
+    {   
+        enemyFactory = GetComponent<EnemyFactory>();
+        
+        navPoint = GetComponent<NavigationPoint>();              
 
         nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));        
     }
@@ -59,16 +55,16 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy(WaveSO wave)
     {
-        Enemy enemy = wave.GetEnemy();
-        if (enemy == null)
+        Enemy enemyPrefab = wave.GetPrefab();
+        if (enemyPrefab == null)
         {
             return;
         }
+        Enemy enemy = enemyFactory.CreateEnemy(enemyPrefab);
+
         Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + spawnOffsetY, transform.position.z);
         enemy.transform.position = startPosition;
-        enemy.SetPath(navPoint);
-        enemy.SetDistance(distanceToLastNavPoint);
-        enemy.SetSpawner(this);
+        enemy.Init(navPoint);       
         StartCoroutine(SpawnEnemyTimer(wave));
     }
 

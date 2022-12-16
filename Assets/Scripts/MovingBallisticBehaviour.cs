@@ -3,28 +3,22 @@ using UnityEngine;
 using System;
 
 
-public class TowerAttackBallisticBehaviour : TaskObjectBehaviour
-{
-    private Vector3 targetPoint;
+public class MovingBallisticBehaviour : MovingBehaviour
+{    
     private float radius;
     private float distanceToApogee;
-    Vector3 linearPosition;
+    private Vector3 linearPosition;
+    [SerializeField]
     private float heighModifier = 3f;
-    
 
-
-
-    private protected override void Move()
-    {
-        if (isActive)
-        {
+    public override void Move()
+    {        
             Vector3 tempLinearPosition = linearPosition;
-            linearPosition = Vector3.MoveTowards(linearPosition, targetPoint, speed * Time.deltaTime);
-            if(linearPosition == targetPoint)
+            linearPosition = Vector3.MoveTowards(linearPosition, targetProvider.GetTargetPoint(), moveSpeed * Time.deltaTime);
+            if(linearPosition == targetProvider.GetTargetPoint())
             {
                 transform.position = linearPosition;
-                animator.SetTrigger("Impact");
-                isActive = false;
+                //тут какой-то колбек на активацию.
                 return;
             }
             float moveDelta = Vector3.Distance(tempLinearPosition, linearPosition);
@@ -45,30 +39,17 @@ public class TowerAttackBallisticBehaviour : TaskObjectBehaviour
 
             Vector3 position = new Vector3(linearPosition.x, linearPosition.y + cannonballHeigh*heighModifier, linearPosition.z);
             transform.position = position;                   
-        }       
-    }
+              
+    }    
 
-    private protected override void Rotate()
-    {
-        
-    }
-
-    public override void Initialize(Transform targetTransform, Action callback, bool isFliped)
-    {
-        gameObject.SetActive(true);
+    public override void Initialize(TargetCoordinatesProvider targetProvider)
+    {        
         startPositionLocal = transform.localPosition;
-        if (isFliped)
-        {
-            transform.localPosition = new Vector3(-startPositionLocal.x, startPositionLocal.y, startPositionLocal.z);
-        }
-        this.callback = callback;
-        this.targetTransform = targetTransform;
-        targetPoint = targetTransform.position;
+        
+        this.targetProvider=targetProvider;
 
         linearPosition = transform.position;
-        radius = Vector3.Distance(transform.position, targetPoint)/2;   
-        distanceToApogee = radius;       
-        
-        Rotate();
+        radius = Vector3.Distance(transform.position, targetProvider.GetTargetPoint())/2;   
+        distanceToApogee = radius;        
     }
 }

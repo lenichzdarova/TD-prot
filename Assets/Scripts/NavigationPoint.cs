@@ -8,16 +8,10 @@ public class NavigationPoint : MonoBehaviour
 {
     [SerializeField] NavigationPoint nextNavigationPoint;   
     [SerializeField] Color gizmoColor;
-    private float offset = 0.3f;
-    
-
 
     public Vector3 GetDestination()
-    {
-        float offsetX=Random.Range(-offset, offset);
-        float offsetZ = Random.Range(-offset, offset);
-        Vector3 position = new Vector3(transform.position.x + offsetX,transform.position.y,transform.position.z+offsetZ);
-        return position;
+    {       
+        return transform.position;
     }
 
     public NavigationPoint GetNextNavigationPoint()
@@ -29,6 +23,11 @@ public class NavigationPoint : MonoBehaviour
         }
         return nextNavigationPoint;
     }    
+
+    public float DistanceToNext()
+    {
+        return Vector3.Distance(GetDestination(), nextNavigationPoint.GetDestination());
+    }
 
     private void OnDrawGizmos()
     {

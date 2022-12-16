@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetCoordinatesProvider : MonoBehaviour
+public abstract class TargetCoordinatesProvider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public abstract Vector3 GetTargetPoint();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Init(Transform targetTransform);
+    
 }

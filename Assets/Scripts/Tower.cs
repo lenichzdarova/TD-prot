@@ -1,17 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-
 public class Tower: MonoBehaviour
 {
-    [SerializeField] private List<TowerTask> tasks;
-    [SerializeField] Animator animator;
-    
+    [SerializeField] private List<TowerSkill> tasks;    
 
     // Update is called once per frame
     void Update()
     {           
+        //затычка, тут распетл€ю
        TasksExecution();             
     }
     

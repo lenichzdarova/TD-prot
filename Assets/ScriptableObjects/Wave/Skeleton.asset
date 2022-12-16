@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5373725400343228753, guid: 194979209965980449516022e6e3eb27,
     type: 3}
   nextWaveCountdown: 100
-  spawnTime: 1
+  spawnTime: 3
   countToSpawn: 30

@@ -3191,6 +3191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: East Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 6513366288221454099, guid: e56c916994b206b4ba50d527d0c5b1d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6662034025493538394, guid: e56c916994b206b4ba50d527d0c5b1d2,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4930,6 +4935,9 @@ GameObject:
   - component: {fileID: 1124778789}
   - component: {fileID: 1124778791}
   - component: {fileID: 1124778792}
+  - component: {fileID: 1124778795}
+  - component: {fileID: 1124778793}
+  - component: {fileID: 1124778794}
   m_Layer: 0
   m_Name: Cannonball
   m_TagString: Untagged
@@ -5036,8 +5044,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c5b7879f93401449b3fd9eb3640fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  animator: {fileID: 1124778791}
+  moveSpeed: 6
+  heighModifier: 3
+--- !u!114 &1124778793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124778786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cd2c45bafe6144f8cbc5b4bb4def4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackStats: {fileID: 1124778795}
+  targetCoordinatesProvider: {fileID: 1124778794}
+  movingBehaviour: {fileID: 1124778792}
+--- !u!114 &1124778794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124778786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024177f6eabbb474f8ee7a9d6998b0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1124778795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124778786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34467ec1c623f3459296f3f3b25db6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDamage: 0
+  maxDamage: 0
+  armorPiercing: 0
+  slowStrength: 0
+  heal: 0
 --- !u!1 &1210651256
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,7 +5681,6 @@ GameObject:
   - component: {fileID: 1428903652}
   - component: {fileID: 1428903651}
   - component: {fileID: 1428903654}
-  - component: {fileID: 1428903655}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
@@ -5725,26 +5776,6 @@ MonoBehaviour:
   - {fileID: 1950313059}
   - {fileID: 1341384061}
   buildUI: {fileID: 1482986712}
---- !u!95 &1428903655
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428903650}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54da3f0b08077994c89bcebc0b642daf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1432743102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6742,9 +6773,10 @@ GameObject:
   - component: {fileID: 1776710948}
   - component: {fileID: 1776710947}
   - component: {fileID: 1776710946}
-  - component: {fileID: 1776710949}
-  - component: {fileID: 1776710950}
   - component: {fileID: 1776710951}
+  - component: {fileID: 1776710949}
+  - component: {fileID: 1776710952}
+  - component: {fileID: 1776710953}
   m_Layer: 0
   m_Name: Bombard
   m_TagString: Untagged
@@ -6853,31 +6885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tasks:
-  - {fileID: 1776710950}
-  animator: {fileID: 1776710946}
---- !u!114 &1776710950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776710945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4bdb3d2bbdda1847899bf4567711b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 9f8324e6714b8ce48b7c6b37a78a961d, type: 3}
-  attackGO: {fileID: 1124778792}
-  animator: {fileID: 1776710946}
-  spriteRenderer: {fileID: 1776710947}
-  minDamage: 9
-  maxDamage: 17
-  slowStrength: 0
-  armorPiercing: 0
-  attackRange: 3
-  attackAOE: 2
-  reloadTime: 4
+  - {fileID: 1776710952}
 --- !u!82 &1776710951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6974,6 +6982,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1776710952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776710945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b628c5755265043b9ce97ea57ea082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer: Enemy
+  taskName: AutoAttack
+  audioClip: {fileID: 8300000, guid: 9f8324e6714b8ce48b7c6b37a78a961d, type: 3}
+  range: 3
+  reloadTime: 2
+  skillGameObject: {fileID: 1124778793}
+--- !u!114 &1776710953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776710945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0586b4b854d50934fa768d7d5e82d652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810110264
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,6 +8377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: West Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513366288221454099, guid: e56c916994b206b4ba50d527d0c5b1d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6662034025493538394, guid: e56c916994b206b4ba50d527d0c5b1d2,
         type: 3}

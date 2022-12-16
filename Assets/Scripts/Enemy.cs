@@ -1,149 +1,58 @@
 
+using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+
+[RequireComponent(typeof(EnemyStats),typeof(Animator),typeof(SpriteRenderer))]
+[RequireComponent(typeof(EnemyMovingHandler))]
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] HealthBar healthBar;
-    [SerializeField] int maxHP;
-    [SerializeField] int hp;
-    [SerializeField] float speed;   
+    public event Action<Enemy> AskForRecycle;      
 
-    [SerializeField] int damage;
-    [SerializeField] int bounty;    
-
-    private NavigationPoint nextNavPoint;
-    private Vector3 destination;
-    private float distanceToLastNavPoint;
-    private Animator animator;
+    private EnemyStats enemyStats;
+    private AnimatorHandler animatorHandler;
     private SpriteRenderer spriteRenderer;
+    private EnemyMovingHandler enemyMovingHandler;    
 
-    private float slowDuration = 10f;
-    private bool isSlowed;
-    private float slowStrength;
-    private Coroutine slowCorutine;
-
-    private Spawner _spawner;
-
-    private void Awake()
+    public void Init(NavigationPoint initialNavPoint)
     {
-        animator = GetComponent<Animator>();
-        spriteRenderer= GetComponent<SpriteRenderer>();
-        healthBar.Initialize(maxHP);
-    }
+        animatorHandler = new AnimatorHandler( GetComponent<Animator>());
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyStats = GetComponent<EnemyStats>();
+        enemyMovingHandler = GetComponent<EnemyMovingHandler>();
+        enemyStats.DeathBorderReach += OnDeathBorderReach;
+        healthBar.Initialize(enemyStats.MaxHealth);
+        enemyMovingHandler.Init(initialNavPoint, enemyStats.Speed);
+    }   
 
-
-    private void Update()
+    public float GetDistanceToLastNavPoint()
     {
-        if(destination!= null)
-        {
-            Moving();
-        }        
+        return enemyMovingHandler.GetDistanceToLastNavPoint();
     }    
 
-    public void SetPath(NavigationPoint n)
+    public void ApplyDamage(AttackStats attackStats)
     {
-        nextNavPoint = n.GetNextNavigationPoint();
-        destination = nextNavPoint.GetDestination();         
-    }
-
-    public void SetSpawner(Spawner spawner)
-    {
-        _spawner= spawner;
-    }
-
-    private void Moving()
-    {
-        float currentSpeed = isSlowed? speed-slowStrength : speed;
-        if (currentSpeed < 0)
-        {
-            currentSpeed= 0;
-        }
-
-        Vector3 position = Vector3.MoveTowards(transform.position, destination, currentSpeed * Time.deltaTime);
-        distanceToLastNavPoint -= Vector3.Distance(transform.position, position);
-        if (transform.position.x< position.x&& spriteRenderer.flipX == true)
-        {
-            spriteRenderer.flipX= false;           
-        }
-        else if (transform.position.x > position.x && spriteRenderer.flipX == false)
-        {
-            spriteRenderer.flipX = true;
-        }
-
-        transform.position = position;
-        if (transform.position == destination)
-        {
-            SetPath(nextNavPoint);
-        }        
-    }
-
-    public float GetDistance()
-    {
-        return distanceToLastNavPoint;
-    }
-
-    public void SetDistance(float distance)
-    {
-        distanceToLastNavPoint= distance;
-    }
-
-    public void ApplyDamage()
-    {/*
-        
-        if (_hp > 0)
-        {
-            if (_attackModificators.GetSLowStrenght() != 0)
-            {
-                if (_isSlowed)
-                {
-                    if (_attackModificators.GetSLowStrenght() >= _slowStrength)
-                    {
-                        StopCoroutine(_slowCorutine); 
-                        _slowStrength = _attackModificators.GetSLowStrenght();                         
-                        _slowCorutine = StartCoroutine(slowApply());
-                    }                                       
-                }
-                else
-                {
-                    _slowStrength = _attackModificators.GetSLowStrenght();
-                    _slowCorutine = StartCoroutine(slowApply());
-                }                
-            }
-            _hp -= _attackModificators.GetDamage();            
-            _healthBar.SetHealth(_hp);
-            if (_hp <= 0)
-            {
-                _speed = 0f;
-                gameObject.layer = 6;
-                _animator.SetBool("IsDead", true);
-                _healthBar.gameObject.SetActive(false);               
-                _spawner.Recycle(this);                
-            }
-        }
-        else
-        {
-            return; 
-        }*/
+       enemyStats.AddHealth(-attackStats.GetDamage());
     }
 
     public int GetBounty()
     {
-        return bounty;
-    }    
-
-    private IEnumerator slowApply()
+        return enemyStats.Bounty;
+    }  
+   
+     private void OnDeathBorderReach()
     {
-        isSlowed = true;
-        yield return new WaitForSeconds(slowDuration);
-        isSlowed= false;
-    }
+        animatorHandler.PlayDeathAnimation();
+        //какой-то выход на статы игрока добавление голдишечки.
+        StartCoroutine(EnemyDeleting());
+    }   
 
-    public void ApplyWaveModifier(float hpMod)
+    private IEnumerator EnemyDeleting()
     {
-        float maxHPMod = maxHP * hpMod;
-        maxHP = (int)maxHPMod;
-        hp = maxHP;
+        float timeToDelete = 2.5f;
+        yield return new WaitForSeconds(timeToDelete);
+        AskForRecycle?.Invoke(this);
     }
 }

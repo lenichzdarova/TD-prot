@@ -1,26 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+
 using UnityEngine;
+
+[RequireComponent(typeof(TowerFactory))]
 
 public class GameBoard : MonoBehaviour
 {   
     [SerializeField] Spawner[] spawners;
     [SerializeField] Building[] buildings;
     [SerializeField] BuildUI buildUI;
+    
+    private PlayerStats playerStats;
+    private int initialGold = 100;
+    private int initialHP = 100;
+    
     private Controller controller;
     private Building currentSelected;
     private float sellMultiplier = 0.5f;
 
 
     public void Initialize(Controller controller)
-    {
+    {        
+        playerStats = new PlayerStats(initialHP, initialGold);
         this.controller = controller;
-        foreach(Spawner spawner in spawners) 
+        foreach(var spawner in spawners) 
         {
             spawner.Initialize();
         }       
-        foreach(Building building in buildings)
+        foreach(var building in buildings)
         {
             building.OnBuild += OpenBuildUI;
         }
