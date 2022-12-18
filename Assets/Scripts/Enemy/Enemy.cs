@@ -1,5 +1,4 @@
 
-using Assets.Scripts;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -45,8 +44,7 @@ public class Enemy : MonoBehaviour
    
      private void OnDeathBorderReach()
     {
-        animatorHandler.PlayDeathAnimation();
-        //какой-то выход на статы игрока добавление голдишечки.
+        animatorHandler.PlayDeathAnimation();        
         StartCoroutine(EnemyDeleting());
     }   
 

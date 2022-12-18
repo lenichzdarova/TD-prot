@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts
-{
     public class PlayerDamageZone : MonoBehaviour
     {
         private IPlayerDamage iPlayerDamage;        
@@ -20,4 +18,3 @@ namespace Assets.Scripts
             }
         }
     }
-}

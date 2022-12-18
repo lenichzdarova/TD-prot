@@ -1,5 +1,3 @@
-
-using Assets.Scripts;
 using UnityEngine;
 
 [RequireComponent(typeof(TowerFactory))]
