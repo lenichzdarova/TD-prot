@@ -10,9 +10,7 @@ public class Building : MonoBehaviour
     [SerializeField] Building[] upgrades;
     [SerializeField] Sprite icon;
     [SerializeField] int cost;
-    [SerializeField] bool canSell;
-
-    
+    [SerializeField] bool canSell;    
     
     private void OnMouseDown()
     {

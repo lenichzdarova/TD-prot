@@ -7,6 +7,8 @@ public class GameBoard : MonoBehaviour
     [SerializeField] Spawner[] spawners;
     [SerializeField] Building[] buildings;
     [SerializeField] BuildUI buildUI;
+
+    [SerializeField] PlayerDamageZone playerDamageZone;
     private Building currentSelected;
     private float sellMultiplier;
 
@@ -20,7 +22,9 @@ public class GameBoard : MonoBehaviour
         foreach(var building in buildings)
         {
            // building.OnBuild += OpenBuildUI;
-        }       
+        }  
+
+        playerDamageZone.Init(playerDamage);     
         //buildUI.OnBuild += BuildTower;
         //buildUI.OnSell += SellTower;
 

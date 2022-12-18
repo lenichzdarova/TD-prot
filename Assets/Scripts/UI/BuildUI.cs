@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildUI : MonoBehaviour
+public class BuildUI : MonoBehaviour, IUIElement
 {
     [SerializeField] Button[] buildButtons;
     [SerializeField] TextMeshProUGUI[] prices;
@@ -31,7 +31,7 @@ public class BuildUI : MonoBehaviour
         button.onClick.AddListener(() =>
         {
             OnBuild?.Invoke(index);
-            Close();
+            Hide();
         });    
                
         Image image = button.GetComponent<Image>();
@@ -50,7 +50,12 @@ public class BuildUI : MonoBehaviour
     }
     
 
-    public void Close()
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Show()
     {
         gameObject.SetActive(false);
     }
@@ -58,6 +63,6 @@ public class BuildUI : MonoBehaviour
     public void Sell()
     {
         OnSell?.Invoke();
-        Close();
+        Hide();
     }    
 }

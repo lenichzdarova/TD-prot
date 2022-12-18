@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Player : IPlayerDamage
+public class Player : IPlayerDamage, IPlayerEventsProvider
 {
-    private const int DEFAULT_GOLD = 100;
-    private const int DEFAULT_HEALTH = 100;
+    public event Action<int> playerGoldChange;
+    public event Action<int> playerHealthChange;    
 
     private string name;
-    private int hitPoints;
+    private int health;
     private int gold;
 
-    public int HitPoints { get { return hitPoints; } }
+    public int Health { get { return health; } }
     public int Gold { get { return gold; } }
     
-    public Player( int hitPoints = DEFAULT_HEALTH, int gold = DEFAULT_GOLD)
+    public Player( int health, int gold )
     {        
-        this.hitPoints = hitPoints;
+        this.health = health;
         this.gold = gold;
     }
 
-    public Player(string name, int hitPoints = 100, int gold = 100) : this (hitPoints, gold)
+    public Player(string name, int health, int gold) : this (health, gold)
     {
         this.name = name;        
     } 
@@ -32,6 +33,18 @@ public class Player : IPlayerDamage
     
     public void ApplyDamage(int value)
     {
-        hitPoints -= value;
+        health -= value;
+    }
+
+    public void AddGold(int value)
+    {
+        gold += value;
+        playerGoldChange?.Invoke(Gold);
+    }
+
+    public void AddHealth(int value)
+    {
+        health += value;
+        playerHealthChange?.Invoke(Gold);
     }
 }
