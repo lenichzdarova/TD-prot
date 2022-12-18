@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    public Enemy CreateEnemy(Enemy prefab)
+    public Enemy GetEnemy(Enemy prefab)
     {
         Enemy enemy = Instantiate(prefab);
         enemy.AskForRecycle += Recycle;

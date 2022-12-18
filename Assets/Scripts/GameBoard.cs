@@ -1,4 +1,5 @@
 
+using Assets.Scripts;
 using UnityEngine;
 
 [RequireComponent(typeof(TowerFactory))]
@@ -8,34 +9,25 @@ public class GameBoard : MonoBehaviour
     [SerializeField] Spawner[] spawners;
     [SerializeField] Building[] buildings;
     [SerializeField] BuildUI buildUI;
-    
-    private PlayerStats playerStats;
-    private int initialGold = 100;
-    private int initialHP = 100;
-    
-    private Controller controller;
     private Building currentSelected;
-    private float sellMultiplier = 0.5f;
+    private float sellMultiplier;
 
-
-    public void Initialize(Controller controller)
-    {        
-        playerStats = new PlayerStats(initialHP, initialGold);
-        this.controller = controller;
+    public void Initialize(IPlayerDamage playerDamage)
+    {  
+        
         foreach(var spawner in spawners) 
         {
             spawner.Initialize();
         }       
         foreach(var building in buildings)
         {
-            building.OnBuild += OpenBuildUI;
-        }
-        controller.OnGoldChange += GoldCheck;
-        buildUI.OnBuild += BuildTower;
-        buildUI.OnSell += SellTower;
+           // building.OnBuild += OpenBuildUI;
+        }       
+        //buildUI.OnBuild += BuildTower;
+        //buildUI.OnSell += SellTower;
 
     }    
-
+    /*
     private void OpenBuildUI(Building building)
     {
         currentSelected= building;
@@ -95,5 +87,5 @@ public class GameBoard : MonoBehaviour
         int sellAmount = (int)(towerCost * sellMultiplier);
         controller.ChangeGold(sellAmount);
         Destroy(currentSelected.gameObject);
-    }
+    }*/
 }

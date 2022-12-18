@@ -8,7 +8,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] WaveSO[] waves;
-    [SerializeField] Controller controller;
+    [SerializeField] Game controller;
     private EnemyFactory enemyFactory;
     private NavigationPoint navPoint;
     private int waveIndex =0;
@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
         {
             return;
         }
-        Enemy enemy = enemyFactory.CreateEnemy(enemyPrefab);
+        Enemy enemy = enemyFactory.GetEnemy(enemyPrefab);
 
         Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + spawnOffsetY, transform.position.z);
         enemy.transform.position = startPosition;
@@ -78,12 +78,6 @@ public class Spawner : MonoBehaviour
     {              
         yield return new WaitForSeconds(timeToNextWave);
         WaveInitialization();
-    }   
-    
-    public void Recycle(Enemy enemy)
-    {
-        controller.ChangeGold(enemy.GetBounty());
-        StartCoroutine(DeletingEnemy(enemy));
     }
 
     private IEnumerator DeletingEnemy(Enemy enemy)

@@ -7,7 +7,7 @@ public class BuildUI : MonoBehaviour
 {
     [SerializeField] Button[] buildButtons;
     [SerializeField] TextMeshProUGUI[] prices;
-    [SerializeField] Controller controller;
+    [SerializeField] Game controller;
     [SerializeField] GameObject sell;
     [SerializeField] TextMeshProUGUI sellText;    
     public event Action<int> OnBuild;
@@ -59,5 +59,5 @@ public class BuildUI : MonoBehaviour
     {
         OnSell?.Invoke();
         Close();
-    }   
+    }    
 }

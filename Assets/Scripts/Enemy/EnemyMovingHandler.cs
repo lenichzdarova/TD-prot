@@ -33,7 +33,7 @@ public class EnemyMovingHandler : MonoBehaviour
             distanceToLastNavPoint -= Vector3.Distance(transform.position,pointToMove);
             bool direction = transform.position.x <= pointToMove.x? true : false;
             MovingDirection?.Invoke(direction);
-            transform.position = enemyMoving.GetMovingPoint(transform.position, navPoint.GetDestination(), speed);
+            transform.position = pointToMove;
         }
         else
         {

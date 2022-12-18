@@ -1,4 +1,5 @@
 
+using Assets.Scripts;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -53,6 +54,12 @@ public class Enemy : MonoBehaviour
     {
         float timeToDelete = 2.5f;
         yield return new WaitForSeconds(timeToDelete);
+        AskForRecycle?.Invoke(this);
+    }    
+    
+    public void AttackPlayer(IPlayerDamage playerDamage)
+    {
+        playerDamage.ApplyDamage(enemyStats.Damage);
         AskForRecycle?.Invoke(this);
     }
 }
