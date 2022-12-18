@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
     public class PlayerDamageZone : MonoBehaviour
@@ -10,10 +10,11 @@ using UnityEngine;
             this.iPlayerDamage = iPlayerDamage;            
         }
 
-        private void OnTriggerEnter(Collider other)
-        {            
+        private void OnTriggerEnter (Collider other)
+        {     
+            Debug.Log(other);       
             if (other.gameObject.TryGetComponent(out Enemy enemy))
-            {
+            {                
                 enemy.AttackPlayer(iPlayerDamage);
             }
         }
