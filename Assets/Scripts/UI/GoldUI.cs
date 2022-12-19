@@ -8,8 +8,7 @@ public class GoldUI : MonoBehaviour, IUIElement
     public void Init(IPlayerEventsProvider playerEventsProvider, int playerGold)
     {
         SetGoldValue(playerGold);
-        playerEventsProvider.playerGoldChange +=SetGoldValue;
-        Hide();
+        playerEventsProvider.playerGoldChange += SetGoldValue;        
     }
 
     private void SetGoldValue(int value)

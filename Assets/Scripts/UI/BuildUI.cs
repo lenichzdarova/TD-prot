@@ -5,39 +5,22 @@ using UnityEngine.UI;
 
 public class BuildUI : MonoBehaviour, IUIElement
 {
-    [SerializeField] Button[] buildButtons;
-    [SerializeField] TextMeshProUGUI[] prices;
-    [SerializeField] Game controller;
-    [SerializeField] GameObject sell;
-    [SerializeField] TextMeshProUGUI sellText;    
+    [SerializeField] BuildTowerButton[] buildButtons;       
+    [SerializeField] Button sellButton;
+    [SerializeField] TextMeshProUGUI sellButtonText;    
     public event Action<int> OnBuild;
     public event Action OnSell;
 
-    public void Initialize(bool canSell)
+    public void Initialize(Building[] buildings, int towerCost, bool canSell)
     {
-        foreach (var button in buildButtons)
+        for (int i = 0; i < buildButtons.Length; i++)
         {
-            button.gameObject.SetActive(false);
-            button.onClick.RemoveAllListeners();
+            buildButtons[i].Init(buildings[i]);
         }
-        sell.SetActive(canSell);
+        //sell.SetActive(canSell);
     }    
 
-    public void ActivateButton(int index,Sprite icon, int cost, bool enoughGold)
-    {
-        Button button = buildButtons[index];
-        button.gameObject.SetActive(true);
-        button.interactable = enoughGold;        
-        button.onClick.AddListener(() =>
-        {
-            OnBuild?.Invoke(index);
-            Hide();
-        });    
-               
-        Image image = button.GetComponent<Image>();
-        image.sprite = icon;
-        prices[index].text= cost.ToString();
-    }  
+   
 
     public void SetSellAmount(int amount)
     {

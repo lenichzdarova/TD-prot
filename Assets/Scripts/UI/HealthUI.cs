@@ -7,8 +7,7 @@ public class HealthUI : MonoBehaviour, IUIElement
     public void Init(IPlayerEventsProvider playerEventsProvider, int playerHealth)
     { 
         SetHealthValue(playerHealth);
-        playerEventsProvider.playerGoldChange +=SetHealthValue;
-        //Hide();
+        playerEventsProvider.playerHealthChange +=SetHealthValue;        
     }  
 
     private void SetHealthValue(int value)

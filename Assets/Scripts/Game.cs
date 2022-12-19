@@ -8,7 +8,6 @@ public class Game : MonoBehaviour
     private Player player;
     private int fps=60;   
     private int playerStartHealth = 100;
-
     private int playerStartGold = 100; 
 
     private void Awake()
@@ -18,6 +17,5 @@ public class Game : MonoBehaviour
         uiHandler.Init(player, player.Health,player.Gold);
         cameraHandler = new CameraHandler(Camera.main);
         gameBoard.Initialize(player);
-
     }   
 }

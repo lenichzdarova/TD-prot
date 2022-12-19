@@ -2,19 +2,24 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-public class UIHandler : MonoBehaviour
+public class UIHandler : MonoBehaviour, IBuildUIProvider
 {
-    private BuildUI buildUI;
-    private GoldUI goldUI;
+    [SerializeField] private BuildUI buildUI;
+    [SerializeField] private GoldUI goldUI;
     [SerializeField] private HealthUI healthUI;
-    private StartMenuUI startMenuUI;    
+    [SerializeField] private IngameMenuUI ingameMenuUI;    
 
     public void Init(IPlayerEventsProvider playerEventsProvider, int playerHealth, int playerGold)
-    {  
-        //startMenuUI.Show();
-        //goldUI.Hide();
+    {
+        //ingameMenuUI.Show();
+        goldUI.Init(playerEventsProvider, playerGold);
         healthUI.Init(playerEventsProvider, playerHealth);
-        //buildUI.Hide();
+        //buildUI.Hide(); 
+    }
+
+    public void InitializeBuildUI(Building[] buildings, int towerCost, bool canSell)
+    {
+        buildUI.Initialize( buildings,towerCost, canSell);
     }
 
 }

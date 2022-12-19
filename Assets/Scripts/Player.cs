@@ -23,7 +23,7 @@ public class Player : IPlayerDamage, IPlayerEventsProvider
 
     public Player(string name, int health, int gold) : this (health, gold)
     {
-        this.name = name;        
+        this.name = name;         
     } 
 
     public void SetName(string name)
@@ -33,13 +33,15 @@ public class Player : IPlayerDamage, IPlayerEventsProvider
     
     public void ApplyDamage(int value)
     {
+        Debug.Log(value);
         health -= value;
+        playerHealthChange?.Invoke(health);
     }
 
     public void AddGold(int value)
     {
         gold += value;
-        playerGoldChange?.Invoke(Gold);
+        playerGoldChange?.Invoke(gold);
     }
 
     public void AddHealth(int value)
