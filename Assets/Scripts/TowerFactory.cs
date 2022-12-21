@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TowerFactory : MonoBehaviour
 {
-    public Tower CreateEnemy(Tower prefab)
+    public Building GetBuilding(Building prefab)
     {
-        return Instantiate(prefab);
+        Building building = Instantiate(prefab);        
+        return building;
     }
 
-    public void Recycle(Tower tower)
+    public void Recycle(Building building)
     {
-        Destroy(tower.gameObject);
+        Destroy(building.gameObject);
     }    
 }

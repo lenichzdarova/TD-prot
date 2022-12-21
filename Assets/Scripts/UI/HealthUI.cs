@@ -1,26 +1,31 @@
 using UnityEngine;
 using TMPro;
 
-public class HealthUI : MonoBehaviour, IUIElement
+public class HealthUI : MonoBehaviour
 {  
-    [SerializeField] private TextMeshProUGUI healthValueHolder;
-    public void Init(IPlayerEventsProvider playerEventsProvider, int playerHealth)
-    { 
-        SetHealthValue(playerHealth);
-        playerEventsProvider.playerHealthChange +=SetHealthValue;        
+    [SerializeField] private TextMeshProUGUI healthValueTextHolder;
+    private IPlayerHealthProvider playerHealthProvider;
+
+    public void Init(IPlayerHealthProvider iPlayerHealthProvider)
+    {
+        Show();
+        playerHealthProvider = iPlayerHealthProvider;
+        SetHealthText(playerHealthProvider.Health);
+        playerHealthProvider.playerHealthChange +=SetHealthText;        
     }  
 
-    private void SetHealthValue(int value)
+    private void SetHealthText(int value)
     {
-        healthValueHolder.text = value.ToString();
+        healthValueTextHolder.text = value.ToString();
     }
     public void Hide()
     {
+        playerHealthProvider.playerHealthChange -= SetHealthText;
         gameObject.SetActive(false);
     }
 
     public void Show()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 }

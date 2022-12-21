@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Building : MonoBehaviour
 {
-    public event Action<Building[], int, bool> OnBuildingClicked;    
+    public event Action<Building> BuildingClicked;    
     
     [SerializeField] Building[] upgrades;
     [SerializeField] Sprite icon;
@@ -16,7 +16,7 @@ public class Building : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            OnBuildingClicked?.Invoke(upgrades,cost,canSell);
+            BuildingClicked?.Invoke(this);
         }        
     }
 

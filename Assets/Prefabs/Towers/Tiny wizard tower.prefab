@@ -118,8 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e2bee55a35294081a45b4e21b8bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  animator: {fileID: 8433036536693901218}
+  moveSpeed: 0
 --- !u!1 &8433036536867489186
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,15 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831311ab767cb0b47a91c7a1a7eda348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3
-  attackAOE: 0
-  reloadTime: 2
-  damage: 3
-  slowStrength: 0
-  armorPiercing: 0
-  attackGO: {fileID: 7074213434090654690}
-  animator: {fileID: 8433036536867489215}
-  spriteRenderer: {fileID: 8433036536867489214}
+  skills: []
 --- !u!82 &4923831696827642471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -393,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 6435040457486820563, guid: ccd7d701e52794147bb39e4271d26e2d, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 126cbe6c7773da74c848285bd7c5c5ba, type: 3}
   cost: 0
   canSell: 1
 --- !u!65 &1309266726

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 2029205052378398580, guid: 0b6b6475f05cbba4ea5b46fc55839aa4, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5ea4707820e87994bbf0429c5cfdb547, type: 3}
   cost: 0
   canSell: 1
 --- !u!65 &8289538223600811808
@@ -156,7 +156,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1800299951055547790, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
 --- !u!4 &5481623495538097702 stripped
 Transform:

@@ -872,6 +872,7 @@ GameObject:
   - component: {fileID: 202449133}
   - component: {fileID: 202449131}
   - component: {fileID: 202449134}
+  - component: {fileID: 202449135}
   m_Layer: 5
   m_Name: Build button (1)
   m_TagString: Untagged
@@ -982,6 +983,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &202449135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202449129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c58606b1555348408328c5dbc12f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 202449131}
+  towerCost: {fileID: 1093951957}
+  image: {fileID: 202449134}
 --- !u!1 &204305149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,6 +4401,7 @@ GameObject:
   - component: {fileID: 1080907480}
   - component: {fileID: 1080907478}
   - component: {fileID: 1080907481}
+  - component: {fileID: 1080907482}
   m_Layer: 5
   m_Name: Build button
   m_TagString: Untagged
@@ -4495,6 +4512,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1080907482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080907476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c58606b1555348408328c5dbc12f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1080907478}
+  towerCost: {fileID: 283606342}
+  image: {fileID: 1080907481}
 --- !u!1 &1093951955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4642,6 +4674,7 @@ GameObject:
   - component: {fileID: 1111726680}
   - component: {fileID: 1111726678}
   - component: {fileID: 1111726681}
+  - component: {fileID: 1111726682}
   m_Layer: 5
   m_Name: Build button (2)
   m_TagString: Untagged
@@ -4752,6 +4785,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1111726682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111726676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c58606b1555348408328c5dbc12f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1111726678}
+  towerCost: {fileID: 368833568}
+  image: {fileID: 1111726681}
 --- !u!1001 &1115755625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5597,7 +5645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426330635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5666,7 +5714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7105b096ce1c3f841b991c458fedc9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldValueHolder: {fileID: 1002755904}
+  goldValueTextHolder: {fileID: 1002755904}
 --- !u!1 &1428903650
 GameObject:
   m_ObjectHideFlags: 0
@@ -5774,7 +5822,6 @@ MonoBehaviour:
   - {fileID: 1763022826}
   - {fileID: 1950313059}
   - {fileID: 1341384061}
-  buildUI: {fileID: 0}
   playerDamageZone: {fileID: 1902258305}
 --- !u!114 &1428903655
 MonoBehaviour:
@@ -5898,7 +5945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1482986709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5975,11 +6022,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12703edbd139def43ac2c323b8b00c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildButtons: []
-  prices: []
-  controller: {fileID: 0}
-  sell: {fileID: 0}
-  sellText: {fileID: 0}
+  buildButtons:
+  - {fileID: 1080907482}
+  - {fileID: 202449135}
+  - {fileID: 1111726682}
+  - {fileID: 1825809308}
+  sellButton: {fileID: 0}
+  sellButtonText: {fileID: 0}
+  closeBuildMenuButton: {fileID: 1834755291}
 --- !u!1 &1507127856
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,7 +7084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1810110265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7103,7 +7153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef2ce49bd4daea4199776ac663d2e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthValueHolder: {fileID: 422567620}
+  healthValueTextHolder: {fileID: 422567620}
 --- !u!1 &1825809302
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,6 +7166,7 @@ GameObject:
   - component: {fileID: 1825809306}
   - component: {fileID: 1825809304}
   - component: {fileID: 1825809307}
+  - component: {fileID: 1825809308}
   m_Layer: 5
   m_Name: Build button (3)
   m_TagString: Untagged
@@ -7226,6 +7277,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1825809308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825809302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c58606b1555348408328c5dbc12f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1825809304}
+  towerCost: {fileID: 33972634}
+  image: {fileID: 1825809307}
 --- !u!1 &1834755287
 GameObject:
   m_ObjectHideFlags: 0
@@ -7792,7 +7858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932286b89d2f59d4c99af8796e0eea22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildUI: {fileID: 0}
+  buildUI: {fileID: 1482986712}
   goldUI: {fileID: 1426330638}
   healthUI: {fileID: 1810110268}
   ingameMenuUI: {fileID: 0}

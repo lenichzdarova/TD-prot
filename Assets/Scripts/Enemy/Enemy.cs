@@ -55,9 +55,9 @@ public class Enemy : MonoBehaviour
         AskForRecycle?.Invoke(this);
     }    
     
-    public void AttackPlayer(IPlayerDamage playerDamage)
+    public void AttackPlayer(IPlayerHealthProvider iPlayerHealthProvider)
     {
-        playerDamage.ApplyDamage(enemyStats.Damage);
+        iPlayerHealthProvider.AddHealth(-enemyStats.Damage);
         AskForRecycle?.Invoke(this);
     }
 }

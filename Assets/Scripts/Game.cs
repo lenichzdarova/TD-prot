@@ -14,8 +14,8 @@ public class Game : MonoBehaviour
     {
         Application.targetFrameRate = fps;        
         player = new Player(playerStartHealth,playerStartGold);
-        uiHandler.Init(player, player.Health,player.Gold);
+        uiHandler.Init(player,player);
         cameraHandler = new CameraHandler(Camera.main);
-        gameBoard.Initialize(player);
+        gameBoard.Initialize(player,uiHandler);
     }   
 }

@@ -3,49 +3,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildUI : MonoBehaviour, IUIElement
+public class BuildUI : MonoBehaviour
 {
-    [SerializeField] BuildTowerButton[] buildButtons;       
+    public event Action<int> buildingIndexSelected;
+
+    [SerializeField] SelectTowerButton[] selectTowerButtons;       
     [SerializeField] Button sellButton;
-    [SerializeField] TextMeshProUGUI sellButtonText;    
-    public event Action<int> OnBuild;
-    public event Action OnSell;
+    [SerializeField] TextMeshProUGUI sellButtonText;
+    [SerializeField] Button closeBuildMenuButton;    
 
     public void Initialize(Building[] buildings, int towerCost, bool canSell)
     {
-        for (int i = 0; i < buildButtons.Length; i++)
+        Show();
+        for (int i = 0; i < buildings.Length; i++)
         {
-            buildButtons[i].Init(buildings[i]);
+            selectTowerButtons[i].Init(buildings[i],i);
+            selectTowerButtons[i].SelectTowerButtonClicked += OnSelectTowerButtonClicked;
         }
-        //sell.SetActive(canSell);
+        closeBuildMenuButton.onClick.AddListener(Hide);
     }    
-
-   
-
-    public void SetSellAmount(int amount)
-    {
-        sellText.text= amount.ToString();
-    }
-    
-    public void GoldChange(int index, bool enoughGold)
-    {
-        buildButtons[index].interactable= enoughGold;
-    }
-    
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        foreach (var button in selectTowerButtons)
+        {
+            button.SelectTowerButtonClicked -= OnSelectTowerButtonClicked;
+            button.Hide();
+        }
+        closeBuildMenuButton.onClick.RemoveListener(Hide);
+        gameObject.SetActive(false); 
     }
 
     public void Show()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
-    public void Sell()
+    private void OnSelectTowerButtonClicked(int buttonIndex) 
     {
-        OnSell?.Invoke();
-        Hide();
-    }    
+        buildingIndexSelected?.Invoke(buttonIndex);        
+    }     
 }

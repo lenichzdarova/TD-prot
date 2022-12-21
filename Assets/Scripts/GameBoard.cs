@@ -13,7 +13,7 @@ public class GameBoard : MonoBehaviour
     private Building currentSelected;
     private float sellMultiplier;
 
-    public void Initialize(IPlayerDamage playerDamage,IBuildUIProvider iBuildUIProvider)
+    public void Initialize(IPlayerHealthProvider iPlayerHealthProvider,IBuildUIProvider iBuildUIProvider)
     {          
         foreach(var spawner in spawners) 
         {
@@ -21,7 +21,7 @@ public class GameBoard : MonoBehaviour
         } 
         towerFactory = GetComponent<TowerFactory>();
         towerBuldingHandler = new TowerBuildingHandler(towerFactory, iBuildUIProvider, buildings);
-        playerDamageZone.Init(playerDamage);     
+        playerDamageZone.Init(iPlayerHealthProvider);     
         //buildUI.OnBuild += BuildTower;
         //buildUI.OnSell += SellTower;
     }        

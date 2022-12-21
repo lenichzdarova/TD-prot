@@ -3,50 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Player : IPlayerDamage, IPlayerEventsProvider
+public class Player : IPlayerHealthProvider, IPlayerGoldProvider 
 {
     public event Action<int> playerGoldChange;
-    public event Action<int> playerHealthChange;    
-
-    private string name;
-    private int health;
-    private int gold;
-
-    public int Health { get { return health; } }
-    public int Gold { get { return gold; } }
+    public event Action<int> playerHealthChange;
+    
+    public string PlayerName { get; private set; }
+    public int Health { get; set; }
+    public int Gold { get; set ; }
     
     public Player( int health, int gold )
     {        
-        this.health = health;
-        this.gold = gold;
+        Health = health;
+        Gold = gold;
     }
 
     public Player(string name, int health, int gold) : this (health, gold)
     {
-        this.name = name;         
+        PlayerName = name;         
     } 
 
     public void SetName(string name)
     {
-        this.name = name;
-    }
-    
-    public void ApplyDamage(int value)
-    {
-        Debug.Log(value);
-        health -= value;
-        playerHealthChange?.Invoke(health);
-    }
+        PlayerName = name;
+    }    
 
     public void AddGold(int value)
     {
-        gold += value;
-        playerGoldChange?.Invoke(gold);
+        Gold += value;
+        playerGoldChange?.Invoke(Gold);
     }
 
     public void AddHealth(int value)
     {
-        health += value;
-        playerHealthChange?.Invoke(Gold);
+        Health += value;
+        playerHealthChange?.Invoke(Health);
     }
 }

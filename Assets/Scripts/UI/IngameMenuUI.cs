@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class IngameMenuUI : MonoBehaviour,IUIElement
+public class IngameMenuUI : MonoBehaviour
 {
     public void Hide()
     {

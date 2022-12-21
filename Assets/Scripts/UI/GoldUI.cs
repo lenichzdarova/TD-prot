@@ -1,29 +1,33 @@
 using UnityEngine;
 using TMPro;
 
-public class GoldUI : MonoBehaviour, IUIElement
+public class GoldUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI goldValueHolder;
+    [SerializeField] private TextMeshProUGUI goldValueTextHolder;
+    private IPlayerGoldProvider playerGoldProvider;
 
-    public void Init(IPlayerEventsProvider playerEventsProvider, int playerGold)
+    public void Init(IPlayerGoldProvider iPlayerGoldProvider)
     {
-        SetGoldValue(playerGold);
-        playerEventsProvider.playerGoldChange += SetGoldValue;        
+        Show();
+        playerGoldProvider = iPlayerGoldProvider;
+        SetGoldText(iPlayerGoldProvider.Gold);
+        iPlayerGoldProvider.playerGoldChange += SetGoldText;        
     }
 
-    private void SetGoldValue(int value)
+    private void SetGoldText(int value)
     {
-        goldValueHolder.text = value.ToString();
+        goldValueTextHolder.text = value.ToString();
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        playerGoldProvider.playerGoldChange-=SetGoldText;
+        gameObject.SetActive(false);        
     }
 
     public void Show()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true); 
     }
 }
 
