@@ -3,21 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBuildingHandler 
-{
+public class TowerBuildHandler{
     public event Action<Building[], int, bool> buildActivation;
 
     private TowerFactory towerFactory;
     private Building currentSelectedBuilding;
 
-    public TowerBuildingHandler(TowerFactory towerFactory, IBuildUIProvider iBuildUIProvider, Building[] initialBuildings)
+    public TowerBuildHandler(TowerFactory towerFactory, IBuildUIProvider iBuildUIProvider, Building[] initialBuildings)
     {
         this.towerFactory = towerFactory;        
         foreach(var building in initialBuildings)
         {
             building.BuildingClicked += OnBuildingClicked;
         }
-        new TowerBuldingPresenter(this, iBuildUIProvider);
+        new TowerBuildPresenter(this, iBuildUIProvider);
     } 
     
     private void OnBuildingClicked(Building clickedBuilding)
@@ -42,5 +41,10 @@ public class TowerBuildingHandler
     {
         Building prefab = currentSelectedBuilding.GetUpgrades()[index];
         BuildTower(prefab);
+    }
+
+    public void OnTowerSell()
+    {
+
     }
 }

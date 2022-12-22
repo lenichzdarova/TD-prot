@@ -6,21 +6,28 @@ using UnityEngine.UI;
 public class BuildUI : MonoBehaviour
 {
     public event Action<int> buildingIndexSelected;
+    public event Action sellTowerButtonClicked;
 
     [SerializeField] SelectTowerButton[] selectTowerButtons;       
-    [SerializeField] Button sellButton;
-    [SerializeField] TextMeshProUGUI sellButtonText;
-    [SerializeField] Button closeBuildMenuButton;    
+    [SerializeField] SellTowerButton sellTowerButton;    
+    [SerializeField] CloseButtonUI closeBuildMenuButton;
+    private IPlayerGoldProvider playerGoldProvider;
 
-    public void Initialize(Building[] buildings, int towerCost, bool canSell)
+    public void Initialize(IPlayerGoldProvider iplayerGoldProvider, Building[] buildings, int sellGoldAmount, bool canSell)
     {
         Show();
+        playerGoldProvider = iplayerGoldProvider;
         for (int i = 0; i < buildings.Length; i++)
         {
-            selectTowerButtons[i].Init(buildings[i],i);
-            selectTowerButtons[i].SelectTowerButtonClicked += OnSelectTowerButtonClicked;
+            SelectTowerButton button = selectTowerButtons[i];
+            button.Initialize(buildings[i],i,playerGoldProvider.Gold);
+            playerGoldProvider.playerGoldChange += button.OnPlayerGoldChange;
+            button.SelectTowerButtonClicked += OnSelectTowerButtonClicked;
         }
-        closeBuildMenuButton.onClick.AddListener(Hide);
+        closeBuildMenuButton.Initialize();
+        closeBuildMenuButton.CloseButtonUIClicked += Hide;
+        sellTowerButton.Initialization(sellGoldAmount, canSell);
+        sellTowerButton.sellTowerButtonClicked += OnSellTowerButtonClicked;
     }    
 
     public void Hide()
@@ -28,9 +35,13 @@ public class BuildUI : MonoBehaviour
         foreach (var button in selectTowerButtons)
         {
             button.SelectTowerButtonClicked -= OnSelectTowerButtonClicked;
+            playerGoldProvider.playerGoldChange -= button.OnPlayerGoldChange;
             button.Hide();
-        }
-        closeBuildMenuButton.onClick.RemoveListener(Hide);
+        }        
+        closeBuildMenuButton.CloseButtonUIClicked -= Hide;
+        closeBuildMenuButton.Hide();
+        sellTowerButton.sellTowerButtonClicked-= OnSellTowerButtonClicked;
+        sellTowerButton.Hide();
         gameObject.SetActive(false); 
     }
 
@@ -42,5 +53,10 @@ public class BuildUI : MonoBehaviour
     private void OnSelectTowerButtonClicked(int buttonIndex) 
     {
         buildingIndexSelected?.Invoke(buttonIndex);        
-    }     
+    }   
+    
+    private void OnSellTowerButtonClicked()
+    {
+        sellTowerButtonClicked?.Invoke();
+    }
 }

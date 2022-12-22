@@ -9,17 +9,20 @@ public class SelectTowerButton : MonoBehaviour
     public event Action<int> SelectTowerButtonClicked;
 
     [SerializeField] Button button;
-    [SerializeField] TextMeshProUGUI towerCost;
+    [SerializeField] TextMeshProUGUI towerCostText;
     [SerializeField] Image image;
     private int buttonIndex;
+    private int towerCost;
 
-    public void Init(Building building, int buttonIndex)
+    public void Initialize(Building building, int buttonIndex, int playerGold)
     {
         Show();
         image.sprite = building.GetIcon();
-        towerCost.text = building.GetCost().ToString();
+        towerCost = building.GetCost();
+        towerCostText.text = towerCost.ToString();
         this.buttonIndex = buttonIndex;        
-        button.onClick.AddListener(OnButtonClick);               
+        button.onClick.AddListener(OnButtonClick); 
+        button.interactable = playerGold >= towerCost? true : false;
     }
 
     private void OnButtonClick()
@@ -36,5 +39,10 @@ public class SelectTowerButton : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+    }
+
+    public void OnPlayerGoldChange(int playerGold)
+    {
+        button.interactable = playerGold >= towerCost ? true : false;
     }
 }

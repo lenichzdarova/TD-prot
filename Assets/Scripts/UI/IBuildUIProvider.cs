@@ -6,6 +6,6 @@ using UnityEngine;
 public interface IBuildUIProvider 
 {
     public event Action<int> buildingIndexSelected;
-    public BuildUI GetBuildUI();
-    public void InitializeBuildUI(Building[] buildings, int towerCost, bool canSell);
+    public event Action sellTower;
+    public void OnBuildActivation(Building[] buildings, int sellGoldAmount, bool canSell);
 }

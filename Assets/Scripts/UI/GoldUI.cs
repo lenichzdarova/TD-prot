@@ -6,7 +6,7 @@ public class GoldUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goldValueTextHolder;
     private IPlayerGoldProvider playerGoldProvider;
 
-    public void Init(IPlayerGoldProvider iPlayerGoldProvider)
+    public void Initialize(IPlayerGoldProvider iPlayerGoldProvider)
     {
         Show();
         playerGoldProvider = iPlayerGoldProvider;

@@ -6,7 +6,7 @@ public class HealthUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthValueTextHolder;
     private IPlayerHealthProvider playerHealthProvider;
 
-    public void Init(IPlayerHealthProvider iPlayerHealthProvider)
+    public void Initialize(IPlayerHealthProvider iPlayerHealthProvider)
     {
         Show();
         playerHealthProvider = iPlayerHealthProvider;
