@@ -3,26 +3,21 @@ using UnityEngine;
 [RequireComponent(typeof(TowerFactory))]
 
 public class GameBoard : MonoBehaviour
-{   
+{
+    [SerializeField] PlayerDamageZone playerDamageZone;
     [SerializeField] Spawner[] spawners;
     [SerializeField] Building[] buildings;    
     private TowerBuildHandler towerBuildHandler;
-    private TowerFactory towerFactory;
+    private TowerFactory towerFactory;    
 
-    [SerializeField] PlayerDamageZone playerDamageZone;
-    private Building currentSelected;
-    private float sellMultiplier;
-
-    public void Initialize(IPlayerHealthProvider iPlayerHealthProvider,IBuildUIProvider iBuildUIProvider)
+    public void Initialize(IPlayerHealthProvider iPlayerHealthProvider, IPlayerGoldProvider iPlayerGoldProvider, IBuildUIProvider iBuildUIProvider)
     {          
         foreach(var spawner in spawners) 
         {
             spawner.Initialize();
         } 
         towerFactory = GetComponent<TowerFactory>();
-        towerBuildHandler = new TowerBuildHandler(towerFactory, iBuildUIProvider, buildings);
-        playerDamageZone.Init(iPlayerHealthProvider);     
-        //buildUI.OnBuild += BuildTower;
-        //buildUI.OnSell += SellTower;
+        towerBuildHandler = new TowerBuildHandler(towerFactory, iBuildUIProvider, iPlayerGoldProvider, buildings);
+        playerDamageZone.Init(iPlayerHealthProvider);        
     }        
 }

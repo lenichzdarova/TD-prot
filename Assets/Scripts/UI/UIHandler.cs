@@ -21,31 +21,36 @@ public class UIHandler : MonoBehaviour, IBuildUIProvider
         //ingameMenuUI.Show();
         //goldUI.Init(iPlayerGoldProvider);
         //healthUI.Init(iPlayerHealthProvider);
-        //buildUI.Hide();
-        
-        buildUI.buildingIndexSelected += OnBuildingIndexSelected;
-        buildUI.sellTowerButtonClicked += OnSellTowerButtonClicked;
-    }    
-
-    private void OpenBuildUI(Building[] buildings, int sellGoldAmount, bool canSell)
-    {
-        buildUI.Initialize(playerGoldProvider, buildings, sellGoldAmount, canSell);
+        //buildUI.Hide();        
     }
 
+    #region BuildUISection
     public void OnBuildActivation(Building[] buildings, int sellGoldAmount, bool canSell)
     {
         OpenBuildUI(buildings, sellGoldAmount, canSell);
     }
 
+    private void OpenBuildUI(Building[] buildings, int sellGoldAmount, bool canSell)
+    {
+        buildUI.buildingIndexSelected += OnBuildingIndexSelected;
+        buildUI.sellTowerButtonClicked += OnSellTowerButtonClicked;
+        buildUI.Initialize(playerGoldProvider, buildings, sellGoldAmount, canSell);
+    }    
+
     private void OnBuildingIndexSelected(int index)
     {
+        buildUI.buildingIndexSelected -= OnBuildingIndexSelected;
+        buildUI.sellTowerButtonClicked -= OnSellTowerButtonClicked;
         buildingIndexSelected.Invoke(index);
         buildUI.Hide();
     }
 
     private void OnSellTowerButtonClicked()
     {
+        buildUI.buildingIndexSelected -= OnBuildingIndexSelected;
+        buildUI.sellTowerButtonClicked -= OnSellTowerButtonClicked;
         sellTower?.Invoke();
         buildUI.Hide();
     }
+    #endregion
 }

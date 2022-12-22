@@ -16,6 +16,6 @@ public class Game : MonoBehaviour
         player = new Player(playerStartHealth,playerStartGold);
         uiHandler.Initialize(player,player);
         cameraHandler = new CameraHandler(Camera.main);
-        gameBoard.Initialize(player,uiHandler);
+        gameBoard.Initialize(player,player,uiHandler);
     }   
 }

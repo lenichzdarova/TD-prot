@@ -13,7 +13,7 @@ public class TowerBuildPresenter
         this.buildUIProvider = buildUIProvider;
 
         towerBuildHandler.buildActivation += buildUIProvider.OnBuildActivation;
-        buildUIProvider.buildingIndexSelected += towerBuildHandler.OnUpgradeIndexSelected;
+        buildUIProvider.buildingIndexSelected += towerBuildHandler.OnTowerToBuildSelected;
         buildUIProvider.sellTower += towerBuildHandler.OnTowerSell;
     }
 }

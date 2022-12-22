@@ -3,15 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBuildHandler{
+public class TowerBuildHandler
+{
     public event Action<Building[], int, bool> buildActivation;
 
     private TowerFactory towerFactory;
     private Building currentSelectedBuilding;
+    private IPlayerGoldProvider playerGoldProvider;
 
-    public TowerBuildHandler(TowerFactory towerFactory, IBuildUIProvider iBuildUIProvider, Building[] initialBuildings)
+    private float sellTowerGoldModifier = 0.7f;
+
+    public TowerBuildHandler(TowerFactory towerFactory, IBuildUIProvider iBuildUIProvider, IPlayerGoldProvider iPlayerGoldProvider, Building[] initialBuildings)
     {
-        this.towerFactory = towerFactory;        
+        this.towerFactory = towerFactory;
+        playerGoldProvider= iPlayerGoldProvider;
         foreach(var building in initialBuildings)
         {
             building.BuildingClicked += OnBuildingClicked;
@@ -22,22 +27,21 @@ public class TowerBuildHandler{
     private void OnBuildingClicked(Building clickedBuilding)
     {
         currentSelectedBuilding = clickedBuilding;
-        buildActivation?.Invoke(currentSelectedBuilding.GetUpgrades(), currentSelectedBuilding.GetCost(), currentSelectedBuilding.CanSell());
-    }
-
-    public void OnUpgradeIndexSelected(int index)
-    {
-
-    }
+        buildActivation?.Invoke(currentSelectedBuilding.GetUpgrades(), GetTowerSellRevenue(), currentSelectedBuilding.CanSell());
+    }    
 
     private void BuildTower(Building prefab)
     {
         Building building = towerFactory.GetBuilding(prefab);
         building.transform.position = currentSelectedBuilding.transform.position;
         building.BuildingClicked += OnBuildingClicked;
+        if (currentSelectedBuilding.CanSell())
+        {
+            towerFactory.Recycle(currentSelectedBuilding);
+        }        
     }
 
-    private void OnTowerToBuildSelected(int index)
+    public void OnTowerToBuildSelected(int index)
     {
         Building prefab = currentSelectedBuilding.GetUpgrades()[index];
         BuildTower(prefab);
@@ -45,6 +49,14 @@ public class TowerBuildHandler{
 
     public void OnTowerSell()
     {
+        playerGoldProvider.AddGold(GetTowerSellRevenue());
+        towerFactory.Recycle(currentSelectedBuilding);        
+    }
 
+    private int GetTowerSellRevenue()
+    {
+        int towerCost = currentSelectedBuilding.GetCost();
+        int towerSellRevenue = (int)(towerCost * sellTowerGoldModifier);
+        return towerSellRevenue;
     }
 }
