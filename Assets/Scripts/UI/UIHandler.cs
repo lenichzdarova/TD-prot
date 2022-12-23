@@ -4,8 +4,8 @@ using System;
 
 public class UIHandler : MonoBehaviour, IBuildUIProvider
 {
-    public event Action<int> buildingIndexSelected;
-    public event Action sellTower;
+    public event Action<int> BuildingIndexSelected;
+    public event Action SellTower;
 
     [SerializeField] private BuildUI buildUI;
     [SerializeField] private GoldUI goldUI;
@@ -32,24 +32,24 @@ public class UIHandler : MonoBehaviour, IBuildUIProvider
 
     private void OpenBuildUI(Building[] buildings, int sellGoldAmount, bool canSell)
     {
-        buildUI.buildingIndexSelected += OnBuildingIndexSelected;
-        buildUI.sellTowerButtonClicked += OnSellTowerButtonClicked;
+        buildUI.BuildingIndexSelected += OnBuildingIndexSelected;
+        buildUI.SellTowerButtonClicked += OnSellTowerButtonClicked;
         buildUI.Initialize(playerGoldProvider, buildings, sellGoldAmount, canSell);
     }    
 
     private void OnBuildingIndexSelected(int index)
     {
-        buildUI.buildingIndexSelected -= OnBuildingIndexSelected;
-        buildUI.sellTowerButtonClicked -= OnSellTowerButtonClicked;
-        buildingIndexSelected.Invoke(index);
+        buildUI.BuildingIndexSelected -= OnBuildingIndexSelected;
+        buildUI.SellTowerButtonClicked -= OnSellTowerButtonClicked;
+        BuildingIndexSelected.Invoke(index);
         buildUI.Hide();
     }
 
     private void OnSellTowerButtonClicked()
     {
-        buildUI.buildingIndexSelected -= OnBuildingIndexSelected;
-        buildUI.sellTowerButtonClicked -= OnSellTowerButtonClicked;
-        sellTower?.Invoke();
+        buildUI.BuildingIndexSelected -= OnBuildingIndexSelected;
+        buildUI.SellTowerButtonClicked -= OnSellTowerButtonClicked;
+        SellTower?.Invoke();
         buildUI.Hide();
     }
     #endregion

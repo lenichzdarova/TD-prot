@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TowerBuildHandler
 {
-    public event Action<Building[], int, bool> buildActivation;
+    public event Action<Building[], int, bool> BuildActivation;
 
     private TowerFactory towerFactory;
     private Building currentSelectedBuilding;
@@ -27,11 +27,12 @@ public class TowerBuildHandler
     private void OnBuildingClicked(Building clickedBuilding)
     {
         currentSelectedBuilding = clickedBuilding;
-        buildActivation?.Invoke(currentSelectedBuilding.GetUpgrades(), GetTowerSellRevenue(), currentSelectedBuilding.CanSell());
+        BuildActivation?.Invoke(currentSelectedBuilding.GetUpgrades(), GetTowerSellRevenue(), currentSelectedBuilding.CanSell());
     }    
 
     private void BuildTower(Building prefab)
     {
+        playerGoldProvider.AddGold(-prefab.GetCost());
         Building building = towerFactory.GetBuilding(prefab);
         building.transform.position = currentSelectedBuilding.transform.position;
         building.BuildingClicked += OnBuildingClicked;

@@ -11,7 +11,7 @@ public class HealthUI : MonoBehaviour
         Show();
         playerHealthProvider = iPlayerHealthProvider;
         SetHealthText(playerHealthProvider.Health);
-        playerHealthProvider.playerHealthChange +=SetHealthText;        
+        playerHealthProvider.PlayerHealthChange +=SetHealthText;        
     }  
 
     private void SetHealthText(int value)
@@ -20,7 +20,7 @@ public class HealthUI : MonoBehaviour
     }
     public void Hide()
     {
-        playerHealthProvider.playerHealthChange -= SetHealthText;
+        playerHealthProvider.PlayerHealthChange -= SetHealthText;
         gameObject.SetActive(false);
     }
 

@@ -12,8 +12,8 @@ public class TowerBuildPresenter
         this.towerBuildHandler = towerBuildHandler;
         this.buildUIProvider = buildUIProvider;
 
-        towerBuildHandler.buildActivation += buildUIProvider.OnBuildActivation;
-        buildUIProvider.buildingIndexSelected += towerBuildHandler.OnTowerToBuildSelected;
-        buildUIProvider.sellTower += towerBuildHandler.OnTowerSell;
+        towerBuildHandler.BuildActivation += buildUIProvider.OnBuildActivation;
+        buildUIProvider.BuildingIndexSelected += towerBuildHandler.OnTowerToBuildSelected;
+        buildUIProvider.SellTower += towerBuildHandler.OnTowerSell;
     }
 }

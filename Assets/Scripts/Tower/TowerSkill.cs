@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TargetProvider))]
-
 public class TowerSkill : MonoBehaviour
 {
     private AudioSource audioSource;
@@ -27,19 +25,19 @@ public class TowerSkill : MonoBehaviour
     private bool isReady = true;
 
 
-    private void Awake()
+    public void Initialize()
     {
-        audioSource= GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        spriteRenderer= GetComponent<SpriteRenderer>();
-        targetProvider= GetComponent<TargetProvider>();
-    }
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        targetProvider = new TargetProvider();
+    }    
 
     public  bool Execute()
     {
         if (isReady)
         {
-           Transform target = targetProvider.TryToGetTarget(range, targetLayer);
+           Transform target = targetProvider.TryToGetTarget(transform , range , targetLayer);
             if (target != null)
             {
                 if (transform.position.x < target.position.x && spriteRenderer.flipX == true)

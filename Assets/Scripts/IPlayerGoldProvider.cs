@@ -2,7 +2,7 @@ using System;
 
 public interface IPlayerGoldProvider
 {
-    public event Action<int> playerGoldChange;
+    public event Action<int> PlayerGoldChange;
 
     public int Gold { get; set; }
 

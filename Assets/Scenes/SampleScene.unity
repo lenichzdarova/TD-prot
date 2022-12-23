@@ -1063,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &207983973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5822,6 +5822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9706ff38bf7217f428919d031dbd04c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDamageZone: {fileID: 1902258305}
   spawners:
   - {fileID: 746159270}
   - {fileID: 623819220}
@@ -5837,7 +5838,6 @@ MonoBehaviour:
   - {fileID: 1763022826}
   - {fileID: 1950313059}
   - {fileID: 1341384061}
-  playerDamageZone: {fileID: 1902258305}
 --- !u!114 &1428903655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6042,7 +6042,7 @@ MonoBehaviour:
   - {fileID: 202449135}
   - {fileID: 1111726682}
   - {fileID: 1825809308}
-  sellTowerButton: {fileID: 0}
+  sellTowerButton: {fileID: 207983977}
   closeBuildMenuButton: {fileID: 1834755292}
 --- !u!1 &1507127856
 GameObject:
@@ -7325,7 +7325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1834755288
 RectTransform:
   m_ObjectHideFlags: 0

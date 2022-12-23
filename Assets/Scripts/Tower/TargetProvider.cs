@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetProvider : MonoBehaviour
+public class TargetProvider
 {
-    public Transform TryToGetTarget(float range, string layer)
+    public Transform TryToGetTarget(Transform towerTransform, float range, string layer)
     {
         Transform currentTarget = null;
-        RaycastHit[] hit = Physics.SphereCastAll(transform.position, range, Vector3.down, 2f, LayerMask.GetMask(layer));
+        RaycastHit[] hit = Physics.SphereCastAll(towerTransform.position, range, Vector3.down, 2f, LayerMask.GetMask(layer));
         if (hit.Length != 0)
         {     
             switch (layer)
@@ -34,7 +34,7 @@ public class TargetProvider : MonoBehaviour
                     {
                         foreach(var rayHit in hit)
                         {
-                            if (rayHit.transform.parent == this)
+                            if (rayHit.transform.parent == towerTransform)
                             {
                                 currentTarget = rayHit.transform;
                                 break;
@@ -51,6 +51,4 @@ public class TargetProvider : MonoBehaviour
         } 
         return currentTarget;
     }
-
-
 }

@@ -19,7 +19,6 @@ public class NavigationPoint : MonoBehaviour
         if (nextNavigationPoint == null) 
         {
             nextNavigationPoint = this;
-            
         }
         return nextNavigationPoint;
     }    

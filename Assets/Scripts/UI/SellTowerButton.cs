@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SellTowerButton : MonoBehaviour
 {
-    public event Action sellTowerButtonClicked;
+    public event Action SellTowerButtonClicked;
 
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI sellGoldAmountText;
@@ -24,7 +24,7 @@ public class SellTowerButton : MonoBehaviour
 
     private void OnButtonClicked()
     {
-        sellTowerButtonClicked?.Invoke();
+        SellTowerButtonClicked?.Invoke();
     }
 
     public void Show()

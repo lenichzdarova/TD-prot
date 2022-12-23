@@ -5,8 +5,8 @@ using System;
 
 public class Player : IPlayerHealthProvider, IPlayerGoldProvider 
 {
-    public event Action<int> playerGoldChange;
-    public event Action<int> playerHealthChange;
+    public event Action<int> PlayerGoldChange;
+    public event Action<int> PlayerHealthChange;
     
     public string PlayerName { get; private set; }
     public int Health { get; set; }
@@ -31,12 +31,12 @@ public class Player : IPlayerHealthProvider, IPlayerGoldProvider
     public void AddGold(int value)
     {
         Gold += value;
-        playerGoldChange?.Invoke(Gold);
+        PlayerGoldChange?.Invoke(Gold);
     }
 
     public void AddHealth(int value)
     {
         Health += value;
-        playerHealthChange?.Invoke(Health);
+        PlayerHealthChange?.Invoke(Health);
     }
 }

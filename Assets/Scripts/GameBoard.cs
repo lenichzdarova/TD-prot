@@ -6,7 +6,7 @@ public class GameBoard : MonoBehaviour
 {
     [SerializeField] PlayerDamageZone playerDamageZone;
     [SerializeField] Spawner[] spawners;
-    [SerializeField] Building[] buildings;    
+    [SerializeField] Building[] initialBuildings;    
     private TowerBuildHandler towerBuildHandler;
     private TowerFactory towerFactory;    
 
@@ -17,7 +17,7 @@ public class GameBoard : MonoBehaviour
             spawner.Initialize();
         } 
         towerFactory = GetComponent<TowerFactory>();
-        towerBuildHandler = new TowerBuildHandler(towerFactory, iBuildUIProvider, iPlayerGoldProvider, buildings);
+        towerBuildHandler = new TowerBuildHandler(towerFactory, iBuildUIProvider, iPlayerGoldProvider, initialBuildings);
         playerDamageZone.Init(iPlayerHealthProvider);        
     }        
 }

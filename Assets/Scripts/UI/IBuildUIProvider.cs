@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IBuildUIProvider 
 {
-    public event Action<int> buildingIndexSelected;
-    public event Action sellTower;
+    public event Action<int> BuildingIndexSelected;
+    public event Action SellTower;
     public void OnBuildActivation(Building[] buildings, int sellGoldAmount, bool canSell);
 }

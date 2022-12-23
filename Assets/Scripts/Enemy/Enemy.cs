@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
    
      private void OnDeathBorderReach()
     {
-        animatorHandler.PlayDeathAnimation();        
+        animatorHandler.PlayAnimation("Death");        
         StartCoroutine(EnemyDeleting());
     }   
 

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BuildUI : MonoBehaviour
 {
-    public event Action<int> buildingIndexSelected;
-    public event Action sellTowerButtonClicked;
+    public event Action<int> BuildingIndexSelected;
+    public event Action SellTowerButtonClicked;
 
     [SerializeField] SelectTowerButton[] selectTowerButtons;       
     [SerializeField] SellTowerButton sellTowerButton;    
@@ -21,13 +21,13 @@ public class BuildUI : MonoBehaviour
         {
             SelectTowerButton button = selectTowerButtons[i];
             button.Initialize(buildings[i],i,playerGoldProvider.Gold);
-            playerGoldProvider.playerGoldChange += button.OnPlayerGoldChange;
+            playerGoldProvider.PlayerGoldChange += button.OnPlayerGoldChange;
             button.SelectTowerButtonClicked += OnSelectTowerButtonClicked;
         }
         closeBuildMenuButton.Initialize();
         closeBuildMenuButton.CloseButtonUIClicked += Hide;
         sellTowerButton.Initialization(sellGoldAmount, canSell);
-        sellTowerButton.sellTowerButtonClicked += OnSellTowerButtonClicked;
+        sellTowerButton.SellTowerButtonClicked += OnSellTowerButtonClicked;
     }    
 
     public void Hide()
@@ -35,12 +35,12 @@ public class BuildUI : MonoBehaviour
         foreach (var button in selectTowerButtons)
         {
             button.SelectTowerButtonClicked -= OnSelectTowerButtonClicked;
-            playerGoldProvider.playerGoldChange -= button.OnPlayerGoldChange;
+            playerGoldProvider.PlayerGoldChange -= button.OnPlayerGoldChange;
             button.Hide();
         }        
         closeBuildMenuButton.CloseButtonUIClicked -= Hide;
         closeBuildMenuButton.Hide();
-        sellTowerButton.sellTowerButtonClicked-= OnSellTowerButtonClicked;
+        sellTowerButton.SellTowerButtonClicked-= OnSellTowerButtonClicked;
         sellTowerButton.Hide();
         gameObject.SetActive(false); 
     }
@@ -52,11 +52,11 @@ public class BuildUI : MonoBehaviour
 
     private void OnSelectTowerButtonClicked(int buttonIndex) 
     {
-        buildingIndexSelected?.Invoke(buttonIndex);        
+        BuildingIndexSelected?.Invoke(buttonIndex);        
     }   
     
     private void OnSellTowerButtonClicked()
     {
-        sellTowerButtonClicked?.Invoke();
+        SellTowerButtonClicked?.Invoke();
     }
 }

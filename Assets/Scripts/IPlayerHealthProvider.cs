@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPlayerHealthProvider
 {
-    public event Action<int> playerHealthChange;
+    public event Action<int> PlayerHealthChange;
 
     public int Health { get; set; }    
     

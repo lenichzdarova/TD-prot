@@ -3,20 +3,24 @@ using UnityEngine;
 
 public class Tower: MonoBehaviour
 {
-    [SerializeField] private List<TowerSkill> skills;    
+    private AnimatorHandler animatorHandler;
 
-    // Update is called once per frame
-    void Update()
-    {           
-        //затычка, тут распетл€ю
-       TasksExecution();             
+    [SerializeField] private List<TowerSkill> skills;
+
+    private void Awake()
+    {
+        animatorHandler = new AnimatorHandler(GetComponent<Animator>());
+        foreach(var skill in skills)
+        {
+            skill.Initialize(); 
+        }
     }
     
-    private void TasksExecution()
+    private void SkillsActivation()
     {       
-        foreach (var task in skills)
+        foreach (var skill in skills)
         {
-            if (task.Execute())
+            if (skill.Execute())
             {
                 return;
             }

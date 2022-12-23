@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     private int waveIndex =0;
     private float nextWaveCountdown=0;
     private float enemyRecycleTime = 2f;
-    private float spawnOffsetY=0.1f;   //этот костыль переделать
+    private float spawnOffsetY=0.1f; 
   
     
 

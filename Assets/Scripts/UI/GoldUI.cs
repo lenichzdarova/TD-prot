@@ -11,7 +11,7 @@ public class GoldUI : MonoBehaviour
         Show();
         playerGoldProvider = iPlayerGoldProvider;
         SetGoldText(iPlayerGoldProvider.Gold);
-        iPlayerGoldProvider.playerGoldChange += SetGoldText;        
+        iPlayerGoldProvider.PlayerGoldChange += SetGoldText;        
     }
 
     private void SetGoldText(int value)
@@ -21,7 +21,7 @@ public class GoldUI : MonoBehaviour
 
     public void Hide()
     {
-        playerGoldProvider.playerGoldChange-=SetGoldText;
+        playerGoldProvider.PlayerGoldChange-=SetGoldText;
         gameObject.SetActive(false);        
     }
 
