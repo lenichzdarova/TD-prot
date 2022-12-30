@@ -5,14 +5,17 @@ using UnityEngine;
 public class TowerAttackHandler : MonoBehaviour 
 {
     public event Action Activation;
+    public event Action<bool> DirectionCheck;
 
-    private TowerStats _towerStats;
+    private AttackStats _attackStats;
     private TargetProvider _targetProvider;
+    private TowerAttackGameObject _towerAttackGameObject;
     
-    public void Initialize(TowerStats towerStats)
+    public void Initialize(AttackStats attackStats)
     {
-        _towerStats = towerStats;
-        _targetProvider= new TargetProvider(transform.position,_towerStats.GetRange());
+        _attackStats = attackStats;
+        _targetProvider = new TargetProvider(transform.position,attackStats.Range);
+        _targetProvider.TargetDirectionCalculated += OnTargetDirectionCalculated;
         StartCoroutine(TryToAttack());
     }
     private IEnumerator TryToAttack()
@@ -26,7 +29,7 @@ public class TowerAttackHandler : MonoBehaviour
     }
     private IEnumerator Reload()
     {
-        yield return new WaitForSeconds(_towerStats.GetRealoadTime());
+        yield return new WaitForSeconds(_attackStats.ReloadTime);
         StartCoroutine(TryToAttack());
     }
     private void Activate()
@@ -38,5 +41,10 @@ public class TowerAttackHandler : MonoBehaviour
     {
         //attackobject activation
         //targetprovider.gettarget
+    }
+
+    private void OnTargetDirectionCalculated(bool direction)
+    {
+        DirectionCheck?.Invoke(direction);
     }
 }

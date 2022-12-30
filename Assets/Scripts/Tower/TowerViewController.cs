@@ -20,8 +20,9 @@ public class TowerViewController
     public void Initialize()
     {
         _towerAttackHandler.Activation += OnTowerActivation;
+        _towerAttackHandler.DirectionCheck += _spriteRendererHandler.OnDirectionCheck;
         _animatorHandler.ActionAnimation += OnAnimatorAction;
-        _animatorHandler.EndAnimation += OnEndAnimation;
+        _animatorHandler.EndAnimation += OnEndAnimation;        
     }
     public void OnTowerActivation()
     {

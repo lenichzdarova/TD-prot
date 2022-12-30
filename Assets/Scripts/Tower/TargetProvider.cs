@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class TargetProvider
 {
+    public event Action<bool> TargetDirectionCalculated; //right false left true - spriteFlipX
+
     private Vector3 towerPosition;
     private float range;
     private string layer = "Enemy";
@@ -37,7 +38,8 @@ public class TargetProvider
                 }                
             }
             targetTransform = currentEnemy.transform;
-           return true;           
+            CalculateTargetDirection(towerPosition, targetTransform.position);
+            return true;           
         }
         else
         {
@@ -64,11 +66,24 @@ public class TargetProvider
                 }
             }
             targetTransform = currentEnemy.transform;
+            CalculateTargetDirection(towerPosition, targetTransform.position);
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private void CalculateTargetDirection(Vector3 startPos, Vector3 targetPos)
+    {
+        if(startPos.x <= targetPos.x)
+        {
+            TargetDirectionCalculated?.Invoke(false);
+        }
+        else
+        {
+            TargetDirectionCalculated?.Invoke(true);
         }
     }
 

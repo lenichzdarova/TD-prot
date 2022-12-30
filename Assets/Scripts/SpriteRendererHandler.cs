@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class SpriteRendererHandler
 {
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
 
     public SpriteRendererHandler(SpriteRenderer spriteRenderer)
     {
-        this.spriteRenderer = spriteRenderer;
+        _spriteRenderer = spriteRenderer;
+    }
+
+    public void OnDirectionCheck(bool direction)
+    {
+        _spriteRenderer.flipX = direction;
     }
 }

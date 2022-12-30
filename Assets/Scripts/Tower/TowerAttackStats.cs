@@ -24,7 +24,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0                        
                     };
                 };
             case TowerType.TinyMageT1:
@@ -35,7 +38,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             case TowerType.TinyMageT2:
@@ -46,7 +52,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             case TowerType.TinyMageT3:
@@ -57,7 +66,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             case TowerType.HobbitT1:
@@ -68,7 +80,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             case TowerType.HobbitT2:
@@ -79,7 +94,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             case TowerType.HobbitT3:
@@ -90,7 +108,10 @@ public class TowerAttackStats : IAttackStatsProvider
                         MaxDamage = 0,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
-                        Heal = 0
+                        Heal = 0,
+                        Range = 0,
+                        AOE = 0,
+                        ReloadTime = 0
                     };
                 };
             default:

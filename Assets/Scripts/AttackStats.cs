@@ -9,6 +9,9 @@ public struct AttackStats
     public float ArmorPiercing { get; set; }
     public float SlowStrength { get; set; }
     public int Heal { get; set; }
+    public float Range { get; set; }
+    public float AOE { get; set; }
+    public float ReloadTime { get; set; }
 
     public int GetDamage()
     {
