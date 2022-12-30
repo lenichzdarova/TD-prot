@@ -12,13 +12,13 @@ public class Enemy : MonoBehaviour
     public event Action<Enemy> AskForRecycle;      
 
     private EnemyStats enemyStats;
-    private AnimatorHandler animatorHandler;
+    private EnemyAnimatorHandler animatorHandler;
     private SpriteRenderer spriteRenderer;
     private EnemyMovingHandler enemyMovingHandler;    
 
     public void Init(NavigationPoint initialNavPoint)
     {
-        animatorHandler = new AnimatorHandler( GetComponent<Animator>());
+        animatorHandler = new EnemyAnimatorHandler( GetComponent<Animator>());
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyStats = GetComponent<EnemyStats>();
         enemyMovingHandler = GetComponent<EnemyMovingHandler>();
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage(AttackStats attackStats)
     {
-       enemyStats.AddHealth(-attackStats.GetDamage());
+       enemyStats.AddHealth(attackStats.GetDamage());
     }
 
     public int GetBounty()
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
    
      private void OnDeathBorderReach()
     {
-        animatorHandler.PlayAnimation("Death");        
+        animatorHandler.DeathAnimation();        
         StartCoroutine(EnemyDeleting());
     }   
 

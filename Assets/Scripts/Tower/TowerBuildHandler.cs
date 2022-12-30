@@ -13,15 +13,14 @@ public class TowerBuildHandler
 
     private float sellTowerGoldModifier = 0.7f;
 
-    public TowerBuildHandler(TowerFactory towerFactory, IBuildUIProvider iBuildUIProvider, IPlayerGoldProvider iPlayerGoldProvider, Building[] initialBuildings)
+    public TowerBuildHandler(TowerFactory towerFactory, IPlayerGoldProvider iPlayerGoldProvider, Building[] initialBuildings)
     {
         this.towerFactory = towerFactory;
-        playerGoldProvider= iPlayerGoldProvider;
+        playerGoldProvider = iPlayerGoldProvider;
         foreach(var building in initialBuildings)
         {
             building.BuildingClicked += OnBuildingClicked;
-        }
-        new TowerBuildPresenter(this, iBuildUIProvider);
+        }        
     } 
     
     private void OnBuildingClicked(Building clickedBuilding)

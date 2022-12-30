@@ -4,51 +4,76 @@ using UnityEngine;
 
 public class TargetProvider
 {
-    public Transform TryToGetTarget(Transform towerTransform, float range, string layer)
+    private Vector3 towerPosition;
+    private float range;
+    private string layer = "Enemy";
+    private Transform targetTransform;
+
+    public TargetProvider() { }
+    
+   
+    public TargetProvider(Vector3 towerPosition, float range) :base()
     {
-        Transform currentTarget = null;
-        RaycastHit[] hit = Physics.SphereCastAll(towerTransform.position, range, Vector3.down, 2f, LayerMask.GetMask(layer));
+        this.towerPosition = towerPosition;
+        this.range = range;
+    }
+
+    public bool TryGetTarget()
+    {       
+        RaycastHit[] hit = Physics.SphereCastAll(towerPosition, range, Vector3.down, 2f, LayerMask.GetMask(layer));
         if (hit.Length != 0)
-        {     
-            switch (layer)
+        {
+            Enemy currentEnemy = null;
+            for (int i = 0; i < hit.Length; i++)
             {
-                case "Enemy":
-                    {
-                        Enemy currentEnemy = null;
-                        for (int i = 0; i < hit.Length; i++)
-                        {                            
-                            Enemy enemy = hit[i].transform.GetComponent<Enemy>();
-                            if (currentEnemy == null)
-                            {
-                                currentEnemy = enemy;
-                            }
-                            else
-                            {
-                                currentEnemy = currentEnemy.GetDistanceToLastNavPoint() <= enemy.GetDistanceToLastNavPoint() ? currentEnemy : enemy;
-                            }
-                            currentTarget = currentEnemy.transform;
-                        }
-                        break;
-                    }
-                case "PointMark":
-                    {
-                        foreach(var rayHit in hit)
-                        {
-                            if (rayHit.transform.parent == towerTransform)
-                            {
-                                currentTarget = rayHit.transform;
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                default:
-                    {
-                        currentTarget = hit[0].transform;
-                        break;
-                    }
-            }            
-        } 
-        return currentTarget;
+                Enemy enemy = hit[i].transform.GetComponent<Enemy>();
+                if (currentEnemy == null)
+                {
+                    currentEnemy = enemy;
+                }
+                else
+                {
+                    currentEnemy = currentEnemy.GetDistanceToLastNavPoint() <= enemy.GetDistanceToLastNavPoint() ? currentEnemy : enemy;
+                }                
+            }
+            targetTransform = currentEnemy.transform;
+           return true;           
+        }
+        else
+        {
+            return false;
+        }        
+    }
+
+    public bool TryGetTarget(Vector3 towerPosition, float range, string layer)
+    {
+        RaycastHit[] hit = Physics.SphereCastAll(towerPosition, range, Vector3.down, 2f, LayerMask.GetMask(layer));
+        if (hit.Length != 0)
+        {
+            Enemy currentEnemy = null;
+            for (int i = 0; i < hit.Length; i++)
+            {
+                Enemy enemy = hit[i].transform.GetComponent<Enemy>();
+                if (currentEnemy == null)
+                {
+                    currentEnemy = enemy;
+                }
+                else
+                {
+                    currentEnemy = currentEnemy.GetDistanceToLastNavPoint() <= enemy.GetDistanceToLastNavPoint() ? currentEnemy : enemy;
+                }
+            }
+            targetTransform = currentEnemy.transform;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public Transform GetTarget()
+    {
+        return targetTransform;
     }
 }

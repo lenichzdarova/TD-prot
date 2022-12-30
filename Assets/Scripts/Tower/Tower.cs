@@ -1,29 +1,26 @@
-using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(Animator),typeof(AudioSource),typeof(SpriteRenderer))]
+[RequireComponent(typeof(TowerAttackHandler))]
 
 public class Tower: MonoBehaviour
 {
-    private AnimatorHandler animatorHandler;
+    private TowerViewController _towerViewController;
+    private TowerAttackHandler _towerAttackHandler;
+    [SerializeField]
+    private TowerType _towerType;    
 
-    [SerializeField] private List<TowerSkill> skills;
-
-    private void Awake()
+    public void Initialize()
     {
-        animatorHandler = new AnimatorHandler(GetComponent<Animator>());
-        foreach(var skill in skills)
-        {
-            skill.Initialize(); 
-        }
-    }
-    
-    private void SkillsActivation()
-    {       
-        foreach (var skill in skills)
-        {
-            if (skill.Execute())
-            {
-                return;
-            }
-        }        
-    }
+        var animatorHandler = new TowerAnimatorHandler(GetComponent<Animator>());
+        var spriteRendererHandler = new SpriteRendererHandler(GetComponent<SpriteRenderer>());
+        var audioSourceHandler = new AudioSourceHandler(GetComponent<AudioSource>());
+
+        var _towerStats = new TowerStats(_towerType);
+        _towerAttackHandler = GetComponent<TowerAttackHandler>();
+        _towerAttackHandler.Initialize(_towerStats);
+        _towerViewController = new TowerViewController(spriteRendererHandler, animatorHandler,
+            audioSourceHandler, _towerAttackHandler);
+        _towerViewController.Initialize();
+    }    
 }

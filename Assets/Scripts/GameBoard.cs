@@ -17,7 +17,8 @@ public class GameBoard : MonoBehaviour
             spawner.Initialize();
         } 
         towerFactory = GetComponent<TowerFactory>();
-        towerBuildHandler = new TowerBuildHandler(towerFactory, iBuildUIProvider, iPlayerGoldProvider, initialBuildings);
+        towerBuildHandler = new TowerBuildHandler(towerFactory, iPlayerGoldProvider, initialBuildings);
+        new TowerBuildPresenter(towerBuildHandler, iBuildUIProvider);
         playerDamageZone.Init(iPlayerHealthProvider);        
     }        
 }
