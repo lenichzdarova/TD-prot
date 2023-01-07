@@ -1,20 +1,16 @@
 
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class MovingLinearBehaviour : MovingBehaviour
 {
-   public override void Move()
+   public override Vector3 GetMovePoint()
     {
-        Vector3 position = Vector3.MoveTowards(transform.position, targetProvider.GetTargetPoint(), moveSpeed * Time.deltaTime);
-        transform.position = position;
-
-        if (transform.position == targetProvider.GetTargetPoint())
-        {
-            //колбек на действие?
-        }
+       return  Vector3.MoveTowards(transform.position, _targetProvider.GetTargetPoint(), _moveSpeed * Time.deltaTime);
     }
-    /*
+
+    /*AttackGO rotation to target code
     private  void Rotate()
     {
         Vector3 firstVector = transform.position + transform.right;

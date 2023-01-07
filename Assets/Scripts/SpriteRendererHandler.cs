@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class SpriteRendererHandler
@@ -11,7 +10,7 @@ public class SpriteRendererHandler
         _spriteRenderer = spriteRenderer;
     }
 
-    public void OnDirectionCheck(bool direction)
+    public void SetDirection(bool direction)
     {
         _spriteRenderer.flipX = direction;
     }

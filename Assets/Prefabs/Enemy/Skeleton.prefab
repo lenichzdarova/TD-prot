@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 5373725400343228758}
   - component: {fileID: 5373725400343228753}
   - component: {fileID: 5902520821632636570}
-  - component: {fileID: 933770817369593911}
-  - component: {fileID: 160243668124459655}
   m_Layer: 3
   m_Name: Skeleton
   m_TagString: Untagged
@@ -123,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 8827143561028484246}
+  _enemyType: 0
 --- !u!65 &5902520821632636570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -136,36 +135,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.32, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &933770817369593911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5373725400343228763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34770b35cae2b394ab2f9053edf0e3aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  health: 20
-  damage: 3
-  bounty: 3
-  speed: 2
-  armor: 0
---- !u!114 &160243668124459655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5373725400343228763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8cbb25eb919bb49af5ea72d9d47353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2285308758149693597
 PrefabInstance:
   m_ObjectHideFlags: 0

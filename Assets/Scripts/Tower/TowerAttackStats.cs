@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class TowerAttackStats : IAttackStatsProvider
 {
@@ -20,14 +17,14 @@ public class TowerAttackStats : IAttackStatsProvider
                 {
                     return new AttackStats()
                     {
-                        MinDamage = 0,
-                        MaxDamage = 0,
+                        MinDamage = 5,
+                        MaxDamage = 10,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
                         Heal = 0,
-                        Range = 0,
-                        AOE = 0,
-                        ReloadTime = 0                        
+                        Range = 3,
+                        AOE = 2,
+                        ReloadTime = 2                        
                     };
                 };
             case TowerType.TinyMageT1:

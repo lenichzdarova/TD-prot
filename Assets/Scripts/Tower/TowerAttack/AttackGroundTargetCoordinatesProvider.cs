@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AttackGroundTargetCoordinatesProvider : TargetCoordinatesProvider
 {
-    private Vector3 pointOnGround;
+    private Vector3 _pointOnGround;
 
-    public override void Init(Transform targetTransform)
+    public override void Initialize(Transform targetTransform)
     {
-        pointOnGround = targetTransform.position;
+        _pointOnGround = targetTransform.position;
     }
 
     public override Vector3 GetTargetPoint()
     {
-        return pointOnGround;
+        return _pointOnGround;
     }
 }

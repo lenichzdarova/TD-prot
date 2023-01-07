@@ -6,6 +6,6 @@ public abstract class TargetCoordinatesProvider : MonoBehaviour
 {
     public abstract Vector3 GetTargetPoint();
 
-    public abstract void Init(Transform targetTransform);
+    public abstract void Initialize(Transform targetTransform);
     
 }

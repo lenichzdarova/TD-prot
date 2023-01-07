@@ -1,15 +1,15 @@
 using UnityEngine;
 using System;
 
-public class TowerAnimatorHandler 
+public class TowerAnimatorHandler : MonoBehaviour
 {
     public event Action EndAnimation;
     public event Action ActionAnimation;
     private Animator _animator;
 
-    public TowerAnimatorHandler(Animator animator)
+    public void Initialization (Animator animator)
     {
-        _animator = animator;
+        _animator = animator;        
     }
 
     public void AnimationEventEndAnimation()

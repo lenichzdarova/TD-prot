@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class TowerViewController
 {
@@ -20,7 +17,7 @@ public class TowerViewController
     public void Initialize()
     {
         _towerAttackHandler.Activation += OnTowerActivation;
-        _towerAttackHandler.DirectionCheck += _spriteRendererHandler.OnDirectionCheck;
+        _towerAttackHandler.DirectionCheck += OnDirectionCheck;
         _animatorHandler.ActionAnimation += OnAnimatorAction;
         _animatorHandler.EndAnimation += OnEndAnimation;        
     }
@@ -36,5 +33,10 @@ public class TowerViewController
     public void OnEndAnimation()
     {
         _animatorHandler.PlayIdleAnimation();
+    }
+
+    private void OnDirectionCheck(bool direction)
+    {
+        _spriteRendererHandler.SetDirection(direction);
     }
 }

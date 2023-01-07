@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class SingleTargetCoordinatesProvider : TargetCoordinatesProvider
 {
-    private Transform targetTransform;
-    private Vector3 lastCoordinates;
+    private Transform _targetTransform;
+    private Vector3 _lastCoordinates;
 
-    public override void Init(Transform targetTransform)
+    public override void Initialize(Transform targetTransform)
     {
-        this.targetTransform = targetTransform;
+        _targetTransform = targetTransform;
     }
 
     public override Vector3 GetTargetPoint()
     {
-        if (targetTransform != null)
+        if (_targetTransform != null)
         {
-            lastCoordinates = targetTransform.position;
-            return lastCoordinates;
+            _lastCoordinates = _targetTransform.position;
+            return _lastCoordinates;
         }
         else
         {
-            return lastCoordinates;
+            return _lastCoordinates;
         }        
     }
 }

@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
 
         Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + spawnOffsetY, transform.position.z);
         enemy.transform.position = startPosition;
-        enemy.Init(navPoint);       
+        enemy.Initialize(navPoint);       
         StartCoroutine(SpawnEnemyTimer(wave));
     }
 

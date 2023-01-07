@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public abstract class MovingBehaviour : MonoBehaviour
-{
-    [SerializeField]
-    private protected float moveSpeed;
-    private protected TargetCoordinatesProvider targetProvider;
-    private protected Vector3 startPositionLocal; //координаты для возврата объекта на исходную. пока не знаю куда воткнуть
+{    
+    private protected float _moveSpeed;
+    private protected TargetCoordinatesProvider _targetProvider;    
 
-    public abstract void Move();
+    public abstract Vector3 GetMovePoint();
 
-    public virtual void Initialize(TargetCoordinatesProvider targetProvider)
+    public virtual void Initialize(TargetCoordinatesProvider targetProvider, float moveSpeed)
     {
-        this.targetProvider = targetProvider;
-        startPositionLocal = transform.localPosition;
-    }
+        _targetProvider = targetProvider;        
+        _moveSpeed = moveSpeed;
+    }    
 }

@@ -2,47 +2,57 @@
 using System;
 using UnityEngine;
 
-public class EnemyMovingHandler : MonoBehaviour
+public class EnemyMovingHandler
 {
     public event Action<bool> MovingDirection; //сюда подписываем обертку спрайтрендерера, чтобы переворачивала спрайт по направлению.
+    private Transform _transform;    
+    private NavigationPoint _navPoint;    
+    private float _distanceToLastNavPoint;
+    private float _speed;
 
-    private EnemyMoving enemyMoving;
-    private NavigationPoint navPoint;    
-    private float distanceToLastNavPoint;
-    private float speed;
-
-    public void Init(NavigationPoint navPoint, float speed)
+    public EnemyMovingHandler(Transform objectTransform, NavigationPoint navPoint, float speed)
     {
-        this.navPoint = navPoint;
-        this.speed = speed;
-
-        NavigationPoint temp = navPoint;
-        while (temp.GetNextNavigationPoint()!=temp)
-        {
-            distanceToLastNavPoint += temp.DistanceToNext();
-            temp = temp.GetNextNavigationPoint();
-        }
-        enemyMoving = new EnemyMoving(); // если надо будет менять принцип передвижения, тут вкорячу интерфейс
+        _transform = objectTransform;
+        _navPoint = navPoint;
+        _speed = speed;
+        CalculateDistanceToLastNavPoint();        
     }
 
-    private void Update()
+    public void Move()
     {        
-        if (transform.position != navPoint.GetDestination())
+        if (_transform.position != _navPoint.GetCoordinates())
         {
-            Vector3 pointToMove = enemyMoving.GetMovingPoint(transform.position, navPoint.GetDestination(), speed);
-            distanceToLastNavPoint -= Vector3.Distance(transform.position,pointToMove);
-            bool direction = transform.position.x <= pointToMove.x? true : false;
+            Vector3 pointToMove = Vector3.MoveTowards(_transform.position, _navPoint.GetCoordinates(), _speed*Time.deltaTime);
+            _distanceToLastNavPoint -= Vector3.Distance(_transform.position,pointToMove);
+            bool direction = MoveDirection(pointToMove);
             MovingDirection?.Invoke(direction);
-            transform.position = pointToMove;
+            _transform.position = pointToMove;
         }
         else
         {
-            navPoint = navPoint.GetNextNavigationPoint();
+            _navPoint = _navPoint.GetNextNavigationPoint();
         }
     }
 
     public float GetDistanceToLastNavPoint()
     {
-        return distanceToLastNavPoint;
-    }       
+        return _distanceToLastNavPoint;
+    }  
+
+    private bool MoveDirection(Vector3 pointToMove)
+    {
+        return _transform.position.x <= pointToMove.x ? false : true;
+    }
+    
+    private void CalculateDistanceToLastNavPoint()
+    {
+        NavigationPoint temp = _navPoint;
+        float distance = 0;
+        while (temp.GetNextNavigationPoint() != temp)
+        {
+            distance += temp.DistanceToNext();
+            temp = temp.GetNextNavigationPoint();
+        }
+        _distanceToLastNavPoint = distance;
+    }
 }
