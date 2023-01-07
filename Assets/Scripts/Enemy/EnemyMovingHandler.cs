@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovingHandler
 {
-    public event Action<bool> MovingDirection; //сюда подписываем обертку спрайтрендерера, чтобы переворачивала спрайт по направлению.
+    public event Action<bool> MovingDirection; 
     private Transform _transform;    
     private NavigationPoint _navPoint;    
     private float _distanceToLastNavPoint;
@@ -17,27 +17,27 @@ public class EnemyMovingHandler
         _speed = speed;
         CalculateDistanceToLastNavPoint();        
     }
-
     public void Move()
     {        
-        if (_transform.position != _navPoint.GetCoordinates())
-        {
-            Vector3 pointToMove = Vector3.MoveTowards(_transform.position, _navPoint.GetCoordinates(), _speed*Time.deltaTime);
-            _distanceToLastNavPoint -= Vector3.Distance(_transform.position,pointToMove);
-            bool direction = MoveDirection(pointToMove);
-            MovingDirection?.Invoke(direction);
-            _transform.position = pointToMove;
-        }
-        else
+        if (_transform.position == _navPoint.GetCoordinates())
         {
             _navPoint = _navPoint.GetNextNavigationPoint();
         }
+        Vector3 pointToMove = GetMoveVector();
+        _distanceToLastNavPoint = GetPassedDistance(pointToMove);       
+        MovingDirection?.Invoke(MoveDirection(pointToMove));
+        _transform.position = pointToMove;        
     }
 
     public float GetDistanceToLastNavPoint()
     {
         return _distanceToLastNavPoint;
-    }  
+    }   
+
+    private Vector3 GetMoveVector()
+    {
+        return Vector3.MoveTowards(_transform.position, _navPoint.GetCoordinates(), _speed * Time.deltaTime);
+    }
 
     private bool MoveDirection(Vector3 pointToMove)
     {
@@ -54,5 +54,10 @@ public class EnemyMovingHandler
             temp = temp.GetNextNavigationPoint();
         }
         _distanceToLastNavPoint = distance;
+    }
+
+    private float GetPassedDistance(Vector3 pointToMove)
+    {
+        return Vector3.Distance(_transform.position, pointToMove);
     }
 }

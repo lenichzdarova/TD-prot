@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
 
-public struct EnemyInitialStats
+public struct EnemyStats
 {
     public readonly int _maxHealth, _damage, _bounty, _armor;
     public readonly float _speed;
 
-    public EnemyInitialStats(EnemyType enemyType)
+    public EnemyStats(EnemyType enemyType)
     {
         switch (enemyType)
         {
