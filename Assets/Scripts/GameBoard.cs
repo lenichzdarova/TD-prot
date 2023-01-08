@@ -10,7 +10,7 @@ public class GameBoard : MonoBehaviour
     private TowerBuildHandler towerBuildHandler;
     private TowerFactory towerFactory;    
 
-    public void Initialize(IPlayerHealthProvider iPlayerHealthProvider, IPlayerGoldProvider iPlayerGoldProvider, IBuildUIProvider iBuildUIProvider)
+    public void Initialize(Health playerHealth, IPlayerGoldProvider iPlayerGoldProvider, IBuildUIProvider iBuildUIProvider)
     {          
         foreach(var spawner in spawners) 
         {
@@ -19,6 +19,6 @@ public class GameBoard : MonoBehaviour
         towerFactory = GetComponent<TowerFactory>();
         towerBuildHandler = new TowerBuildHandler(towerFactory, iPlayerGoldProvider, initialBuildings);
         new TowerBuildPresenter(towerBuildHandler, iBuildUIProvider);
-        playerDamageZone.Init(iPlayerHealthProvider);        
+        playerDamageZone.Init(playerHealth);        
     }        
 }

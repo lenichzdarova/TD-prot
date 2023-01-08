@@ -12,12 +12,12 @@ public class UIHandler : MonoBehaviour, IBuildUIProvider
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private IngameMenuUI ingameMenuUI;
     private IPlayerGoldProvider playerGoldProvider;
-    private IPlayerHealthProvider playerHealthProvider;
+    private Health _playerHealth;
 
-    public void Initialize(IPlayerGoldProvider iPlayerGoldProvider, IPlayerHealthProvider iPlayerHealthProvider)
+    public void Initialize(IPlayerGoldProvider iPlayerGoldProvider, Health playerHealth)
     {
         playerGoldProvider = iPlayerGoldProvider;
-        playerHealthProvider = iPlayerHealthProvider;
+        _playerHealth = playerHealth;
         //ingameMenuUI.Show();
         //goldUI.Init(iPlayerGoldProvider);
         //healthUI.Init(iPlayerHealthProvider);

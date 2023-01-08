@@ -24,15 +24,19 @@ public class Health
         _currentHealth = maxHealth;
     }
 
-    public void ChangeHealth(int value)
+    public void AddHealth(int value)
     {
         _currentHealth += value;
         if (_currentHealth > _maxHealth) 
         {
             _currentHealth = _maxHealth;
         }
+        HealthChanged?.Invoke(_currentHealth);      
+    }
+    public void RemoveHealth(int value)
+    {
+        _currentHealth -= value;
         HealthChanged?.Invoke(_currentHealth);
-          
         if (_currentHealth <= 0)
         {
             Death?.Invoke();

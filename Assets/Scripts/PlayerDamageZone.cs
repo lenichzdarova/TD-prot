@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PlayerDamageZone : MonoBehaviour
 {
-    private IPlayerHealthProvider playerHealthProvider;
+    private Health _playerHealth;
 
-    public void Init(IPlayerHealthProvider iPlayerHealthProvider)
+    public void Init(Health playerHealth)
     {
-        playerHealthProvider = iPlayerHealthProvider;
+        _playerHealth = playerHealth;
     }
 
     private void OnTriggerEnter(Collider other)
     {        
         if (other.gameObject.TryGetComponent(out Enemy enemy))
         {
-            enemy.AttackPlayer(playerHealthProvider);
+            enemy.AttackPlayer(_playerHealth);
         }        
     }
 }

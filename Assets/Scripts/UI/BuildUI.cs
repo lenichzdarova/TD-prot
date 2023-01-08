@@ -21,7 +21,7 @@ public class BuildUI : MonoBehaviour
         {
             SelectTowerButton button = selectTowerButtons[i];
             button.Initialize(buildings[i],i,playerGoldProvider.Gold);
-            playerGoldProvider.PlayerGoldChange += button.OnPlayerGoldChange;
+            playerGoldProvider.PlayerGoldChanged += button.OnPlayerGoldChange;
             button.SelectTowerButtonClicked += OnSelectTowerButtonClicked;
         }
         closeBuildMenuButton.Initialize();
@@ -35,7 +35,7 @@ public class BuildUI : MonoBehaviour
         foreach (var button in selectTowerButtons)
         {
             button.SelectTowerButtonClicked -= OnSelectTowerButtonClicked;
-            playerGoldProvider.PlayerGoldChange -= button.OnPlayerGoldChange;
+            playerGoldProvider.PlayerGoldChanged -= button.OnPlayerGoldChange;
             button.Hide();
         }        
         closeBuildMenuButton.CloseButtonUIClicked -= Hide;

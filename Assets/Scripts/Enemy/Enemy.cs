@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
             armor = 0;
         int DamageArmorDebuff = attackStats.GetDamage() * armor / 100;
         int damage = attackStats.GetDamage() - DamageArmorDebuff;
-        _health.ChangeHealth(-damage);
+        _health.RemoveHealth(damage);
     }
 
     public int GetBounty()
@@ -65,9 +65,9 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(timeToDelete);
         AskForRecycle?.Invoke(this);
     }    
-    public void AttackPlayer(IPlayerHealthProvider iPlayerHealthProvider)
+    public void AttackPlayer(Health playerHealth)
     {
-        iPlayerHealthProvider.AddHealth(-_enemyStats._damage);
+        playerHealth.RemoveHealth(_enemyStats._damage);
         AskForRecycle?.Invoke(this);
     }
     private IEnumerator MainLoop()

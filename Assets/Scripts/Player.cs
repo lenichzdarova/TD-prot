@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Player : IPlayerHealthProvider, IPlayerGoldProvider 
+public class Player : IPlayerGoldProvider 
 {
-    public event Action<int> PlayerGoldChange;
-    public event Action<int> PlayerHealthChange;
+    public event Action<int> PlayerGoldChanged;    
     
-    public string PlayerName { get; private set; }
-    public int Health { get; set; }
+    public string PlayerName { get; private set; }   
     public int Gold { get; set ; }
+
+    private Health _health;
+    public Health GetHealth() { return _health; }
     
     public Player( int health, int gold )
-    {        
-        Health = health;
+    {       
         Gold = gold;
+        _health = new Health(health);
     }
 
     public Player(string name, int health, int gold) : this (health, gold)
@@ -31,12 +32,12 @@ public class Player : IPlayerHealthProvider, IPlayerGoldProvider
     public void AddGold(int value)
     {
         Gold += value;
-        PlayerGoldChange?.Invoke(Gold);
+        PlayerGoldChanged?.Invoke(Gold);
     }
 
-    public void AddHealth(int value)
+    public void RemoveGold(int value)
     {
-        Health += value;
-        PlayerHealthChange?.Invoke(Health);
-    }
+        Gold -= value;
+        PlayerGoldChanged?.Invoke(Gold);
+    }    
 }

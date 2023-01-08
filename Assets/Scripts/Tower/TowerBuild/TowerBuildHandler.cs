@@ -31,7 +31,7 @@ public class TowerBuildHandler
 
     private void BuildTower(Building prefab)
     {
-        playerGoldProvider.AddGold(-prefab.GetCost());
+        playerGoldProvider.RemoveGold(prefab.GetCost());
         Building building = towerFactory.GetBuilding(prefab);
         building.transform.position = currentSelectedBuilding.transform.position;
         building.BuildingClicked += OnBuildingClicked;
