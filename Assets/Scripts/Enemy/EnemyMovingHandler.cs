@@ -24,7 +24,7 @@ public class EnemyMovingHandler
             _navPoint = _navPoint.GetNextNavigationPoint();
         }
         Vector3 pointToMove = GetMoveVector();
-        _distanceToLastNavPoint = GetPassedDistance(pointToMove);       
+        CalculateRemainDistance(pointToMove);       
         MovingDirection?.Invoke(MoveDirection(pointToMove));
         _transform.position = pointToMove;        
     }
@@ -56,8 +56,8 @@ public class EnemyMovingHandler
         _distanceToLastNavPoint = distance;
     }
 
-    private float GetPassedDistance(Vector3 pointToMove)
+    private void CalculateRemainDistance(Vector3 pointToMove)
     {
-        return Vector3.Distance(_transform.position, pointToMove);
+        _distanceToLastNavPoint -= Vector3.Distance(_transform.position, pointToMove);
     }
 }

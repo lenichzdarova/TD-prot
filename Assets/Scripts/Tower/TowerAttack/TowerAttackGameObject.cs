@@ -8,31 +8,40 @@ public class TowerAttackGameObject : MonoBehaviour
 
     [SerializeField] private TargetCoordinatesProvider _targetCoordinatesProvider;
     [SerializeField] private MovingBehaviour _movingBehaviour;
-    [SerializeField] private float _moveSpeed;   
+    private AttackGameObjectAnimatorHandler _animatorHandler;
+    [SerializeField] private float _moveSpeed;
+
+    private bool _isInitialized = false;
             
-    private Vector3 basePosition;    
-    public void Initialize(Transform targetTransform)
+    private Vector3 _baseLocalPosition;    
+    public void Initialize()
+    {        
+        _baseLocalPosition  = transform.localPosition;        
+        _targetCoordinatesProvider = GetComponent<TargetCoordinatesProvider>();
+        _movingBehaviour = GetComponent<MovingBehaviour>();
+        _animatorHandler = new AttackGameObjectAnimatorHandler(GetComponent<Animator>());
+        _isInitialized = true;
+    }  
+    
+    public void Activate(Transform targetTransform)
     {
+        if (!_isInitialized)
+        {
+            Initialize();
+        }
         gameObject.SetActive(true);
-        basePosition  = transform.position;
-        if (_targetCoordinatesProvider == null)
-        {
-            _targetCoordinatesProvider = GetComponent<TargetCoordinatesProvider>();
-        }
-        if (_movingBehaviour == null)
-        {
-            _movingBehaviour = GetComponent<MovingBehaviour>();
-        }
         _targetCoordinatesProvider.Initialize(targetTransform);
-        _movingBehaviour.Initialize(_targetCoordinatesProvider,_moveSpeed);
+        _movingBehaviour.Initialize(_targetCoordinatesProvider, _moveSpeed);
+        _animatorHandler.PlayMoveAnimation();
         StartCoroutine(Moving());
-    }    
+    }
     
     public void OnDirectionCheck(bool direction)
     {
-        if ((direction && transform.localPosition.x > 0) || (!direction && transform.localPosition.x < 0))
+        if ((direction && _baseLocalPosition.x > 0) || (!direction && _baseLocalPosition.x < 0))
         {
-            transform.localPosition = new Vector3(-transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            _baseLocalPosition = new Vector3(-_baseLocalPosition.x, _baseLocalPosition.y, _baseLocalPosition.z);
+            transform.localPosition = _baseLocalPosition;
         }
     }
 
@@ -49,7 +58,12 @@ public class TowerAttackGameObject : MonoBehaviour
             yield return null;
         }        
         TargetPointReach?.Invoke(transform.position);
-        //impact animation command
-        //targetreachevent invokation
+        _animatorHandler.PlayImpactAnimation();        
+    }
+
+    private void OnAnimationEnd() //animation event
+    {
+        transform.localPosition = _baseLocalPosition;        
+        gameObject.SetActive(false);
     }
 }

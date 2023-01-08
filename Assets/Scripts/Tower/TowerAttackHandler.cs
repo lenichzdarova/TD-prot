@@ -17,7 +17,8 @@ public class TowerAttackHandler : MonoBehaviour
         _attackStats = attackStats;
         _targetProvider = new TargetProvider(transform.position,_attackStats.Range);
         _targetProvider.TargetDirectionCalculated += OnTargetDirectionCalculated;
-        _towerAttackGameObject.TargetPointReach += OnTargetPointReach;
+        _towerAttackGameObject.Initialize();
+        _towerAttackGameObject.TargetPointReach += OnTargetPointReach;        
         DirectionCheck += _towerAttackGameObject.OnDirectionCheck;
         StartCoroutine(TryToAttack());
     }
@@ -43,7 +44,7 @@ public class TowerAttackHandler : MonoBehaviour
         var target = _targetProvider.GetTarget();
         if(target != null)
         {
-            _towerAttackGameObject.Initialize(target);
+            _towerAttackGameObject.Activate(target);
             StartCoroutine(Reload());
         }
         else

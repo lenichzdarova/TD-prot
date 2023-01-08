@@ -156,9 +156,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013108384150999798, guid: 93297ff3c63621c4a88447abb26b3620,
+        type: 3}
+      propertyPath: _towerType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1800299951055547790, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 93297ff3c63621c4a88447abb26b3620, type: 3}
+--- !u!1 &4288266270968088974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1640374701745136989, guid: 93297ff3c63621c4a88447abb26b3620,
+    type: 3}
+  m_PrefabInstance: {fileID: 3260944151177981139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1007172418969807949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288266270968088974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cd2c45bafe6144f8cbc5b4bb4def4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetCoordinatesProvider: {fileID: 0}
+  _movingBehaviour: {fileID: 5475254874267043112}
+  _moveSpeed: 0
+--- !u!114 &5475254874267043112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7403126281433262587, guid: 93297ff3c63621c4a88447abb26b3620,
+    type: 3}
+  m_PrefabInstance: {fileID: 3260944151177981139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288266270968088974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1e2bee55a35294081a45b4e21b8bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5481623495538097702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7013108384150999797, guid: 93297ff3c63621c4a88447abb26b3620,

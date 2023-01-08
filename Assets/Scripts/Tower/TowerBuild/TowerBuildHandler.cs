@@ -7,16 +7,16 @@ public class TowerBuildHandler
 {
     public event Action<Building[], int, bool> BuildActivation;
 
-    private TowerFactory towerFactory;
-    private Building currentSelectedBuilding;
-    private IPlayerGoldProvider playerGoldProvider;
+    private TowerFactory _towerFactory;
+    private Building _currentSelectedBuilding;
+    private IPlayerGoldProvider _playerGoldProvider;
 
-    private float sellTowerGoldModifier = 0.7f;
+    private float _sellTowerGoldModifier = 0.7f;
 
     public TowerBuildHandler(TowerFactory towerFactory, IPlayerGoldProvider iPlayerGoldProvider, Building[] initialBuildings)
     {
-        this.towerFactory = towerFactory;
-        playerGoldProvider = iPlayerGoldProvider;
+        _towerFactory = towerFactory;
+        _playerGoldProvider = iPlayerGoldProvider;
         foreach(var building in initialBuildings)
         {
             building.BuildingClicked += OnBuildingClicked;
@@ -25,38 +25,38 @@ public class TowerBuildHandler
     
     private void OnBuildingClicked(Building clickedBuilding)
     {
-        currentSelectedBuilding = clickedBuilding;
-        BuildActivation?.Invoke(currentSelectedBuilding.GetUpgrades(), GetTowerSellRevenue(), currentSelectedBuilding.CanSell());
+        _currentSelectedBuilding = clickedBuilding;
+        BuildActivation?.Invoke(_currentSelectedBuilding.GetUpgrades(), GetTowerSellRevenue(), _currentSelectedBuilding.CanSell());
     }    
 
     private void BuildTower(Building prefab)
     {
-        playerGoldProvider.RemoveGold(prefab.GetCost());
-        Building building = towerFactory.GetBuilding(prefab);
-        building.transform.position = currentSelectedBuilding.transform.position;
+        _playerGoldProvider.RemoveGold(prefab.GetCost());
+        Building building = _towerFactory.GetBuilding(prefab);
+        building.transform.position = _currentSelectedBuilding.transform.position;
         building.BuildingClicked += OnBuildingClicked;
-        if (currentSelectedBuilding.CanSell())
+        if (_currentSelectedBuilding.CanSell())
         {
-            towerFactory.Recycle(currentSelectedBuilding);
+            _towerFactory.Recycle(_currentSelectedBuilding);
         }        
     }
 
     public void OnTowerToBuildSelected(int index)
     {
-        Building prefab = currentSelectedBuilding.GetUpgrades()[index];
+        Building prefab = _currentSelectedBuilding.GetUpgrades()[index];
         BuildTower(prefab);
     }
 
     public void OnTowerSell()
     {
-        playerGoldProvider.AddGold(GetTowerSellRevenue());
-        towerFactory.Recycle(currentSelectedBuilding);        
+        _playerGoldProvider.AddGold(GetTowerSellRevenue());
+        _towerFactory.Recycle(_currentSelectedBuilding);        
     }
 
     private int GetTowerSellRevenue()
     {
-        int towerCost = currentSelectedBuilding.GetCost();
-        int towerSellRevenue = (int)(towerCost * sellTowerGoldModifier);
+        int towerCost = _currentSelectedBuilding.GetCost();
+        int towerSellRevenue = (int)(towerCost * _sellTowerGoldModifier);
         return towerSellRevenue;
     }
 }
