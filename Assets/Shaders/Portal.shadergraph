@@ -1405,8 +1405,8 @@
     "m_AlphaMode": 0,
     "m_RenderFace": 0,
     "m_AlphaClip": false,
-    "m_CastShadows": true,
-    "m_ReceiveShadows": true,
+    "m_CastShadows": false,
+    "m_ReceiveShadows": false,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
 }
@@ -1977,10 +1977,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1383.0001220703125,
-            "y": 123.00004577636719,
-            "width": 139.0,
-            "height": 34.0
+            "x": -1555.0001220703125,
+            "y": -201.0,
+            "width": 139.0001220703125,
+            "height": 33.99998474121094
         }
     },
     "m_Slots": [
@@ -2360,10 +2360,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1113.0001220703125,
-            "y": -59.999969482421878,
-            "width": 208.0,
-            "height": 435.0
+            "x": -1447.0001220703125,
+            "y": -104.00000762939453,
+            "width": 208.0001220703125,
+            "height": 435.0000305175781
         }
     },
     "m_Slots": [

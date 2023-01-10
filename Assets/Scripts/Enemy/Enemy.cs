@@ -13,25 +13,28 @@ public class Enemy : MonoBehaviour
     
     private EnemyAnimatorHandler _animatorHandler;
     private SpriteRendererHandler _spriteRenderer;
-    private EnemyMovingHandler _enemyMovingHandler; // can make abstraction here
-
-    private EnemyStats _enemyStats; // possibly need decorator to implement slow mechanic
+    private EnemyMovingHandler _enemyMovingHandler;    
     private Health _health;    
     private Coroutine _mainLoop;
 
     public void Initialize(NavigationPoint initialNavPoint)
     {
         _animatorHandler = new EnemyAnimatorHandler( GetComponent<Animator>());
-        _spriteRenderer = new SpriteRendererHandler( GetComponent<SpriteRenderer>());
-        _enemyStats = new EnemyStats(_enemyType);      
-        _health = new Health(_enemyStats._maxHealth);
+        _spriteRenderer = new SpriteRendererHandler( GetComponent<SpriteRenderer>());             
+        _health = new Health(GetStats().MaxHealth);
         _health.HealthChanged += healthBar.SetHealth;
         _health.Death += OnDeath;
-        healthBar.Initialize(_enemyStats._maxHealth);
-        _enemyMovingHandler = new EnemyMovingHandler(transform,initialNavPoint, _enemyStats._speed);
+        healthBar.Initialize(_health.GetMaxHealth());
+        _enemyMovingHandler = new EnemyMovingHandler(transform,initialNavPoint, GetStats().Speed);
         _enemyMovingHandler.MovingDirection += _spriteRenderer.SetDirection;        
         _mainLoop = StartCoroutine(MainLoop());
     } 
+
+    private EnemyStats GetStats()
+    {
+        var statsProvider = new BaseEnemyStats(_enemyType);
+        return statsProvider.GetStats();
+    }
 
     public float GetDistanceToPlayerBase()
     {
@@ -40,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(AttackStats attackStats) 
     {
-        int armor = -_enemyStats._armor - attackStats.ArmorPiercing;
+        int armor = GetStats().Armor - attackStats.ArmorPiercing;
         if (armor < 0) 
             armor = 0;
         int DamageArmorDebuff = attackStats.GetDamage() * armor / 100;
@@ -50,7 +53,7 @@ public class Enemy : MonoBehaviour
 
     public int GetBounty()
     {
-        return _enemyStats._bounty;
+        return GetStats().Bounty;
     }  
    
     private void OnDeath()
@@ -67,7 +70,7 @@ public class Enemy : MonoBehaviour
     }    
     public void AttackPlayer(Health playerHealth)
     {
-        playerHealth.RemoveHealth(_enemyStats._damage);
+        playerHealth.RemoveHealth(GetStats().Damage);
         AskForRecycle?.Invoke(this);
     }
     private IEnumerator MainLoop()

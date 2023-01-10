@@ -13,7 +13,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -40,13 +40,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0.1
-    - _CellDencity: 2
+    - _CellDencity: 0.98
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TimeMultiplayer: 0.3
     - _Twirl_Str: 20
     m_Colors:
-    - _Color: {r: 3.0810802, g: 0.42689666, b: 3.5450983, a: 0}
+    - _Color: {r: 0.11569952, g: 0.19429837, b: 0.9811321, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8561494262480816370
 MonoBehaviour:

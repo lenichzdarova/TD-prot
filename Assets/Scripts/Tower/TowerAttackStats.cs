@@ -22,7 +22,7 @@ public class TowerAttackStats : IAttackStatsProvider
                         SlowStrength = 0,
                         ArmorPiercing = 0,
                         Heal = 0,
-                        Range = 3,
+                        Range = 3f,
                         AOE = 2,
                         ReloadTime = 2                        
                     };
@@ -73,14 +73,14 @@ public class TowerAttackStats : IAttackStatsProvider
                 {
                     return new AttackStats()
                     {
-                        MinDamage = 0,
-                        MaxDamage = 0,
+                        MinDamage = 3,
+                        MaxDamage = 6,
                         SlowStrength = 0,
                         ArmorPiercing = 0,
                         Heal = 0,
-                        Range = 0,
+                        Range = 3f,
                         AOE = 0,
-                        ReloadTime = 0
+                        ReloadTime = 1
                     };
                 };
             case TowerType.HobbitT2:
@@ -115,7 +115,6 @@ public class TowerAttackStats : IAttackStatsProvider
                 {
                     throw new NotImplementedException("Wrong tower type");
                 }
-
         }
     }
 

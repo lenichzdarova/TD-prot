@@ -3,6 +3,8 @@
 public class AttackGameObjectAnimatorHandler
 {
     private Animator _animator;
+    private const string IMPACT_ANIMATION_STATE_NAME = "Impact";
+    private const string MOVING_ANIMATION_STATE_NAME = "Move";
 
     public AttackGameObjectAnimatorHandler(Animator animator)
     {
@@ -11,11 +13,11 @@ public class AttackGameObjectAnimatorHandler
 
     public void PlayImpactAnimation()
     {
-        _animator.Play("Impact");
+        _animator.Play(IMPACT_ANIMATION_STATE_NAME);
     }
 
     public void PlayMoveAnimation() 
     {
-        _animator.Play("Move");
+        _animator.Play(MOVING_ANIMATION_STATE_NAME);
     }
 }

@@ -25,7 +25,7 @@ public class TowerAttackHandler : MonoBehaviour
     private IEnumerator TryToAttack()
     {        
         while (!_targetProvider.TryGetTarget())
-        {          
+        {            
             yield return null;            
         }
         Activate();        

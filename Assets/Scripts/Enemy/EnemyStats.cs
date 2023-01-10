@@ -3,31 +3,9 @@ using UnityEngine;
 
 public struct EnemyStats
 {
-    public readonly int _maxHealth, _damage, _bounty, _armor;
-    public readonly float _speed;
-
-    public EnemyStats(EnemyType enemyType)
-    {
-        switch (enemyType)
-        {
-            case EnemyType.Skeleton:
-                {
-                    _maxHealth = 20;
-                    _damage = 1;
-                    _bounty = 1;
-                    _armor = 0;
-                    _speed = 1;
-                    break;
-                }
-            default:
-                {
-                    _maxHealth=0;
-                    _damage = 0;
-                    _bounty = 0;
-                    _armor = 0;
-                    _speed = 0;
-                    break;
-                }
-        }
-    }
+    public int MaxHealth { get; set; } 
+    public int Damage { get; set; }
+    public int Bounty { get; set; }
+    public int Armor { get; set; }
+    public float Speed { get; set; }    
 }

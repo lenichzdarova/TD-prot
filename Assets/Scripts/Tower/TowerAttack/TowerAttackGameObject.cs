@@ -16,7 +16,7 @@ public class TowerAttackGameObject : MonoBehaviour
     private Vector3 _baseLocalPosition;    
     public void Initialize()
     {        
-        _baseLocalPosition  = transform.localPosition;        
+        _baseLocalPosition = transform.localPosition;        
         _targetCoordinatesProvider = GetComponent<TargetCoordinatesProvider>();
         _movingBehaviour = GetComponent<MovingBehaviour>();
         _animatorHandler = new AttackGameObjectAnimatorHandler(GetComponent<Animator>());
@@ -45,7 +45,7 @@ public class TowerAttackGameObject : MonoBehaviour
         }
     }
 
-    private bool Move(Vector3 movePoint)
+    private bool Move(Vector3 movePoint) 
     {       
         transform.position = movePoint;
         return movePoint !=_targetCoordinatesProvider.GetTargetPoint();

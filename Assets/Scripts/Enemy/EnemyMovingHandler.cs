@@ -7,7 +7,7 @@ public class EnemyMovingHandler
     public event Action<bool> MovingDirection; 
     private Transform _transform;    
     private NavigationPoint _navPoint;    
-    private float _distanceToLastNavPoint;
+    private float _distanceToLastNavPoint=0;
     private float _speed;
 
     public EnemyMovingHandler(Transform objectTransform, NavigationPoint navPoint, float speed)
