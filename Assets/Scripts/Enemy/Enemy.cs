@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator),typeof(SpriteRenderer))]
@@ -8,7 +9,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] HealthBar healthBar;
-    [SerializeField] EnemyType _enemyType;
+    [SerializeField] EnemyType _enemyType; // maybe i can take it in waveSO and use as init args for different stats with same prefabs
     public event Action<Enemy> AskForRecycle;
     
     private EnemyAnimatorHandler _animatorHandler;
@@ -16,6 +17,9 @@ public class Enemy : MonoBehaviour
     private EnemyMovingHandler _enemyMovingHandler;    
     private Health _health;    
     private Coroutine _mainLoop;
+
+    private bool _isSLowed;
+    private Coroutine _slowCoroutine;
 
     public void Initialize(NavigationPoint initialNavPoint)
     {
@@ -25,14 +29,18 @@ public class Enemy : MonoBehaviour
         _health.HealthChanged += healthBar.SetHealth;
         _health.Death += OnDeath;
         healthBar.Initialize(_health.GetMaxHealth());
-        _enemyMovingHandler = new EnemyMovingHandler(transform,initialNavPoint, GetStats().Speed);
+        _enemyMovingHandler = new EnemyMovingHandler(transform,initialNavPoint);
         _enemyMovingHandler.MovingDirection += _spriteRenderer.SetDirection;        
         _mainLoop = StartCoroutine(MainLoop());
     } 
 
     private EnemyStats GetStats()
     {
-        var statsProvider = new BaseEnemyStats(_enemyType);
+        IEnemyStatsProvider statsProvider = new BaseEnemyStats(_enemyType);
+        if (_isSLowed)
+        {
+            statsProvider = new SlowEnemyStats(statsProvider);
+        }
         return statsProvider.GetStats();
     }
 
@@ -49,13 +57,13 @@ public class Enemy : MonoBehaviour
         int DamageArmorDebuff = attackStats.GetDamage() * armor / 100;
         int damage = attackStats.GetDamage() - DamageArmorDebuff;
         _health.RemoveHealth(damage);
+        SlowApply(attackStats.Slow);
     }
 
     public int GetBounty()
     {
         return GetStats().Bounty;
-    }  
-   
+    }   
     private void OnDeath()
     {
         StopCoroutine(_mainLoop);
@@ -77,8 +85,28 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            _enemyMovingHandler.Move();
+            _enemyMovingHandler.Move(GetStats().Speed);
             yield return null;
         }
+    }
+
+    private void SlowApply(bool isSlow)
+    {
+        if (isSlow)
+        {
+            if (_slowCoroutine != null)
+            {
+                StopCoroutine(_slowCoroutine);
+            }
+            _slowCoroutine = StartCoroutine(SlowCoruotine());
+        }
+    }
+
+    private IEnumerator SlowCoruotine()
+    {        
+        float duration = 5f;
+        _isSLowed = true;
+        yield return new WaitForSeconds(duration);
+        _isSLowed = false;
     }
 }

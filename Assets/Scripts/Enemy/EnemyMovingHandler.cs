@@ -8,22 +8,21 @@ public class EnemyMovingHandler
     private Transform _transform;    
     private NavigationPoint _navPoint;    
     private float _distanceToLastNavPoint=0;
-    private float _speed;
+    
 
-    public EnemyMovingHandler(Transform objectTransform, NavigationPoint navPoint, float speed)
+    public EnemyMovingHandler(Transform objectTransform, NavigationPoint navPoint)
     {
         _transform = objectTransform;
-        _navPoint = navPoint;
-        _speed = speed;
+        _navPoint = navPoint;        
         CalculateDistanceToLastNavPoint();        
     }
-    public void Move()
+    public void Move(float speed)
     {        
         if (_transform.position == _navPoint.GetCoordinates())
         {
             _navPoint = _navPoint.GetNextNavigationPoint();
         }
-        Vector3 pointToMove = GetMoveVector();
+        Vector3 pointToMove = GetMoveVector(speed);
         CalculateRemainDistance(pointToMove);       
         MovingDirection?.Invoke(MoveDirection(pointToMove));
         _transform.position = pointToMove;        
@@ -34,9 +33,9 @@ public class EnemyMovingHandler
         return _distanceToLastNavPoint;
     }   
 
-    private Vector3 GetMoveVector()
+    private Vector3 GetMoveVector(float speed)
     {
-        return Vector3.MoveTowards(_transform.position, _navPoint.GetCoordinates(), _speed * Time.deltaTime);
+        return Vector3.MoveTowards(_transform.position, _navPoint.GetCoordinates(), speed * Time.deltaTime);
     }
 
     private bool MoveDirection(Vector3 pointToMove)
