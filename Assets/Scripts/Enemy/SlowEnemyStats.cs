@@ -2,7 +2,7 @@
 
 public class SlowEnemyStats : EnemyStatsDecorator
 {
-    public SlowEnemyStats(IEnemyStatsProvider statsProvider) : base(statsProvider)
+    public SlowEnemyStats(IStatsProvider<EnemyStats> statsProvider) : base(statsProvider)
     {
 
     }

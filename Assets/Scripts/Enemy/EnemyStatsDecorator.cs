@@ -1,9 +1,9 @@
 ﻿
-public abstract class EnemyStatsDecorator : IEnemyStatsProvider
+public abstract class EnemyStatsDecorator : IStatsProvider<EnemyStats>
 {
-    protected readonly IEnemyStatsProvider _statsProvider;
+    protected readonly IStatsProvider<EnemyStats> _statsProvider;
 
-    public EnemyStatsDecorator (IEnemyStatsProvider statsProvider)
+    public EnemyStatsDecorator (IStatsProvider<EnemyStats> statsProvider)
     {
         _statsProvider = statsProvider;
     }

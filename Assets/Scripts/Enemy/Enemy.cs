@@ -8,10 +8,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    public event Action<Enemy> AskForRecycle;
+
     [SerializeField] HealthBar healthBar;
     [SerializeField] EnemyType _enemyType; // maybe i can take it in waveSO and use as init args for different stats with same prefabs
-    public event Action<Enemy> AskForRecycle;
-    
+      
     private EnemyAnimatorHandler _animatorHandler;
     private SpriteRendererHandler _spriteRenderer;
     private EnemyMovingHandler _enemyMovingHandler;    
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private EnemyStats GetStats()
     {
-        IEnemyStatsProvider statsProvider = new BaseEnemyStats(_enemyType);
+        IStatsProvider<EnemyStats> statsProvider = new BaseEnemyStats(_enemyType);
         if (_isSLowed)
         {
             statsProvider = new SlowEnemyStats(statsProvider);
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour
     }   
     private void OnDeath()
     {
+        gameObject.layer = LayerMask.GetMask("DeadEnemy");
         StopCoroutine(_mainLoop);
         _animatorHandler.DeathAnimation();        
         StartCoroutine(EnemyDeleting());
@@ -98,11 +101,11 @@ public class Enemy : MonoBehaviour
             {
                 StopCoroutine(_slowCoroutine);
             }
-            _slowCoroutine = StartCoroutine(SlowCoruotine());
+            _slowCoroutine = StartCoroutine(SlowRoutine());
         }
     }
 
-    private IEnumerator SlowCoruotine()
+    private IEnumerator SlowRoutine()
     {        
         float duration = 5f;
         _isSLowed = true;

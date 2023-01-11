@@ -1,6 +1,6 @@
 using System;
 
-public class TowerAttackStats : IAttackStatsProvider
+public class TowerAttackStats : IStatsProvider<AttackStats>
 {
     private readonly TowerType _towerType;
 
@@ -9,7 +9,7 @@ public class TowerAttackStats : IAttackStatsProvider
         _towerType = towerType;
     }
 
-    public AttackStats GetAttackStats()
+    public AttackStats GetStats()
     {
         switch(_towerType)
         {
@@ -24,7 +24,7 @@ public class TowerAttackStats : IAttackStatsProvider
                         Range = 3f,
                         AOE = 2f,
                         ReloadTime = 2f,
-                        Slow = false
+                        Slow = true
                     };
                 };
             case TowerType.TinyMageT1:

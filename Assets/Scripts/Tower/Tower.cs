@@ -25,7 +25,7 @@ public class Tower: MonoBehaviour
 
         var towerAttackStats = new TowerAttackStats(_towerType);
         _towerAttackHandler = GetComponent<TowerAttackHandler>();
-        _towerAttackHandler.Initialize(towerAttackStats.GetAttackStats());
+        _towerAttackHandler.Initialize(towerAttackStats.GetStats());
         _towerViewController = new TowerViewController(spriteRendererHandler, animatorHandler,
             audioSourceHandler, _towerAttackHandler);
         _towerViewController.Initialize();

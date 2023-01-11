@@ -3,7 +3,7 @@
 using System;
 using UnityEngine;
 
-public class BaseEnemyStats : IEnemyStatsProvider
+public class BaseEnemyStats : IStatsProvider<EnemyStats>
 {
     private EnemyType _enemyType;
 
