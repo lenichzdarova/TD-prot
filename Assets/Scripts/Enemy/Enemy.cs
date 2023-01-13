@@ -1,18 +1,16 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator),typeof(SpriteRenderer))]
 
 public class Enemy : MonoBehaviour
 {
-
     public event Action<Enemy> AskForRecycle;
 
-    [SerializeField] HealthBar healthBar;
-    [SerializeField] EnemyType _enemyType; // maybe i can take it in waveSO and use as init args for different stats with same prefabs
+    [SerializeField] HealthBar _healthBar;
+    [SerializeField] EnemyType _enemyType; // maybe i can take it from waveSO and use as init args for different stats with same prefabs
       
     private EnemyAnimatorHandler _animatorHandler;
     private SpriteRendererHandler _spriteRenderer;
@@ -28,9 +26,9 @@ public class Enemy : MonoBehaviour
         _animatorHandler = new EnemyAnimatorHandler( GetComponent<Animator>());
         _spriteRenderer = new SpriteRendererHandler( GetComponent<SpriteRenderer>());             
         _health = new Health(GetStats().MaxHealth);
-        _health.HealthChanged += healthBar.SetHealth;
+        _health.HealthChanged += _healthBar.SetHealth;
         _health.Death += OnDeath;
-        healthBar.Initialize(_health.GetMaxHealth());
+        _healthBar.Initialize(_health.GetMaxHealth());
         _enemyMovingHandler = new EnemyMovingHandler(transform,initialNavPoint);
         _enemyMovingHandler.MovingDirection += _spriteRenderer.SetDirection;        
         _mainLoop = StartCoroutine(MainLoop());

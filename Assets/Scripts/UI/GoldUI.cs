@@ -3,25 +3,25 @@ using TMPro;
 
 public class GoldUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI goldValueTextHolder;
-    private IPlayerGoldProvider playerGoldProvider;
+    [SerializeField] private TextMeshProUGUI _goldValueTextHolder;
+    private IPlayerGoldProvider _playerGoldProvider;
 
     public void Initialize(IPlayerGoldProvider iPlayerGoldProvider)
     {
         Show();
-        playerGoldProvider = iPlayerGoldProvider;
+        _playerGoldProvider = iPlayerGoldProvider;
         SetGoldText(iPlayerGoldProvider.Gold);
         iPlayerGoldProvider.PlayerGoldChanged += SetGoldText;        
     }
 
     private void SetGoldText(int value)
     {
-        goldValueTextHolder.text = value.ToString();
+        _goldValueTextHolder.text = value.ToString();
     }
 
     public void Hide()
     {
-        playerGoldProvider.PlayerGoldChanged -= SetGoldText;
+        _playerGoldProvider.PlayerGoldChanged -= SetGoldText;
         gameObject.SetActive(false);        
     }
 

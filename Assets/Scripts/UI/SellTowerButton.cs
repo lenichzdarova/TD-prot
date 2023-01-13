@@ -9,16 +9,16 @@ public class SellTowerButton : MonoBehaviour
 {
     public event Action SellTowerButtonClicked;
 
-    [SerializeField] private Button button;
-    [SerializeField] private TextMeshProUGUI sellGoldAmountText;
+    [SerializeField] private Button _button;
+    [SerializeField] private TextMeshProUGUI _sellGoldAmountText;
 
     public void Initialization(int sellGoldAmount, bool canSell)
     {
         if(canSell)
         {
             Show();
-            sellGoldAmountText.text = sellGoldAmount.ToString();
-            button.onClick.AddListener(OnButtonClicked);
+            _sellGoldAmountText.text = sellGoldAmount.ToString();
+            _button.onClick.AddListener(OnButtonClicked);
         }
     }
 
@@ -34,7 +34,7 @@ public class SellTowerButton : MonoBehaviour
 
     public void Hide()
     {
-        button.onClick.RemoveListener(OnButtonClicked);
+        _button.onClick.RemoveListener(OnButtonClicked);
         gameObject.SetActive(false);
     }
 }

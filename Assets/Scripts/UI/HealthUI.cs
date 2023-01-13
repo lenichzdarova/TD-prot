@@ -3,7 +3,7 @@ using TMPro;
 
 public class HealthUI : MonoBehaviour
 {  
-    [SerializeField] private TextMeshProUGUI healthValueTextHolder;
+    [SerializeField] private TextMeshProUGUI _healthValueTextHolder;
     private Health _playerHealth;
 
     public void Initialize(Health playerHealth)
@@ -16,7 +16,7 @@ public class HealthUI : MonoBehaviour
 
     private void SetHealthText(int value)
     {
-        healthValueTextHolder.text = value.ToString();
+        _healthValueTextHolder.text = value.ToString();
     }
     public void Hide()
     {

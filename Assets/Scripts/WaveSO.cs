@@ -8,9 +8,9 @@ using UnityEngine;
 [Serializable]
 public class WaveSO : ScriptableObject
 {
-    [SerializeField] Enemy enemyPrefab;
-    [SerializeField] float nextWaveCountdown;
-    [SerializeField] float spawnTime;
+    [SerializeField] Enemy _enemyPrefab;
+    [SerializeField] float _nextWaveCountdown;
+    [SerializeField] float _spawnTime;
     [SerializeField] int countToSpawn;
     //[SerializeField] float HPModifier=1;
 
@@ -28,12 +28,12 @@ public class WaveSO : ScriptableObject
             return null;
         }
         alreadySpawned++;        
-        return enemyPrefab;        
+        return _enemyPrefab;        
     }    
 
     public float GetSpawnTime()
     {
-        return spawnTime;
+        return _spawnTime;
     }
 
     public int GetCountToSpawn()
@@ -43,6 +43,6 @@ public class WaveSO : ScriptableObject
 
     public float NextWaveCountdown()
     {
-        return nextWaveCountdown;
+        return _nextWaveCountdown;
     }
 }

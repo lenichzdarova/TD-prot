@@ -8,12 +8,12 @@ public class CloseButtonUI : MonoBehaviour
 {
     public event Action CloseButtonUIClicked;
 
-    [SerializeField] private Button button;
+    [SerializeField] private Button _button;
 
     public void Initialize()
     {
         Show();
-        button.onClick.AddListener(OnButtonClick);
+        _button.onClick.AddListener(OnButtonClick);
     }
 
     public void Show()
@@ -23,7 +23,7 @@ public class CloseButtonUI : MonoBehaviour
 
     public void Hide()
     {
-        button.onClick.RemoveListener(OnButtonClick);
+        _button.onClick.RemoveListener(OnButtonClick);
         gameObject.SetActive(false);
     }
 

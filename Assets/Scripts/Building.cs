@@ -7,10 +7,10 @@ public class Building : MonoBehaviour
 {
     public event Action<Building> BuildingClicked;    
     
-    [SerializeField] Building[] upgrades;
-    [SerializeField] Sprite icon;
-    [SerializeField] int cost;
-    [SerializeField] bool canSell;    
+    [SerializeField] Building[] _upgrades;
+    [SerializeField] Sprite _icon;
+    [SerializeField] int _cost;
+    [SerializeField] bool _canSell;    
     
     private void OnMouseDown()
     {
@@ -22,10 +22,10 @@ public class Building : MonoBehaviour
 
     public Building[] GetUpgrades()
     {
-        return upgrades;
+        return _upgrades;
     }  
     
-    public Sprite GetIcon() { return icon; }
-    public int GetCost() { return cost; }
-    public bool CanSell() { return canSell;}
+    public Sprite GetIcon() { return _icon; }
+    public int GetCost() { return _cost; }
+    public bool CanSell() { return _canSell;}
 }

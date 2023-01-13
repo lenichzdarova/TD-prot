@@ -8,40 +8,40 @@ public class BuildUI : MonoBehaviour
     public event Action<int> BuildingIndexSelected;
     public event Action SellTowerButtonClicked;
 
-    [SerializeField] SelectTowerButton[] selectTowerButtons;       
-    [SerializeField] SellTowerButton sellTowerButton;    
-    [SerializeField] CloseButtonUI closeBuildMenuButton;
-    private IPlayerGoldProvider playerGoldProvider;
+    [SerializeField] SelectTowerButton[] _selectTowerButtons;       
+    [SerializeField] SellTowerButton _sellTowerButton;    
+    [SerializeField] CloseButtonUI _closeBuildMenuButton;
+    private IPlayerGoldProvider _playerGoldProvider;
 
     public void Initialize(IPlayerGoldProvider iplayerGoldProvider, Building[] buildings, int sellGoldAmount, bool canSell)
     {
         Show();
-        playerGoldProvider = iplayerGoldProvider;
+        _playerGoldProvider = iplayerGoldProvider;
         for (int i = 0; i < buildings.Length; i++)
         {
-            SelectTowerButton button = selectTowerButtons[i];
-            button.Initialize(buildings[i],i,playerGoldProvider.Gold);
-            playerGoldProvider.PlayerGoldChanged += button.OnPlayerGoldChange;
+            SelectTowerButton button = _selectTowerButtons[i];
+            button.Initialize(buildings[i],i,_playerGoldProvider.Gold);
+            _playerGoldProvider.PlayerGoldChanged += button.OnPlayerGoldChange;
             button.SelectTowerButtonClicked += OnSelectTowerButtonClicked;
         }
-        closeBuildMenuButton.Initialize();
-        closeBuildMenuButton.CloseButtonUIClicked += Hide;
-        sellTowerButton.Initialization(sellGoldAmount, canSell);
-        sellTowerButton.SellTowerButtonClicked += OnSellTowerButtonClicked;
+        _closeBuildMenuButton.Initialize();
+        _closeBuildMenuButton.CloseButtonUIClicked += Hide;
+        _sellTowerButton.Initialization(sellGoldAmount, canSell);
+        _sellTowerButton.SellTowerButtonClicked += OnSellTowerButtonClicked;
     }    
 
     public void Hide()
     {
-        foreach (var button in selectTowerButtons)
+        foreach (var button in _selectTowerButtons)
         {
             button.SelectTowerButtonClicked -= OnSelectTowerButtonClicked;
-            playerGoldProvider.PlayerGoldChanged -= button.OnPlayerGoldChange;
+            _playerGoldProvider.PlayerGoldChanged -= button.OnPlayerGoldChange;
             button.Hide();
         }        
-        closeBuildMenuButton.CloseButtonUIClicked -= Hide;
-        closeBuildMenuButton.Hide();
-        sellTowerButton.SellTowerButtonClicked-= OnSellTowerButtonClicked;
-        sellTowerButton.Hide();
+        _closeBuildMenuButton.CloseButtonUIClicked -= Hide;
+        _closeBuildMenuButton.Hide();
+        _sellTowerButton.SellTowerButtonClicked-= OnSellTowerButtonClicked;
+        _sellTowerButton.Hide();
         gameObject.SetActive(false); 
     }
 

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class TowerFoundation : MonoBehaviour
 {
-    [SerializeField] GameObject highLight; 
+    [SerializeField] GameObject _highLight; 
 
     private void Awake()
     {
-        highLight.SetActive(false);       
+        _highLight.SetActive(false);       
     }
 
     private void OnMouseEnter()
     {
-        highLight.SetActive(true);       
+        _highLight.SetActive(true);       
     }
 
     private void OnMouseExit()
     {
-        highLight.SetActive(false);
+        _highLight.SetActive(false);
     }
 }

@@ -7,14 +7,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] WaveSO[] waves;
-    [SerializeField] Game controller;
-    private EnemyFactory enemyFactory;
-    private NavigationPoint navPoint;
-    private int waveIndex =0;
-    private float nextWaveCountdown=0;
-    private float enemyRecycleTime = 2f;
-    private float spawnOffsetY=0.1f; 
+    [SerializeField] WaveSO[] _waves;
+    [SerializeField] Game _controller;
+    private EnemyFactory _enemyFactory;
+    private NavigationPoint _navPoint;
+    private int _waveIndex =0;
+    private float _nextWaveCountdown=0;
+    private float _enemyRecycleTime = 2f;
+    private float _spawnOffsetY=0.1f; 
   
     
 
@@ -22,28 +22,28 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        nextWaveCountdown -= Time.deltaTime;        
+        _nextWaveCountdown -= Time.deltaTime;        
     }    
 
     public void Initialize()
     {   
-        enemyFactory = GetComponent<EnemyFactory>();
+        _enemyFactory = GetComponent<EnemyFactory>();
         
-        navPoint = GetComponent<NavigationPoint>();              
+        _navPoint = GetComponent<NavigationPoint>();              
 
-        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));        
+        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));        
     }
 
     private void WaveInitialization()
     {
-        WaveSO wave = waves[waveIndex];
+        WaveSO wave = _waves[_waveIndex];
         wave.Initialize();
-        nextWaveCountdown = wave.NextWaveCountdown();
+        _nextWaveCountdown = wave.NextWaveCountdown();
         SpawnEnemy(wave);
-        waveIndex++;  
-        if(waveIndex<waves.Length) 
+        _waveIndex++;  
+        if(_waveIndex<_waves.Length) 
         {
-            nextWaveSpawn = StartCoroutine(WaveSpawnTimer(nextWaveCountdown));
+            nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));
         }           
     }
 
@@ -60,11 +60,11 @@ public class Spawner : MonoBehaviour
         {
             return;
         }
-        Enemy enemy = enemyFactory.GetEnemy(enemyPrefab);
+        Enemy enemy = _enemyFactory.GetEnemy(enemyPrefab);
 
-        Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + spawnOffsetY, transform.position.z);
+        Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + _spawnOffsetY, transform.position.z);
         enemy.transform.position = startPosition;
-        enemy.Initialize(navPoint);       
+        enemy.Initialize(_navPoint);       
         StartCoroutine(SpawnEnemyTimer(wave));
     }
 
@@ -82,7 +82,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator DeletingEnemy(Enemy enemy)
     {
-        yield return new WaitForSeconds(enemyRecycleTime);
+        yield return new WaitForSeconds(_enemyRecycleTime);
         Destroy(enemy.gameObject);
     }
       

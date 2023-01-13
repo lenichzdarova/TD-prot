@@ -1,10 +1,10 @@
 using System;
 
-public class TowerAttackStats : IStatsProvider<AttackStats>
+public class BaseTowerAttackStats : IStatsProvider<AttackStats>
 {
     private readonly TowerType _towerType;
 
-    public TowerAttackStats (TowerType towerType)
+    public BaseTowerAttackStats (TowerType towerType)
     {
         _towerType = towerType;
     }

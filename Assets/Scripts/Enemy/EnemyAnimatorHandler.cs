@@ -5,11 +5,11 @@ public class EnemyAnimatorHandler
 {
     public event Action AnimationEnd;
     public event Action AnimationAction;
-    private protected Animator animator;
+    private protected Animator _animator;
 
     public EnemyAnimatorHandler (Animator animator)
     {
-        this.animator = animator;        
+        _animator = animator;        
     }    
 
     public void AnimationEventEndAnimation()
@@ -24,7 +24,7 @@ public class EnemyAnimatorHandler
 
     public void DeathAnimation()
     {
-        animator.SetTrigger("Death");
+        _animator.SetTrigger("Death");
     }
 }
 
