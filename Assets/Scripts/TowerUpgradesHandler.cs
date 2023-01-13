@@ -5,12 +5,25 @@ using System.Collections.Generic;
 
 public class TowerUpgradesHandler
 {
-    private static Dictionary<TowerType, int> _upgradesLevel;
+    private static Dictionary<TowerType, int> _upgradesLevel; 
     private static List<TowerUpgrades> _upgrades;
 
     public TowerUpgradesHandler()
     {
-        //cycle towerTypes to inialize all upgrades;
+        int baseUpgradesLevel = 0;
+        _upgradesLevel = new Dictionary<TowerType, int>();
+        _upgrades= new List<TowerUpgrades>();
+        foreach (var value in Enum.GetValues(typeof(TowerType)))
+        {
+            TowerType towerType = (TowerType)value;
+            _upgrades.Add(new TowerUpgrades(towerType));
+            _upgradesLevel.Add(towerType, baseUpgradesLevel);
+        }       
+    }
+
+    public void SetUpgradesLevel(TowerType towerType, int level)
+    {
+        _upgradesLevel[towerType] = level;
     }
 
     public static IStatsProvider<AttackStats>[] GetUpgrades(TowerType towerType)
@@ -24,5 +37,5 @@ public class TowerUpgradesHandler
             }
         }
         throw new NotImplementedException($"Tower type {towerType} upgrades not implemented");
-    }
+    }    
 }
