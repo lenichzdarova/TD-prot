@@ -22,10 +22,9 @@ public class Tower: MonoBehaviour
         animatorHandler.Initialization(GetComponent<Animator>());
         var spriteRendererHandler = new SpriteRendererHandler(GetComponent<SpriteRenderer>());
         var audioSourceHandler = new AudioSourceHandler(GetComponent<AudioSource>());
-
-        var towerAttackStats = new BaseTowerAttackStats(_towerType);
+        
         _towerAttackHandler = GetComponent<TowerAttackHandler>();
-        _towerAttackHandler.Initialize(towerAttackStats.GetStats());
+        _towerAttackHandler.Initialize(_towerType);
         _towerViewController = new TowerViewController(spriteRendererHandler, animatorHandler,
             audioSourceHandler, _towerAttackHandler);
         _towerViewController.Initialize();

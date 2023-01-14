@@ -1,27 +1,36 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerAttackHandler : MonoBehaviour 
 {
     public event Action Activation;
     public event Action<bool> DirectionCheck; //false == right
-
-    private AttackStats _attackStats;
+    
     private TargetProvider _targetProvider;
     [SerializeField]
     private TowerAttackGameObject _towerAttackGameObject;
+    private TowerType _towerType;
     
-    public void Initialize(AttackStats attackStats)
+    public void Initialize(TowerType towerType)
     {
-        _attackStats = attackStats;
-        _targetProvider = new TargetProvider(transform.position,_attackStats.Range);
+        _towerType = towerType;
+        _targetProvider = new TargetProvider(transform.position,GetStats().Range);
         _targetProvider.TargetDirectionCalculated += OnTargetDirectionCalculated;
         _towerAttackGameObject.Initialize();
         _towerAttackGameObject.TargetPointReach += OnTargetPointReach;        
         DirectionCheck += _towerAttackGameObject.OnDirectionCheck;
         StartCoroutine(TryToAttack());
     }
+
+    private AttackStats GetStats()
+    {
+        IStatsProvider<AttackStats> stats = new BaseTowerAttackStats(_towerType);
+        stats = new TowerUpgrades(stats, new List<string>()); //TODO need class to get this string with current upgrades names
+        return stats.GetStats();
+    }
+
     private IEnumerator TryToAttack()
     {        
         while (!_targetProvider.TryGetTarget())
@@ -32,7 +41,7 @@ public class TowerAttackHandler : MonoBehaviour
     }
     private IEnumerator Reload()
     {
-        yield return new WaitForSeconds(_attackStats.ReloadTime);
+        yield return new WaitForSeconds(GetStats().ReloadTime);
         StartCoroutine(TryToAttack());
     }
     private void Activate()
@@ -60,10 +69,10 @@ public class TowerAttackHandler : MonoBehaviour
 
     private void OnTargetPointReach(Vector3 targetPoint)
     {
-        var targets = _targetProvider.GetTarget(targetPoint, _attackStats.AOE);       
+        var targets = _targetProvider.GetTarget(targetPoint, GetStats().AOE);       
         foreach(var target in targets)
         {
-            target.TakeDamage(_attackStats);
+            target.TakeDamage(GetStats());
         }
     }
 }
