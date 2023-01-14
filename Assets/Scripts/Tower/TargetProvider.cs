@@ -22,28 +22,33 @@ public class TargetProvider
         RaycastHit[] hit = Physics.SphereCastAll(_towerPosition, _range, Vector3.down, 2f, _layerMask);
         if (hit.Length != 0)
         {
-            Enemy currentEnemy = null;
-            for (int i = 0; i < hit.Length; i++)
-            {
-                Enemy enemy = hit[i].transform.GetComponent<Enemy>();
-                if (currentEnemy == null)
-                {
-                    currentEnemy = enemy;
-                }
-                else
-                {
-                    currentEnemy = currentEnemy.GetDistanceToPlayerBase() <= enemy.GetDistanceToPlayerBase() ? currentEnemy : enemy;
-                }                
-            }
-            _targetTransform = currentEnemy.transform;
+            var enemies = GetEnemiesFromRaycastHit(hit);
+            var target = GetClosestToPlayer(enemies);
+            _targetTransform = target.transform;
             CalculateTargetDirection(_towerPosition, _targetTransform.position);
             return true;           
         }
         else
         {
-            return false;
+            return false; 
         }        
-    }    
+    } 
+    
+    private Enemy[] GetEnemiesFromRaycastHit(RaycastHit[] hit)
+    {
+        Enemy[] enemies = new Enemy[hit.Length];
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i] = hit[i].transform.GetComponent<Enemy>();
+        }
+        return enemies;
+    }
+    private Enemy GetClosestToPlayer(Enemy[] enemies)
+    {        
+        Array.Sort(enemies, new EnemyDistanceComparer());
+        int closestEnemyIndex = 0;
+        return enemies[closestEnemyIndex];
+    }
 
     private void CalculateTargetDirection(Vector3 startPos, Vector3 targetPos)
     {
