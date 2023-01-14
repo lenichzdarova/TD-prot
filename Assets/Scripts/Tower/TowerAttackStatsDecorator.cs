@@ -2,7 +2,7 @@
 
 public abstract class TowerAttackStatsDecorator : IStatsProvider<AttackStats>
 {
-    private readonly IStatsProvider<AttackStats> _statsProvider;
+   protected readonly IStatsProvider<AttackStats> _statsProvider;
 
     public TowerAttackStatsDecorator(IStatsProvider<AttackStats> statsProvider)
     {

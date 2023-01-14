@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class TowerUpgradesHandler
 {    
-    private static List<TowerUpgrades> _upgrades;
+    private static List<TowerUpgradesStatsProvider> _upgrades;
 
     public TowerUpgradesHandler()
     {      
