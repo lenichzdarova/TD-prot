@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
 
 public class TargetProvider
 {
@@ -21,20 +23,19 @@ public class TargetProvider
     {       
         RaycastHit[] hit = Physics.SphereCastAll(_towerPosition, _range, Vector3.down, 2f, _layerMask);
         if (hit.Length != 0)
-        {
-            var enemies = GetEnemiesFromRaycastHit(hit);
-            var target = GetClosestToPlayer(enemies);
+        {            
+            var target = GetClosestToPlayer(GetEnemiesArray(hit));
             _targetTransform = target.transform;
             CalculateTargetDirection(_towerPosition, _targetTransform.position);
             return true;           
         }
-        else
+        else 
         {
-            return false; 
+            return false;            
         }        
     } 
     
-    private Enemy[] GetEnemiesFromRaycastHit(RaycastHit[] hit)
+    private Enemy[] GetEnemiesArray(RaycastHit[] hit)
     {
         Enemy[] enemies = new Enemy[hit.Length];
         for (int i = 0; i < enemies.Length; i++)
@@ -43,11 +44,11 @@ public class TargetProvider
         }
         return enemies;
     }
-    private Enemy GetClosestToPlayer(Enemy[] enemies)
-    {        
-        Array.Sort(enemies, new EnemyDistanceComparer());
-        int closestEnemyIndex = 0;
-        return enemies[closestEnemyIndex];
+    private Enemy GetClosestToPlayer(Enemy[] enemiesArray)
+    {
+        enemiesArray.OrderBy(x => x.GetDistanceToPlayerBase());        
+        enemiesArray.First();
+        return enemiesArray.First();
     }
 
     private void CalculateTargetDirection(Vector3 startPos, Vector3 targetPos)

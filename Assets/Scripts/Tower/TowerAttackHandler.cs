@@ -27,7 +27,7 @@ public class TowerAttackHandler : MonoBehaviour
     private AttackStats GetStats()
     {
         IStatsProvider<AttackStats> stats = new BaseTowerAttackStats(_towerType);
-        stats = new TowerUpgradesStatsProvider(stats,_towerType); //TODO need class to get this string with current upgrades names
+        stats = new TowerUpgradesStatsProvider(stats,_towerType); 
         return stats.GetStats();
     }
 
