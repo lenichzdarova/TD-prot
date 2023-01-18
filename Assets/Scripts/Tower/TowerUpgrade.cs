@@ -10,19 +10,19 @@ public class TowerUpgrade : ScriptableObject, IStatsProvider<AttackStats>
     private TowerType _effectedTower;    
 
     [SerializeField]
-    public int _minDamage;
+    private int _minDamage;
     [SerializeField]
-    public int _maxDamage;
+    private int _maxDamage;
     [SerializeField]
-    public int _armorPiercing;
+    private int _armorPiercing;
     [SerializeField]
-    public float _range;
+    private float _range;
     [SerializeField]
-    public float _aOE;
+    private float _aOE;
     [SerializeField]
-    public float _reloadTime;
+    private float _reloadTime;
     [SerializeField]
-    public bool _slow;
+    private bool _slow;
 
     public int GetUpgradeLevel()
     {
@@ -32,8 +32,6 @@ public class TowerUpgrade : ScriptableObject, IStatsProvider<AttackStats>
     {
         return _effectedTower;
     }
-
-
     public AttackStats GetStats()
     {
         return new AttackStats

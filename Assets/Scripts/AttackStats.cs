@@ -26,7 +26,7 @@ public struct AttackStats
             Range = a.Range + b.Range,
             AOE = a.AOE + b.AOE,
             ReloadTime = a.ReloadTime + b.ReloadTime,
-            Slow = b.Slow
+            Slow = a.Slow == true || b.Slow == true
         };
     }
 }

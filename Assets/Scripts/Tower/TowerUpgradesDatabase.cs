@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Newtonsoft.Json.Schema;
 
-public class TowerUpgradesDatabase : ScriptableObject
+public class TowerUpgradesDatabase 
 {
     [SerializeField]
-    private List<TowerUpgrade> _allUpgrades;
+    private TowerUpgrade[] _allUpgrades;
+
+    public TowerUpgradesDatabase()
+    {
+        _allUpgrades = Resources.LoadAll<TowerUpgrade>("ScriptableObjects/TowerUpgrades");
+    }
 
     public IEnumerable<TowerUpgrade> GetTowerUpgrades(TowerType towerType,int currentLevel)
     {
@@ -16,5 +22,4 @@ public class TowerUpgradesDatabase : ScriptableObject
 
         return upgrades;
     }
-
 }
