@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d00874f3952774a980eb604ffec7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highLight: {fileID: 8317518636760276491}
+  _highLight: {fileID: 8317518636760276491}
 --- !u!65 &7150396200878960193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,12 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec42df17e634e479c7046b3a257020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades:
-  - {fileID: 8019917700012577283, guid: 642f9bd020b4e4a41a040e0a1c0c3acd, type: 3}
-  - {fileID: 8433036537476202804, guid: c3150551a577f43478e9165d9d0ddce5, type: 3}
-  icon: {fileID: 0}
-  cost: 0
-  canSell: 0
+  _upgrades: []
+  _icon: {fileID: 0}
+  _cost: 0
+  _canSell: 0
 --- !u!1 &8317518636760276491
 GameObject:
   m_ObjectHideFlags: 0

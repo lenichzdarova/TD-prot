@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class DataManager 
 {
-    private Reader _reader;
-    private Writer _writer;
+    private const string DATA_FILE_NAME = "PlayerData.bat";    
 
-    private const string DATA_FILE_NAME = "PlayerData.bat";
-
-    public DataManager()
+    public void SaveData(PlayerPersistentData data)
     {
-        _reader = new Reader();
-        _writer = new Writer();
+        var writer = new Writer();
+        writer.WriteData(data,DATA_FILE_NAME);
     }
-
-    public void SaveData(PlayerPersistantData data)
+    public PlayerPersistentData LoadData()
     {
-        _writer.WriteData(data,DATA_FILE_NAME);
-    }
-    public PlayerPersistantData LoadData()
-    {
-        return _reader.ReadData(DATA_FILE_NAME);
+        var reader = new Reader();
+        return reader.ReadData(DATA_FILE_NAME);
     }
 }

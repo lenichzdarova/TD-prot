@@ -6,14 +6,16 @@ using UnityEngine;
 public class TowerUpgradesHandler
 {
     private TowerUpgradesDatabase _upgradesDatabase;
-    public TowerUpgradesHandler()
+    private Dictionary<TowerType, byte> _towerLevels;
+    public TowerUpgradesHandler(PlayerPersistentData upgradeLevels)
     {      
-      _upgradesDatabase= new TowerUpgradesDatabase();
+        _upgradesDatabase = new TowerUpgradesDatabase(); 
+        _towerLevels = upgradeLevels.GetUpgradesData();
     }  
     
-    public IEnumerable<TowerUpgrade> GetUpgradeLevel(TowerType towerType)
+    public IEnumerable<TowerUpgrade> GetUpgrades(TowerType towerType)
     {        
-        return _upgradesDatabase.GetTowerUpgrades(towerType,0);
+        return _upgradesDatabase.GetTowerUpgrades(towerType, _towerLevels[towerType]);
     }
     
 }

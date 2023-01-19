@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.IO;
-using UnityEngine;
+
 
 public class Reader 
 {
-    public PlayerPersistantData ReadData(string fileName)
+    public PlayerPersistentData ReadData(string fileName)
     {
         if (File.Exists(fileName))
         {
             using (var stream = File.OpenRead(fileName))
             {
-                using(var reader = new StreamReader(stream))
+                using(var reader = new BinaryReader(stream))
                 {
-                    return new PlayerPersistantData
+                    var data = new PlayerPersistentData();
+                    data.SceneIndex = reader.ReadInt32();
+                    for (int i =0; i < data.UpgradeLevels.Length; i++)
                     {
-                       //parse stream to playerData
-                    };
+                        data.UpgradeLevels[i] = reader.ReadByte();
+                    }                    
+                    return data;
                 }
             }
-        }        
-
-        return new PlayerPersistantData();
+        }
+        return new PlayerPersistentData();//gag
     }
 }

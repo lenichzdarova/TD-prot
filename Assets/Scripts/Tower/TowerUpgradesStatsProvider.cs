@@ -10,7 +10,7 @@ public class TowerUpgradesStatsProvider : TowerAttackStatsDecorator
     public TowerUpgradesStatsProvider (IStatsProvider<AttackStats> statsProvider, TowerType towerType) : base (statsProvider)
     {
         _towerType = towerType;
-        _upgrades = TowerUpgradesHandler.GetUpgradeLevel(towerType);        
+       //_upgrades = TowerUpgradesHandler.GetUpgradeLevel(towerType);        
     }    
 
     public override AttackStats GetStats()

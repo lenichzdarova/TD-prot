@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Writer
 {
-   public void WriteData(PlayerPersistantData data, string fileName)
+   public void WriteData(PlayerPersistentData data, string fileName)
     {
         using (var stream = File.Open(fileName, FileMode.OpenOrCreate))
         {
             using(var writer = new BinaryWriter(stream))
             {
-                //parse data;
+                writer.Write(data.SceneIndex);
+                writer.Write(data.UpgradeLevels);
             }
         }
     }
