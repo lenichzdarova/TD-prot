@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DataManager 
 {
@@ -13,7 +15,16 @@ public class DataManager
     }
     public PlayerPersistentData LoadData()
     {
-        var reader = new Reader();
-        return reader.ReadData(DATA_FILE_NAME);
-    }
+        if (File.Exists(DATA_FILE_NAME))
+        {
+            var reader = new Reader();
+            return reader.ReadData(DATA_FILE_NAME);
+        }
+
+        var playerDefaultData = new PlayerPersistentData();
+        SaveData(playerDefaultData);
+        return playerDefaultData;                
+    }  
+    
+
 }
