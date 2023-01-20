@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
-using UnityEngine.Rendering;
 
-public class DataManager 
+
+public static class DataManager 
 {
     private const string DATA_FILE_NAME = "PlayerData.bat";    
 
-    public void SaveData(PlayerPersistentData data)
+    public static void SaveData(PlayerPersistentData data)
     {
         var writer = new Writer();
         writer.WriteData(data,DATA_FILE_NAME);
     }
-    public PlayerPersistentData LoadData()
+    public static PlayerPersistentData LoadData()
     {
         if (File.Exists(DATA_FILE_NAME))
         {

@@ -11,7 +11,7 @@ public class Writer
         {
             using(var writer = new BinaryWriter(stream))
             {
-                writer.Write(data.SceneIndex);
+                writer.Write(data.LastPlayedSceneIndex);
                 writer.Write(data.UpgradeLevels);
             }
         }

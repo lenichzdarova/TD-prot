@@ -2,27 +2,24 @@
 
 using UnityEngine.SceneManagement;
 
-public class GameSceneManager //shitty class need rework
+public static class GameSceneManager //shitty class need rework
 {        
     private const int MAIN_MENU_SCENE_INDEX = 0;
-    
-    public void LoadNextScene()
+
+    public static void LoadNextScene(PlayerPersistentData playerData)
     {
-        var dataManager = new DataManager();
-        var playerData = dataManager.LoadData();
-        ++playerData.SceneIndex;       
-        dataManager.SaveData(playerData);
-        SceneManager.LoadScene(playerData.SceneIndex);
+        playerData.LastPlayedSceneIndex++;
+        DataManager.SaveData(playerData);
+
+        SceneManager.LoadScene(playerData.LastPlayedSceneIndex);
     }
 
-    public void LoadLastGameScene()
-    {
-        var dataManager = new DataManager();
-        var playerData = dataManager.LoadData();
-        SceneManager.LoadScene(playerData.SceneIndex);
+    public static void LoadLastGameScene(PlayerPersistentData playerData)
+    {        
+        SceneManager.LoadScene(playerData.LastPlayedSceneIndex);
     }
 
-    public void MainMenuScene()
+    public static void LoadMainMenuScene()
     {
         SceneManager.LoadScene(MAIN_MENU_SCENE_INDEX);
     }

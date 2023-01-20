@@ -6,6 +6,7 @@ public class UIHandler : MonoBehaviour, IBuildUIProvider
 {
     public event Action<int> BuildingIndexSelected;
     public event Action SellTower;
+    public event Action PlayerReady;
 
     [SerializeField] private BuildUI _buildUI;
     [SerializeField] private GoldUI _goldUI;

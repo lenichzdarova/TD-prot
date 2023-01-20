@@ -6,12 +6,12 @@ using UnityEngine;
 public class PlayerPersistentData 
 {
     
-    public int SceneIndex { get; set; }
+    public int LastPlayedSceneIndex { get; set; }
     public byte[] UpgradeLevels { get; set; }    
 
     public PlayerPersistentData()
     {
-        SceneIndex = 0;
+        LastPlayedSceneIndex = 0;
         int towerTypeNumber = Enum.GetNames(typeof(TowerType)).Length;
         UpgradeLevels = new byte[towerTypeNumber];
         Array.Fill(UpgradeLevels, (byte)0);        

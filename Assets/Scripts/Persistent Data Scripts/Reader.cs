@@ -11,7 +11,7 @@ public class Reader
             using (var reader = new BinaryReader(stream))
             {
                 var data = new PlayerPersistentData();
-                data.SceneIndex = reader.ReadInt32();
+                data.LastPlayedSceneIndex = reader.ReadInt32();
                 for (int i = 0; i < data.UpgradeLevels.Length; i++)
                 {
                     data.UpgradeLevels[i] = reader.ReadByte();

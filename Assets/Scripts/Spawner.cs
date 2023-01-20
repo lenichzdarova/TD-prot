@@ -8,17 +8,15 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] WaveSO[] _waves;
-    [SerializeField] Game _controller;
+    [SerializeField] SceneLauncher _controller;
     private EnemyFactory _enemyFactory;
     private NavigationPoint _navPoint;
     private int _waveIndex =0;
     private float _nextWaveCountdown=0;
     private float _enemyRecycleTime = 2f;
-    private float _spawnOffsetY=0.1f; 
-  
-    
+    private float _spawnOffsetY=0.1f;   
 
-    Coroutine nextWaveSpawn;
+    private Coroutine _nextWaveSpawn;
 
     private void Update()
     {
@@ -27,11 +25,9 @@ public class Spawner : MonoBehaviour
 
     public void Initialize()
     {   
-        _enemyFactory = GetComponent<EnemyFactory>();
-        
-        _navPoint = GetComponent<NavigationPoint>();              
-
-        nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));        
+        _enemyFactory = GetComponent<EnemyFactory>();        
+        _navPoint = GetComponent<NavigationPoint>();
+        _nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));        
     }
 
     private void WaveInitialization()
@@ -43,13 +39,13 @@ public class Spawner : MonoBehaviour
         _waveIndex++;  
         if(_waveIndex<_waves.Length) 
         {
-            nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));
+            _nextWaveSpawn = StartCoroutine(WaveSpawnTimer(_nextWaveCountdown));
         }           
     }
 
     public void ManualWaveSpawn()
     {
-        StopCoroutine(nextWaveSpawn);
+        StopCoroutine(_nextWaveSpawn);
         WaveInitialization();
     }
 
@@ -61,7 +57,6 @@ public class Spawner : MonoBehaviour
             return;
         }
         Enemy enemy = _enemyFactory.GetEnemy(enemyPrefab);
-
         Vector3 startPosition = new Vector3(transform.position.x, transform.position.y + _spawnOffsetY, transform.position.z);
         enemy.transform.position = startPosition;
         enemy.Initialize(_navPoint);       

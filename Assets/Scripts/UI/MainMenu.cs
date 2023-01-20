@@ -17,12 +17,14 @@ public class MainMenu : MonoBehaviour
 
     public void Initialize(PlayerPersistentData data)
     {
-        if (data.SceneIndex > 0)
+        if (data.LastPlayedSceneIndex > 0)
         {
             _continue.interactable = true;
         }
 
         _continue.onClick.AddListener(Continue);
+        _newGame.onClick.AddListener(NewGame);
+        _quit.onClick.AddListener(Quit);
     }
 
     private void Continue()
