@@ -25,7 +25,7 @@ public class SceneLauncher : MonoBehaviour
     {               
         _player = new Player(_playerStartHealth,_playerStartGold);
         _uiHandler.Initialize(_player,_player.GetHealth());        
-        _uiHandler.PlayerReady += OnPlayerReady;
+        _uiHandler.PlayerReadyToGamepLay += OnPlayerReady;
     }
     
     private void OnPlayerReady()
